@@ -4,5 +4,5 @@ int cmGame::init(void)
 {
     mDraw = new mDraw;
 
-    mDraw->init
+    mDraw->init();
 }
