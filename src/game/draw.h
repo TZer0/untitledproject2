@@ -3,7 +3,7 @@
 
 class cmDraw {
     public:
-        void init(void);
+        void init(void){}
         
         void draw(void);
         
