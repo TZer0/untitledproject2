@@ -6,6 +6,7 @@ class cmDraw;
 
 // Misc modules
 class cmTimer;
+class cmInput;
 
 class cmGame {
     public:
@@ -17,6 +18,7 @@ class cmGame {
 
         // Misc modules
         class cmTimer *mTimer;
+        class cmInput *mIn;
 };
 
 extern class cmGame *mGame;
