@@ -30,6 +30,4 @@ class cmInput {
 		char key_old[KEY_MAX];
 };
 
-extern class cmInput mIn;
-
 #endif

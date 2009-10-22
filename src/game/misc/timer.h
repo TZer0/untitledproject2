@@ -30,6 +30,4 @@ class cmTimer {
         int last_timer; // Set after each call to delta()
 };
 
-extern class cmTimer mTimer;
-
 #endif 
