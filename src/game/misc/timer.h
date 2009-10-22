@@ -2,8 +2,6 @@
  * File: timer.h
  *
  * Description:	Header for the timer module
- *
- * (c)2009, by Raymond Loeberg
  */
 #ifndef TIMER_H
 #define TIMER_H
@@ -17,7 +15,7 @@ class cmTimer {
     private:
         double delta_var;
     public:
-        int setup(); // Begins a timer
+        int init(); // Begins a timer
         int get_timer(); // Returns the current timer position
         void reset_timer(); // Sets the timer back to zero
         double delta(); // Returns the time taken since the last call to delta()
