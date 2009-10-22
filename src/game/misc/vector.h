@@ -2,8 +2,6 @@
  * File: vector.h
  *
  * Description:	Header for the vector class.
- *
- * (c)2009, by Raymond Loeberg
  */
 #ifndef VECTOR_H
 #define VECTOR_H

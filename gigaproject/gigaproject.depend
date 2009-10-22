@@ -1,24 +1,26 @@
 # depslib dependency file v1.0
-1256237240 source:/home/avenger/Other/Projects/untitledproject2/src/game/draw.cpp
+1256249285 source:/home/avenger/Other/Projects/untitledproject2/src/game/draw.cpp
 	"draw.h"
 
-1256240126 /home/avenger/Other/Projects/untitledproject2/src/game/draw.h
+1256249300 /home/avenger/Other/Projects/untitledproject2/src/game/draw.h
+	"port.h"
 
 1256242143 source:/home/avenger/Other/Projects/untitledproject2/src/game/enemy/enemy.cpp
 
-1256245650 source:/home/avenger/Other/Projects/untitledproject2/src/game/game.cpp
+1256249466 source:/home/avenger/Other/Projects/untitledproject2/src/game/game.cpp
 	"port.h"
 	"game.h"
 	"draw.h"
 	"misc/timer.h"
 	"misc/input.h"
 
-1256245576 /home/avenger/Other/Projects/untitledproject2/src/game/game.h
+1256249489 /home/avenger/Other/Projects/untitledproject2/src/game/game.h
+	"misc/log.h"
 
 1256243722 /home/avenger/Other/Projects/untitledproject2/src/game/misc/timer.h
 	<time.h>
 
-1256245605 source:/home/avenger/Other/Projects/untitledproject2/src/game/init.cpp
+1256249754 source:/home/avenger/Other/Projects/untitledproject2/src/game/init.cpp
 	"misc/timer.h"
 	"misc/input.h"
 	"game.h"
@@ -35,16 +37,17 @@
 	"allegro.h"
 	"winalleg.h"
 
-1256058521 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/vector.cpp
+1256248982 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/vector.cpp
 	<math.h>
 	"vector.h"
 
-1256058532 /home/avenger/Other/Projects/untitledproject2/src/game/misc/vector.h
+1256248977 /home/avenger/Other/Projects/untitledproject2/src/game/misc/vector.h
 	<math.h>
 
 1256241956 source:/home/avenger/Other/Projects/untitledproject2/src/game/weapon/weapon.cpp
 
-1256240126 source:/home/avenger/Other/Projects/untitledproject2/src/main.cpp
+1256249127 source:/home/avenger/Other/Projects/untitledproject2/src/main.cpp
+	<allegro.h>
 	"game/game.h"
 
 1256245415 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/input.cpp
@@ -53,4 +56,26 @@
 
 1256245642 /home/avenger/Other/Projects/untitledproject2/src/game/misc/input.h
 	"../port.h"
+
+1251972098 /home/avenger/Other/Projects/untitledproject2/src/game/misc/log.h
+	<string>
+	<stdio.h>
+	<stdarg.h>
+
+1251923305 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/log.cpp
+	"log.h"
+	<allegro.h>
+	<time.h>
+
+1256249765 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/file.cpp
+	<math.h>
+	<allegro.h>
+	<string>
+	"file.h"
+	"../game.h"
+
+1256249739 /home/avenger/Other/Projects/untitledproject2/src/game/misc/file.h
+	<allegro.h>
+	<list>
+	<string>
 

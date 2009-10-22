@@ -1,4 +1,9 @@
-//#include <allegro.h>
+/**
+ * File: main.cpp
+ *
+ * Description: Main file
+ */
+#include <allegro.h>
 #include "game/game.h"
 
 cmGame *mGame;
@@ -10,4 +15,4 @@ int main(int argc, char **argv)
     
     return 0;
 }
-//END_OF_MAIN()
+END_OF_MAIN()

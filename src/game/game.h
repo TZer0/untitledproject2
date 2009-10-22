@@ -1,6 +1,9 @@
 #ifndef GAME_H
 #define GAME_H
 
+// Logging functions
+#include "misc/log.h"
+
 // Forward declarations of modules
 class cmDraw;
 

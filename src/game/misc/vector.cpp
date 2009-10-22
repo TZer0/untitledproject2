@@ -2,8 +2,6 @@
  * File: vector.cpp
  *
  * Description:	Advanced vector class functions
- *
- * (c)2009, by Raymond Loeberg
  */
 // Global includes
 #include <math.h>

@@ -1,3 +1,8 @@
+/**
+* File: game.cpp
+*
+* Description: Contains run(), the function that does it all.
+*/
 #include "port.h"
 #include "game.h"
 #include "draw.h"
@@ -22,6 +27,7 @@ void cmGame::run(void)
             
             // Drawing functions
             mDraw->draw();
+            LOGS(LDEBUG, "lol");
         }
     }
     

@@ -1,5 +1,6 @@
 #include "misc/timer.h"
 #include "misc/input.h"
+#include "misc/file.h"
 #include "game.h"
 #include "draw.h"
 int cmGame::init(void)
@@ -13,10 +14,18 @@ int cmGame::init(void)
     install_keyboard();
     install_mouse();
     
+    // Setting working directory
+    set_data_directory("data");
+    
+    // Logging intialization
+    mLog.init(LDEBUG);
+    
+    // Module creation
     mDraw = new cmDraw;
     mTimer = new cmTimer;
     mIn = new cmInput;
-
+    
+    // Module initialization
     mDraw->init();
     mTimer->init();
     return 0;
