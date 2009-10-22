@@ -1,0 +1,52 @@
+# depslib dependency file v1.0
+1256237240 source:/home/avenger/Other/Projects/untitledproject2/src/game/draw.cpp
+	"draw.h"
+
+1256240126 /home/avenger/Other/Projects/untitledproject2/src/game/draw.h
+
+1256242143 source:/home/avenger/Other/Projects/untitledproject2/src/game/enemy/enemy.cpp
+
+1256244048 source:/home/avenger/Other/Projects/untitledproject2/src/game/game.cpp
+	"game.h"
+	"draw.h"
+	"misc/timer.h"
+
+1256243685 /home/avenger/Other/Projects/untitledproject2/src/game/game.h
+
+1256243722 /home/avenger/Other/Projects/untitledproject2/src/game/misc/timer.h
+	<time.h>
+
+1256243716 source:/home/avenger/Other/Projects/untitledproject2/src/game/init.cpp
+	"misc/timer.h"
+	"game.h"
+	"draw.h"
+
+1256243972 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/timer.cpp
+	"timer.h"
+	"../port.h"
+	<unistd.h>
+	<sys/time.h>
+
+1256242398 /home/avenger/Other/Projects/untitledproject2/src/game/port.h
+	<allegro.h>
+	"allegro.h"
+	"winalleg.h"
+
+1256058521 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/vector.cpp
+	<math.h>
+	"vector.h"
+
+1256058532 /home/avenger/Other/Projects/untitledproject2/src/game/misc/vector.h
+	<math.h>
+
+1256241956 source:/home/avenger/Other/Projects/untitledproject2/src/game/weapon/weapon.cpp
+
+1256240126 source:/home/avenger/Other/Projects/untitledproject2/src/main.cpp
+	"game/game.h"
+
+1256245415 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/input.cpp
+	"../port.h"
+	"input.h"
+
+1256242398 /home/avenger/Other/Projects/untitledproject2/src/game/misc/input.h
+
