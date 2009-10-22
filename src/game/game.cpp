@@ -1,9 +1,5 @@
 #include "game.h"
-
-int cmGame::init(void)
-{
-    return 0;
-}
+#include "draw.h"
 
 void cmGame::run(void)
 {
@@ -12,7 +8,7 @@ void cmGame::run(void)
     while(1) {
         // Input functions
         
-        if(newFrame()) {
+        if(1) {
             // Processing functions
             
             // Drawing functions
