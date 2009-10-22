@@ -12,8 +12,6 @@
 // Other includes
 #include "input.h"
 
-class cmInput mIn;
-
 void cmInput::update(void)
 {
 	int k;
