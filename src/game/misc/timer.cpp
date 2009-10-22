@@ -3,15 +3,10 @@
  *
  * Description:	Timer module, handles portable timing.
  *
- * (c)2009, by Raymond Loeberg
  */
-// Global includes
-#include <allegro.h>
-
 // Other includes
 #include "timer.h"
-
-class cmTimer mTimer;
+#include "../port.h" // For allegro
 
 #if defined(unix) || defined(__unix__) || defined(__unix)
 	#include <unistd.h>
@@ -86,7 +81,7 @@ class cmTimer mTimer;
     
     double getFps() {
         if(once) {
-            LOGC(LWARN, "FPS timer not available on platform");
+            //LOGC(LWARN, "FPS timer not available on platform");
             once = false;
         }
         return 0.0;
@@ -98,7 +93,7 @@ class cmTimer mTimer;
 /**
  * Initializes the timer
  */
-int cmTimer::setup()
+int cmTimer::init()
 {
     timer_init();
     return 1;

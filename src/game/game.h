@@ -4,6 +4,9 @@
 // Forward declarations of modules
 class cmDraw;
 
+// Misc modules
+class cmTimer;
+
 class cmGame {
     public:
         int init(void);
@@ -11,6 +14,9 @@ class cmGame {
         
         // Modules
         class cmDraw *mDraw;
+
+        // Misc modules
+        class cmTimer *mTimer;
 };
 
 extern class cmGame *mGame;
