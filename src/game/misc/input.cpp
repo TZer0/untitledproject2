@@ -3,11 +3,9 @@
  *
  * Description:	Module to store input data [keyboard and mouse] into arrays
  *              of flags for just pressed/released keys/mousebuttons.
- *
- * (c)2009, by Raymond Loeberg
  */
 // Global includes
-#include <allegro.h>
+#include "../port.h"
 
 // Other includes
 #include "input.h"
