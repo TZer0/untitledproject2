@@ -7,6 +7,7 @@
  */
 #ifndef INPUT_H
 #define INPUT_H
+#include "../port.h"
 
 /// Stores pressed/released keys/mousebuttons and updates them on request
 class cmInput {

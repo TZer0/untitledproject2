@@ -1,6 +1,8 @@
+#include "port.h"
 #include "game.h"
 #include "draw.h"
 #include "misc/timer.h"
+#include "misc/input.h"
 
 void cmGame::run(void)
 {
@@ -9,8 +11,9 @@ void cmGame::run(void)
     // Initializing stuff
     init();
     
-    while(1) {
+    while(!key[KEY_ESC]) {
         // Input functions
+        mIn->update();
         
         if(mTimer->get_timer() > 0) {
             delta = mTimer->delta();
