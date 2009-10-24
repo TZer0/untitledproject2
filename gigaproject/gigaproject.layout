@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="../src/game/game.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="122" topLine="0" />
+	</File>
+	<File name="../src/game/game.h" open="0" top="0" tabpos="2">
+		<Cursor position="126" topLine="0" />
+	</File>
+	<File name="../src/game/init.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="70" topLine="0" />
+	</File>
+	<File name="../src/game/misc/file.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="259" topLine="48" />
+	</File>
+	<File name="../src/game/misc/input.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="292" topLine="0" />
+	</File>
+	<File name="../src/game/misc/input.h" open="0" top="0" tabpos="5">
+		<Cursor position="156" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>
