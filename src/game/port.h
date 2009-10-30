@@ -3,5 +3,6 @@
 #else
 #include "allegro.h"
 #include "winalleg.h"
+#define _USE_MATH_DEFINES
 #endif
 
