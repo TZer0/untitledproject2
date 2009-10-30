@@ -4,8 +4,11 @@
 #include "../misc/moduletemplate.h"
 #include "../misc/vector.h"
 
+#define HOR_SPEED   100.0
+
 class cmPlayer : public cDataSystem {
     private:
+        double gravity;
         cVector pos;
         cVector vel;
         bool flagLeft;
