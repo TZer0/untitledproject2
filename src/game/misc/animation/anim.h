@@ -22,6 +22,7 @@
 
 // Other headers
 #include "../../port.h"
+#include "../moduletemplate.h"
 
 
 /// Animation data block
@@ -80,7 +81,7 @@ class cAnimation {
 };
 
 /// Master class for animations
-class cmAnim {
+class cmAnim : public cDataSystem {
     private:
         std::list<cAnimation*> data;
         
@@ -95,15 +96,18 @@ class cmAnim {
 		
 		/// @name Overloaded functions
 		//@{
-            void init(void) {}
+            void init(void) 
+            { animData = new cmAnimData; }
+            
             void level_init(void) {}
+            int load(void);
             
             void process(double);
             void draw(void) {}
             void clear_data(void);
         //@}
+        
+        cmAnimData *animData;
 };
-
-extern class cmAnim mAnim;
 
 #endif

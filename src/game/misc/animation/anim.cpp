@@ -10,9 +10,6 @@
 
 using namespace std;
 
-// Module master definition
-class cmAnim mAnim;
-
 // cmAnim functions:
 class cAnimation *cmAnim::add(string id)
 {
@@ -47,6 +44,12 @@ class cAnimation *cmAnim::add(cAnimData *animdata)
 	data.push_back(tmp);
 	
 	return tmp;
+}
+
+int cmAnim::load(void)
+{
+    anim_getItems();
+    anim_load();
 }
 
 /**
