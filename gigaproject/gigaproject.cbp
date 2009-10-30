@@ -45,6 +45,7 @@
 		<Unit filename="../src/game/game.h" />
 		<Unit filename="../src/game/init.cpp" />
 		<Unit filename="../src/game/load.cpp" />
+		<Unit filename="../src/game/lua.h" />
 		<Unit filename="../src/game/misc/animation/anim.cpp" />
 		<Unit filename="../src/game/misc/animation/anim.h" />
 		<Unit filename="../src/game/misc/animation/animproc.cpp" />
