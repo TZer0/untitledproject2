@@ -13,6 +13,7 @@ class cmInput;
 
 class cmGame {
     public:
+        void load(void);
         int init(void);
         void run(void);
 

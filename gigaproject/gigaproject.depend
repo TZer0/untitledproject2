@@ -7,7 +7,7 @@
 
 1256242143 source:/home/avenger/Other/Projects/untitledproject2/src/game/enemy/enemy.cpp
 
-1256935030 source:/home/avenger/Other/Projects/untitledproject2/src/game/game.cpp
+1256937270 source:/home/avenger/Other/Projects/untitledproject2/src/game/game.cpp
 	"port.h"
 	"game.h"
 	"draw.h"
@@ -15,16 +15,17 @@
 	"misc/input.h"
 	"player/player.h"
 
-1256936581 /home/avenger/Other/Projects/untitledproject2/src/game/game.h
+1256937161 /home/avenger/Other/Projects/untitledproject2/src/game/game.h
 	"misc/log.h"
 
 1256243722 /home/avenger/Other/Projects/untitledproject2/src/game/misc/timer.h
 	<time.h>
 
-1256935030 source:/home/avenger/Other/Projects/untitledproject2/src/game/init.cpp
+1256936673 source:/home/avenger/Other/Projects/untitledproject2/src/game/init.cpp
 	"misc/timer.h"
 	"misc/input.h"
 	"misc/file.h"
+	"misc/animation/anim.h"
 	"player/player.h"
 	"game.h"
 	"draw.h"
@@ -126,25 +127,28 @@
 	<math.h>
 	"anim.h"
 
-1256935470 /home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/anim.h
+1256937694 /home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/anim.h
 	<list>
 	<queue>
 	<vector>
 	<string>
 	"loadanimation.h"
 	"../../port.h"
+	"../moduletemplate.h"
 
 1256935555 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/loadimage.cpp
 	"loadimage.h"
 	"log.h"
 	"../game.h"
 
-1256934508 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/luaanimation.cpp
+1256937816 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/luaanimation.cpp
 	"luaanimation.h"
 	"loadanimation.h"
+	"anim.h"
 	"../loadimage.h"
+	"../../game.h"
 
-1256934480 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/anim.cpp
+1256937570 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/anim.cpp
 	"anim.h"
 
 1256935030 /home/avenger/Other/Projects/untitledproject2/src/game/player/player.h
@@ -152,4 +156,9 @@
 	"../misc/vector.h"
 
 1256240141 /home/avenger/Other/Projects/untitledproject2/src/game/misc/moduletemplate.h
+
+1256937533 source:/home/avenger/Other/Projects/untitledproject2/src/game/load.cpp
+	"misc/log.h"
+	"misc/animation/anim.h"
+	"game.h"
 

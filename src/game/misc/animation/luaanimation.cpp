@@ -1,6 +1,8 @@
 #include "luaanimation.h"
 #include "loadanimation.h"
+#include "anim.h"
 #include "../loadimage.h"
+#include "../../game.h"
 
 // Hidden functions
 /**
@@ -8,8 +10,8 @@
  */
 static int luaanim_new_animation(lua_State *l)
 {
-	mAnimData.cur = new cAnimData;
-	mAnimData.insert(luaL_checkstring(l,1),mAnimData.cur);
+	mGame->mAnim->animData->cur = new cAnimData;
+	mGame->mAnim->animData->insert(luaL_checkstring(l,1),mGame->mAnim->animData->cur);
 	
 	return 0;
 }
@@ -20,10 +22,10 @@ static int luaanim_new_animation(lua_State *l)
 static int luaanim_new_sequence(lua_State *l)
 {
 	// Create sequence in animation
-	mAnimData.cseq = mAnimData.cur->new_sequence(luaL_checkstring(l,1), luaL_checkstring(l,3));
+	mGame->mAnim->animData->cseq = mGame->mAnim->animData->cur->new_sequence(luaL_checkstring(l,1), luaL_checkstring(l,3));
     
     // Find bitmap to use for all frames
-    mAnimData.seqBmp = mImagesData.retrieve(luaL_checkstring(l,2));
+    mGame->mAnim->animData->seqBmp = mImagesData.retrieve(luaL_checkstring(l,2));
     
 	return 0;
 }
@@ -48,7 +50,7 @@ static int luaanim_new_frame(lua_State *l)
     int yo = luaL_checkint(l,7);
     
     // Push frame
-    mAnimData.cseq->new_frame(bmp, xo,yo,t);
+    mGame->mAnim->animData->cseq->new_frame(bmp, xo,yo,t);
     
     return 0;
 }
