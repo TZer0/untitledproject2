@@ -17,6 +17,7 @@ int cmGame::init(void)
     install_mouse();
     
     // Setting working directory
+    mFile = new cmFile;
     mFile->set_data_directory("data");
     
     // Logging intialization
