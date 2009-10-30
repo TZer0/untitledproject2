@@ -79,7 +79,7 @@
         return(delta);
     }
     
-    double getFps() {
+    double getFps(double delta) {
         if(once) {
             //LOGC(LWARN, "FPS timer not available on platform");
             once = false;
