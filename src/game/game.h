@@ -24,6 +24,8 @@ class cmGame {
         class cmTimer *mTimer;
         class cmInput *mIn;
         class cmFile *mFile;
+        
+        class cmAnim *mAnim;
 };
 
 extern class cmGame *mGame;

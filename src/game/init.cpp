@@ -1,6 +1,7 @@
 #include "misc/timer.h"
 #include "misc/input.h"
 #include "misc/file.h"
+#include "misc/animation/anim.h"
 #include "player/player.h"
 #include "game.h"
 #include "draw.h"
@@ -28,10 +29,12 @@ int cmGame::init(void)
     mTimer = new cmTimer;
     mIn = new cmInput;
     mPlayer = new cmPlayer;
+    mAnim = new cmAnim;
     
     // Module initialization
     mDraw->init();
     mTimer->init();
     mPlayer->init();
+    mAnim->init();
     return 0;
 }
