@@ -27,7 +27,7 @@ void cmGame::run(void)
             
             // Drawing functions
             mDraw->draw();
-            LOGS(LDEBUG, "lol");
+            LOGS(LDEBUG);
         }
     }
     
