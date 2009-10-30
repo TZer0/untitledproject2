@@ -1,0 +1,3 @@
+<area shape="rect" href="$classcm_input.html" title="Stores pressed/released keys/mousebuttons and updates them on request." alt="" coords="5,5,72,32">
+<area shape="rect" href="$classcm_draw.html" title="cmDraw" alt="" coords="96,5,163,32">
+<area shape="rect" href="$classcm_timer.html" title="Timer module. Handles timer related stuff." alt="" coords="187,5,259,32">
