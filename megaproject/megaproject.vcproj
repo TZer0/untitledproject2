@@ -57,6 +57,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="alleg.lib"
 				GenerateDebugInformation="true"
 				TargetMachine="1"
 			/>
@@ -162,27 +163,99 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath="..\hg\src\game\draw.cpp"
+				RelativePath="..\src\game\draw.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\hg\src\game\draw.h"
+				RelativePath="..\src\game\draw.h"
 				>
 			</File>
 			<File
-				RelativePath="..\hg\src\game\game.cpp"
+				RelativePath="..\src\game\enemy\enemy.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\hg\src\game\game.h"
+				RelativePath="..\src\game\enemy\enemy.h"
 				>
 			</File>
 			<File
-				RelativePath="..\hg\src\game\init.cpp"
+				RelativePath="..\src\game\misc\file.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\hg\src\main.cpp"
+				RelativePath="..\src\game\misc\file.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\game\game.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\src\game\game.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\game\init.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\src\game\misc\input.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\src\game\misc\input.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\game\misc\log.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\src\game\misc\log.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\main.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\src\game\misc\moduletemplate.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\game\player\player.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\src\game\player\player.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\port.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\game\misc\timer.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\src\game\misc\timer.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\game\misc\vector.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\src\game\misc\vector.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\game\weapon\weapon.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\src\game\weapon\weapon.h"
 				>
 			</File>
 		</Filter>
