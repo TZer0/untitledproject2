@@ -1,4 +1,4 @@
-#include <allegro.h>
+#include "../port.h"
 #include "player.h"
 #include "../draw.h"
 #include "../game.h"
