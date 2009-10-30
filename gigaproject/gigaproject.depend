@@ -1,0 +1,155 @@
+# depslib dependency file v1.0
+1256249285 source:/home/avenger/Other/Projects/untitledproject2/src/game/draw.cpp
+	"draw.h"
+
+1256935030 /home/avenger/Other/Projects/untitledproject2/src/game/draw.h
+	"port.h"
+
+1256242143 source:/home/avenger/Other/Projects/untitledproject2/src/game/enemy/enemy.cpp
+
+1256935030 source:/home/avenger/Other/Projects/untitledproject2/src/game/game.cpp
+	"port.h"
+	"game.h"
+	"draw.h"
+	"misc/timer.h"
+	"misc/input.h"
+	"player/player.h"
+
+1256936581 /home/avenger/Other/Projects/untitledproject2/src/game/game.h
+	"misc/log.h"
+
+1256243722 /home/avenger/Other/Projects/untitledproject2/src/game/misc/timer.h
+	<time.h>
+
+1256935030 source:/home/avenger/Other/Projects/untitledproject2/src/game/init.cpp
+	"misc/timer.h"
+	"misc/input.h"
+	"misc/file.h"
+	"player/player.h"
+	"game.h"
+	"draw.h"
+
+1256935030 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/timer.cpp
+	"timer.h"
+	"../port.h"
+	<unistd.h>
+	<sys/time.h>
+
+1256242398 /home/avenger/Other/Projects/untitledproject2/src/game/port.h
+	<allegro.h>
+	"allegro.h"
+	"winalleg.h"
+
+1256248982 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/vector.cpp
+	<math.h>
+	"vector.h"
+
+1256248977 /home/avenger/Other/Projects/untitledproject2/src/game/misc/vector.h
+	<math.h>
+
+1256241956 source:/home/avenger/Other/Projects/untitledproject2/src/game/weapon/weapon.cpp
+
+1256249127 source:/home/avenger/Other/Projects/untitledproject2/src/main.cpp
+	<allegro.h>
+	"game/game.h"
+
+1256245415 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/input.cpp
+	"../port.h"
+	"input.h"
+
+1256245642 /home/avenger/Other/Projects/untitledproject2/src/game/misc/input.h
+	"../port.h"
+
+1251972098 /home/avenger/Other/Projects/untitledproject2/src/game/misc/log.h
+	<string>
+	<stdio.h>
+	<stdarg.h>
+
+1251923305 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/log.cpp
+	"log.h"
+	<allegro.h>
+	<time.h>
+
+1256935030 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/file.cpp
+	<math.h>
+	<allegro.h>
+	<string>
+	"file.h"
+	"../game.h"
+
+1256935030 /home/avenger/Other/Projects/untitledproject2/src/game/misc/file.h
+	<allegro.h>
+	<list>
+	<string>
+
+1256935030 source:/home/avenger/Other/Projects/untitledproject2/src/game/player/player.cpp
+	<allegro.h>
+	"player.h"
+	"../draw.h"
+	"../game.h"
+
+1256935509 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/loadanimation.cpp
+	"../../port.h"
+	"../../game.h"
+	"loadanimation.h"
+	"../loadimage.h"
+	"../file.h"
+	"../log.h"
+	"luaanimation.h"
+
+1256935466 /home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/loadanimation.h
+	<vector>
+	<list>
+	<lua5.1/lua.h>
+	<lua5.1/lauxlib.h>
+	<lua5.1/lualib.h>
+	"../../port.h"
+	"loadtemplate.h"
+
+1256300182 /home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/loadtemplate.h
+	<string>
+	<map>
+	<list>
+
+1255972366 /home/avenger/Other/Projects/untitledproject2/src/game/misc/loadimage.h
+	<map>
+	<string>
+	<allegro.h>
+	"../misc/file.h"
+
+1256934503 /home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/luaanimation.h
+	<lua5.1/lua.h>
+	<lua5.1/lauxlib.h>
+	<lua5.1/lualib.h>
+
+1256934249 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/animproc.cpp
+	<math.h>
+	"anim.h"
+
+1256935470 /home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/anim.h
+	<list>
+	<queue>
+	<vector>
+	<string>
+	"loadanimation.h"
+	"../../port.h"
+
+1256935555 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/loadimage.cpp
+	"loadimage.h"
+	"log.h"
+	"../game.h"
+
+1256934508 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/luaanimation.cpp
+	"luaanimation.h"
+	"loadanimation.h"
+	"../loadimage.h"
+
+1256934480 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/anim.cpp
+	"anim.h"
+
+1256935030 /home/avenger/Other/Projects/untitledproject2/src/game/player/player.h
+	"../misc/moduletemplate.h"
+	"../misc/vector.h"
+
+1256240141 /home/avenger/Other/Projects/untitledproject2/src/game/misc/moduletemplate.h
+
