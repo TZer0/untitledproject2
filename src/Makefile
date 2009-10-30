@@ -1,4 +1,4 @@
-SOURCES = main.cpp ./game/init.cpp ./game/game.cpp ./game/draw.cpp ./game/misc/timer.cpp ./game/misc/input.cpp ./game/misc/file.cpp ./game/misc/log.cpp
+SOURCES = main.cpp ./game/init.cpp ./game/game.cpp ./game/draw.cpp ./game/misc/timer.cpp ./game/misc/input.cpp ./game/misc/file.cpp ./game/misc/log.cpp ./game/player/player.cpp
 CC = g++
 CFLAGS = $(shell allegro-config --cflags) -Wall
 LDFLAGS = $(shell allegro-config --libs)

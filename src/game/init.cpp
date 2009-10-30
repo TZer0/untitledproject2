@@ -1,8 +1,10 @@
 #include "misc/timer.h"
 #include "misc/input.h"
 #include "misc/file.h"
+#include "player/player.h"
 #include "game.h"
 #include "draw.h"
+
 int cmGame::init(void)
 {
     // Initialize allegro
@@ -24,9 +26,11 @@ int cmGame::init(void)
     mDraw = new cmDraw;
     mTimer = new cmTimer;
     mIn = new cmInput;
+    mPlayer = new cmPlayer;
     
     // Module initialization
     mDraw->init();
     mTimer->init();
+    mPlayer->init();
     return 0;
 }

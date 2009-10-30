@@ -10,13 +10,17 @@ class cmPlayer : public cDataSystem {
         cVector vel;
         
     public:
-        void init();
         void level_init() {}
-        int load() {}
+        
+        int load() {
+            return 0;
+        }
+        
+        void init();
         void input();
         void process(double delta);
         void draw();
         void clear_data();
-}
+};
 
 #endif

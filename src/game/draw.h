@@ -8,13 +8,10 @@
 #include "port.h"
 
 class cmDraw {
-    private:
-        BITMAP *buffer;
     public:
+        BITMAP *buffer;
         void init(void);
-        
         void draw(void);
-        
 };
 
 #endif
