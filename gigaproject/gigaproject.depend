@@ -2,32 +2,34 @@
 1256249285 source:/home/avenger/Other/Projects/untitledproject2/src/game/draw.cpp
 	"draw.h"
 
-1256249300 /home/avenger/Other/Projects/untitledproject2/src/game/draw.h
+1256935030 /home/avenger/Other/Projects/untitledproject2/src/game/draw.h
 	"port.h"
 
 1256242143 source:/home/avenger/Other/Projects/untitledproject2/src/game/enemy/enemy.cpp
 
-1256928088 source:/home/avenger/Other/Projects/untitledproject2/src/game/game.cpp
+1256935030 source:/home/avenger/Other/Projects/untitledproject2/src/game/game.cpp
 	"port.h"
 	"game.h"
 	"draw.h"
 	"misc/timer.h"
 	"misc/input.h"
+	"player/player.h"
 
-1256249489 /home/avenger/Other/Projects/untitledproject2/src/game/game.h
+1256935030 /home/avenger/Other/Projects/untitledproject2/src/game/game.h
 	"misc/log.h"
 
 1256243722 /home/avenger/Other/Projects/untitledproject2/src/game/misc/timer.h
 	<time.h>
 
-1256249823 source:/home/avenger/Other/Projects/untitledproject2/src/game/init.cpp
+1256935030 source:/home/avenger/Other/Projects/untitledproject2/src/game/init.cpp
 	"misc/timer.h"
 	"misc/input.h"
 	"misc/file.h"
+	"player/player.h"
 	"game.h"
 	"draw.h"
 
-1256243972 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/timer.cpp
+1256935030 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/timer.cpp
 	"timer.h"
 	"../port.h"
 	<unistd.h>
@@ -68,35 +70,40 @@
 	<allegro.h>
 	<time.h>
 
-1256249765 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/file.cpp
+1256935030 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/file.cpp
 	<math.h>
 	<allegro.h>
 	<string>
 	"file.h"
 	"../game.h"
 
-1256249739 /home/avenger/Other/Projects/untitledproject2/src/game/misc/file.h
+1256935030 /home/avenger/Other/Projects/untitledproject2/src/game/misc/file.h
 	<allegro.h>
 	<list>
 	<string>
 
-1256926771 source:/home/avenger/Other/Projects/untitledproject2/src/game/player/player.cpp
-
-1256933669 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/loadanimation.cpp
+1256935030 source:/home/avenger/Other/Projects/untitledproject2/src/game/player/player.cpp
 	<allegro.h>
+	"player.h"
+	"../draw.h"
+	"../game.h"
+
+1256935509 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/loadanimation.cpp
+	"../../port.h"
+	"../../game.h"
 	"loadanimation.h"
 	"../loadimage.h"
 	"../file.h"
 	"../log.h"
 	"luaanimation.h"
 
-1256933658 /home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/loadanimation.h
+1256935466 /home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/loadanimation.h
 	<vector>
 	<list>
-	<allegro.h>
 	<lua5.1/lua.h>
 	<lua5.1/lauxlib.h>
 	<lua5.1/lualib.h>
+	"../../port.h"
 	"loadtemplate.h"
 
 1256300182 /home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/loadtemplate.h
@@ -119,17 +126,18 @@
 	<math.h>
 	"anim.h"
 
-1256932627 /home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/anim.h
-	<allegro.h>
+1256935470 /home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/anim.h
 	<list>
 	<queue>
 	<vector>
 	<string>
 	"loadanimation.h"
+	"../../port.h"
 
-1256934324 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/loadimage.cpp
+1256935555 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/loadimage.cpp
 	"loadimage.h"
 	"log.h"
+	"../game.h"
 
 1256934508 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/luaanimation.cpp
 	"luaanimation.h"
@@ -138,4 +146,10 @@
 
 1256934480 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/anim.cpp
 	"anim.h"
+
+1256935030 /home/avenger/Other/Projects/untitledproject2/src/game/player/player.h
+	"../misc/moduletemplate.h"
+	"../misc/vector.h"
+
+1256240141 /home/avenger/Other/Projects/untitledproject2/src/game/misc/moduletemplate.h
 
