@@ -11,11 +11,7 @@
 // Global includes
 #include <vector>
 #include <list>
-extern "C" {
-#include <lua5.1/lua.h>
-#include <lua5.1/lauxlib.h>
-#include <lua5.1/lualib.h>
-}
+#include "../../lua.h"
 
 // Other includes
 #include "../../port.h"
