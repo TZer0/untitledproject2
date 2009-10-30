@@ -1,5 +1,5 @@
 #include "log.h"
-#include <allegro.h>
+#include "../port.h"
 #include <time.h>
 
 #define get_ptime() (double(clock())/double(CLOCKS_PER_SEC))
