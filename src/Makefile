@@ -3,8 +3,8 @@ CC = g++
 CFLAGZ = $(shell allegro-config --cflags) -Wall -g3
 LDFLAGZ = $(shell allegro-config --libs)
 
-paddy : $(SOURCEZ)
+up2 : $(SOURCEZ)
 	$(CC) $(SOURCEZ) $(OUTPUT_OPTION) $(CFLAGZ) $(LDFLAGZ)
 
 clean :
-	rm paddy
+	rm up2

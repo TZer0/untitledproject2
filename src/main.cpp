@@ -3,7 +3,7 @@
  *
  * Description: Main file
  */
-#include <allegro.h>
+#include "game/port.h"
 #include "game/game.h"
 
 cmGame *mGame;
