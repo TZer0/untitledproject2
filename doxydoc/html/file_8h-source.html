@@ -27,19 +27,28 @@
 <a name="l00012"></a>00012 <span class="preprocessor">#include &lt;list&gt;</span>
 <a name="l00013"></a>00013 <span class="preprocessor">#include &lt;string&gt;</span>
 <a name="l00014"></a>00014 
-<a name="l00015"></a>00015 <span class="keywordtype">double</span> <a class="code" href="file_8cpp.html#323fe25b7c662e3a2b22069a07a091d4">read_double</a>(PACKFILE *fp);
-<a name="l00016"></a>00016 <span class="keywordtype">char</span> *<a class="code" href="file_8cpp.html#09abba6f997c66d2baca4aa4ee7a0fb6">read_string</a>(PACKFILE *fp);
-<a name="l00017"></a>00017 
-<a name="l00018"></a>00018 <span class="keywordtype">void</span> <a class="code" href="file_8cpp.html#7d7f0d08a8bf7ec6426ff3d41e9e71ac">set_data_directory</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *dir);
-<a name="l00019"></a>00019 std::string <a class="code" href="file_8cpp.html#dc260b2cf2f9773d69c815063533bbc1">execdir_strip</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *dir);
-<a name="l00020"></a>00020 std::list&lt;std::string&gt; <a class="code" href="file_8cpp.html#b7dcc9d8d271aad130f2be7791292f30">dirRecursiveGet</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *tdir, <span class="keyword">const</span> <span class="keywordtype">char</span> *suffix);
-<a name="l00021"></a>00021 std::string <a class="code" href="file_8cpp.html#ba4e01d0bfe0c646987caec65a6d0464">get_filename</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *basedir, <span class="keyword">const</span> <span class="keywordtype">char</span> *filename);
-<a name="l00022"></a>00022 
-<a name="l00023"></a>00023 <span class="keywordtype">char</span> *<a class="code" href="file_8cpp.html#bb49f31728041e19c23da058d1dc7b33">get_script</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *file);
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="preprocessor">#endif</span>
+<a name="l00015"></a><a class="code" href="classcm_file.html">00015</a> <span class="keyword">class </span><a class="code" href="classcm_file.html">cmFile</a> {
+<a name="l00016"></a>00016     <span class="keywordtype">char</span> *datadir;
+<a name="l00017"></a>00017     <span class="keywordtype">char</span> *execdir;
+<a name="l00018"></a>00018     <span class="keyword">public</span>:
+<a name="l00019"></a><a class="code" href="classcm_file.html#6f957f10755eed77451952f021f01b80">00019</a>     <a class="code" href="classcm_file.html#6f957f10755eed77451952f021f01b80">cmFile</a>() {
+<a name="l00020"></a>00020         datadir=NULL;
+<a name="l00021"></a>00021         execdir=NULL;
+<a name="l00022"></a>00022     }
+<a name="l00023"></a>00023     <span class="keywordtype">double</span> <a class="code" href="classcm_file.html#19d18ce4ad7317ea6ece6181dee521b9">read_double</a>(PACKFILE *fp);
+<a name="l00024"></a>00024     <span class="keywordtype">char</span> *<a class="code" href="classcm_file.html#64c4d676a83cd61699ebf44aaa2ad8e1">read_string</a>(PACKFILE *fp);
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026     <span class="keywordtype">void</span> <a class="code" href="classcm_file.html#ceb8dca0925a4b6de1d3b1fe81689662">set_data_directory</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *dir);
+<a name="l00027"></a>00027     std::string <a class="code" href="classcm_file.html#b8e5d0ae12bdef6eae35c6bf798ed489">execdir_strip</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *dir);
+<a name="l00028"></a>00028     std::list&lt;std::string&gt; <a class="code" href="classcm_file.html#c093f5e2fa9b093fb1b67d9e220f7ea8">dirRecursiveGet</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *tdir, <span class="keyword">const</span> <span class="keywordtype">char</span> *suffix);
+<a name="l00029"></a>00029     std::string <a class="code" href="classcm_file.html#29add5e5c8dd025dbf974036adca8c72">get_filename</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *basedir, <span class="keyword">const</span> <span class="keywordtype">char</span> *filename);
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031     <span class="keywordtype">char</span> *<a class="code" href="classcm_file.html#29bb0a1ef1dacdeecced10aaf34cf530">get_script</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *file);
+<a name="l00032"></a>00032 };
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Oct 24 17:14:48 2009 for untitledproject2 by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri Oct 30 23:01:11 2009 for untitledproject2 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

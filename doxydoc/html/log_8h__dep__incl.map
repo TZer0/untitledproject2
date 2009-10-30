@@ -1,6 +1,11 @@
-<area shape="rect" href="$game_8h.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/game.h" alt="" coords="651,80,1043,107">
-<area shape="rect" href="$log_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/misc/log.cpp" alt="" coords="1067,80,1491,107">
-<area shape="rect" href="$game_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/game.cpp" alt="" coords="5,155,411,181">
-<area shape="rect" href="$init_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/init.cpp" alt="" coords="435,155,827,181">
-<area shape="rect" href="$file_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/misc/file.cpp" alt="" coords="851,155,1275,181">
-<area shape="rect" href="$main_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/main.cpp" alt="" coords="1299,155,1664,181">
+<area shape="rect" href="$game_8h.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/game.h" alt="" coords="1688,80,2080,107">
+<area shape="rect" href="$load_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/load.cpp" alt="" coords="5,155,403,181">
+<area shape="rect" href="$loadanimation_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/loadanimation.cpp" alt="" coords="427,155,973,181">
+<area shape="rect" href="$loadimage_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/misc/loadimage.cpp" alt="" coords="3715,155,4179,181">
+<area shape="rect" href="$log_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/misc/log.cpp" alt="" coords="2155,80,2579,107">
+<area shape="rect" href="$game_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/game.cpp" alt="" coords="2307,155,2712,181">
+<area shape="rect" href="$init_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/init.cpp" alt="" coords="2736,155,3128,181">
+<area shape="rect" href="$luaanimation_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/luaanimation.cpp" alt="" coords="3152,155,3691,181">
+<area shape="rect" href="$file_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/misc/file.cpp" alt="" coords="997,155,1421,181">
+<area shape="rect" href="$player_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/player/player.cpp" alt="" coords="1445,155,1893,181">
+<area shape="rect" href="$main_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/main.cpp" alt="" coords="1917,155,2283,181">

@@ -34,22 +34,27 @@
 <a name="l00013"></a>00013 
 <a name="l00014"></a><a class="code" href="classcm_game.html">00014</a> <span class="keyword">class </span><a class="code" href="classcm_game.html">cmGame</a> {
 <a name="l00015"></a>00015     <span class="keyword">public</span>:
-<a name="l00016"></a>00016         <span class="keywordtype">int</span> <a class="code" href="classcm_game.html#c9ee71d612f54279679b3c3be7abdbd8">init</a>(<span class="keywordtype">void</span>);
-<a name="l00017"></a>00017         <span class="keywordtype">void</span> <a class="code" href="classcm_game.html#eea67fbde2d7fc8de1a4d1a1aab67c23">run</a>(<span class="keywordtype">void</span>);
-<a name="l00018"></a>00018         
-<a name="l00019"></a>00019         <span class="comment">// Modules</span>
-<a name="l00020"></a><a class="code" href="classcm_game.html#efa1fea341914571aa64ccb909e76696">00020</a>         <span class="keyword">class </span><a class="code" href="classcm_draw.html">cmDraw</a> *<a class="code" href="classcm_game.html#efa1fea341914571aa64ccb909e76696">mDraw</a>;
-<a name="l00021"></a>00021 
-<a name="l00022"></a>00022         <span class="comment">// Misc modules</span>
-<a name="l00023"></a><a class="code" href="classcm_game.html#2dab395322f59441a4a6a721ac36cf9e">00023</a>         <span class="keyword">class </span><a class="code" href="classcm_timer.html" title="Timer module. Handles timer related stuff.">cmTimer</a> *<a class="code" href="classcm_game.html#2dab395322f59441a4a6a721ac36cf9e">mTimer</a>;
-<a name="l00024"></a><a class="code" href="classcm_game.html#a91a13a5f1f52138f6e82322e1bf5f8c">00024</a>         <span class="keyword">class </span><a class="code" href="classcm_input.html" title="Stores pressed/released keys/mousebuttons and updates them on request.">cmInput</a> *<a class="code" href="classcm_game.html#a91a13a5f1f52138f6e82322e1bf5f8c">mIn</a>;
-<a name="l00025"></a>00025 };
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="keyword">extern</span> <span class="keyword">class </span><a class="code" href="classcm_game.html">cmGame</a> *<a class="code" href="game_8h.html#62bb2fde19f8fee40fc57758d19149f4">mGame</a>;
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029 <span class="preprocessor">#endif</span>
+<a name="l00016"></a>00016         <span class="keywordtype">void</span> <a class="code" href="classcm_game.html#bae9ead944b86a6cf85da3af36494f9c">load</a>(<span class="keywordtype">void</span>);
+<a name="l00017"></a>00017         <span class="keywordtype">int</span> <a class="code" href="classcm_game.html#c9ee71d612f54279679b3c3be7abdbd8">init</a>(<span class="keywordtype">void</span>);
+<a name="l00018"></a>00018         <span class="keywordtype">void</span> <a class="code" href="classcm_game.html#eea67fbde2d7fc8de1a4d1a1aab67c23">run</a>(<span class="keywordtype">void</span>);
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020         <span class="comment">// Modules</span>
+<a name="l00021"></a><a class="code" href="classcm_game.html#efa1fea341914571aa64ccb909e76696">00021</a>         <span class="keyword">class </span><a class="code" href="classcm_draw.html">cmDraw</a> *<a class="code" href="classcm_game.html#efa1fea341914571aa64ccb909e76696">mDraw</a>;
+<a name="l00022"></a><a class="code" href="classcm_game.html#7bc2e22c323d1c7c7d29b0d4e9cd051c">00022</a>         <span class="keyword">class </span><a class="code" href="classcm_player.html">cmPlayer</a> *<a class="code" href="classcm_game.html#7bc2e22c323d1c7c7d29b0d4e9cd051c">mPlayer</a>;
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024         <span class="comment">// Misc modules</span>
+<a name="l00025"></a><a class="code" href="classcm_game.html#2dab395322f59441a4a6a721ac36cf9e">00025</a>         <span class="keyword">class </span><a class="code" href="classcm_timer.html" title="Timer module. Handles timer related stuff.">cmTimer</a> *<a class="code" href="classcm_game.html#2dab395322f59441a4a6a721ac36cf9e">mTimer</a>;
+<a name="l00026"></a><a class="code" href="classcm_game.html#a91a13a5f1f52138f6e82322e1bf5f8c">00026</a>         <span class="keyword">class </span><a class="code" href="classcm_input.html" title="Stores pressed/released keys/mousebuttons and updates them on request.">cmInput</a> *<a class="code" href="classcm_game.html#a91a13a5f1f52138f6e82322e1bf5f8c">mIn</a>;
+<a name="l00027"></a><a class="code" href="classcm_game.html#8583e10ce9889bac7a331fa1e2bd85ef">00027</a>         <span class="keyword">class </span><a class="code" href="classcm_file.html">cmFile</a> *<a class="code" href="classcm_game.html#8583e10ce9889bac7a331fa1e2bd85ef">mFile</a>;
+<a name="l00028"></a>00028         
+<a name="l00029"></a><a class="code" href="classcm_game.html#317e5c9b72dd7d40f38886f1583ad93d">00029</a>         <span class="keyword">class </span><a class="code" href="classcm_anim.html" title="Master class for animations.">cmAnim</a> *<a class="code" href="classcm_game.html#317e5c9b72dd7d40f38886f1583ad93d">mAnim</a>;
+<a name="l00030"></a>00030 };
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 <span class="keyword">extern</span> <span class="keyword">class </span><a class="code" href="classcm_game.html">cmGame</a> *<a class="code" href="game_8h.html#62bb2fde19f8fee40fc57758d19149f4">mGame</a>;
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Sat Oct 24 17:14:48 2009 for untitledproject2 by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Fri Oct 30 23:01:11 2009 for untitledproject2 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

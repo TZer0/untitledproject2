@@ -7,13 +7,16 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/gigaproject" prefix_auto="1" extension_auto="1" />
+				<Option output="../bin/up2" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
+				<Linker>
+					<Add option="-llua5.1" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/gigaproject" prefix_auto="1" extension_auto="1" />
@@ -41,10 +44,20 @@
 		<Unit filename="../src/game/game.cpp" />
 		<Unit filename="../src/game/game.h" />
 		<Unit filename="../src/game/init.cpp" />
+		<Unit filename="../src/game/load.cpp" />
+		<Unit filename="../src/game/misc/animation/anim.cpp" />
+		<Unit filename="../src/game/misc/animation/anim.h" />
+		<Unit filename="../src/game/misc/animation/animproc.cpp" />
+		<Unit filename="../src/game/misc/animation/loadanimation.cpp" />
+		<Unit filename="../src/game/misc/animation/loadanimation.h" />
+		<Unit filename="../src/game/misc/animation/luaanimation.cpp" />
+		<Unit filename="../src/game/misc/animation/luaanimation.h" />
 		<Unit filename="../src/game/misc/file.cpp" />
 		<Unit filename="../src/game/misc/file.h" />
 		<Unit filename="../src/game/misc/input.cpp" />
 		<Unit filename="../src/game/misc/input.h" />
+		<Unit filename="../src/game/misc/loadimage.cpp" />
+		<Unit filename="../src/game/misc/loadimage.h" />
 		<Unit filename="../src/game/misc/log.cpp" />
 		<Unit filename="../src/game/misc/log.h" />
 		<Unit filename="../src/game/misc/moduletemplate.h" />
