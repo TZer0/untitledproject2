@@ -5,7 +5,7 @@
  */
 // Global includes
 #include <math.h>
-#include <allegro.h>
+#include "../port.h"
 #include <string>
 
 // Other includes
