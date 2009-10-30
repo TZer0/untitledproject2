@@ -52,6 +52,8 @@
 		<Unit filename="../src/game/misc/timer.h" />
 		<Unit filename="../src/game/misc/vector.cpp" />
 		<Unit filename="../src/game/misc/vector.h" />
+		<Unit filename="../src/game/player/player.cpp" />
+		<Unit filename="../src/game/player/player.h" />
 		<Unit filename="../src/game/port.h" />
 		<Unit filename="../src/game/weapon/weapon.cpp" />
 		<Unit filename="../src/game/weapon/weapon.h" />
