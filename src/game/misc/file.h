@@ -12,14 +12,23 @@
 #include <list>
 #include <string>
 
-double read_double(PACKFILE *fp);
-char *read_string(PACKFILE *fp);
+class cmFile {
+    char *datadir;
+    char *execdir;
+    public:
+    cmFile() {
+        datadir=NULL;
+        execdir=NULL;
+    }
+    double read_double(PACKFILE *fp);
+    char *read_string(PACKFILE *fp);
 
-void set_data_directory(const char *dir);
-std::string execdir_strip(const char *dir);
-std::list<std::string> dirRecursiveGet(const char *tdir, const char *suffix);
-std::string get_filename(const char *basedir, const char *filename);
+    void set_data_directory(const char *dir);
+    std::string execdir_strip(const char *dir);
+    std::list<std::string> dirRecursiveGet(const char *tdir, const char *suffix);
+    std::string get_filename(const char *basedir, const char *filename);
 
-char *get_script(const char *file);
+    char *get_script(const char *file);
+};
 
 #endif

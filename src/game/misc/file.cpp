@@ -2,8 +2,6 @@
  * File: file.cpp
  *
  * Description:	Miscellaneous functions to interact with files
- *
- * (c)2009, by Raymond Loeberg
  */
 // Global includes
 #include <math.h>
@@ -18,16 +16,12 @@
 
 using namespace std;
 
-/// Internal value for the datafile directory
-char *datadir=NULL;
-char *execdir=NULL;
-
 /**
  * Reads a double float from a packfile.
  * Reads first a 1-byte length integer, then a string of that length
  * @returns A direct conversion of the loaded string
  */
-double read_double(PACKFILE *fp)
+double cmFile::read_double(PACKFILE *fp)
 {
 	int len;
 	char str[256];
@@ -43,7 +37,7 @@ double read_double(PACKFILE *fp)
  * Reads first a 4-byte length integer, then a string of that same length
  * @returns A new memory block with the loaded string, null-terminated
  */
-char *read_string(PACKFILE *fp)
+char *cmFile::read_string(PACKFILE *fp)
 {
 	int len;
 	char *str;
@@ -58,7 +52,7 @@ char *read_string(PACKFILE *fp)
 /**
  * Retrieves the executable directory, and appends the data directory to it.
  */
-void set_data_directory(const char *dir)
+void cmFile::set_data_directory(const char *dir)
 {
 	
 	// Give the data directory some memory
@@ -96,7 +90,7 @@ void set_data_directory(const char *dir)
  * @arg pat The extension to answer to, ex. "png"
  * @returns A list of all filenames associated with the given suffix
  */
-std::list<string> dirRecursiveGet(const char *tdir, const char *pat)
+std::list<string> cmFile::dirRecursiveGet(const char *tdir, const char *pat)
 {
 	std::list<string> dirlist;
 	std::list<string> filelist;
@@ -162,10 +156,10 @@ std::list<string> dirRecursiveGet(const char *tdir, const char *pat)
 
 
 /**
- * Gets a full script from file (text or compiled).
+ * Gets a full script from file (text (not compiled)).
  * @returns The loaded text
  */
-char *get_script(const char *file)
+char *cmFile::get_script(const char *file)
 {
 	int len;
 	char *script;
@@ -190,7 +184,7 @@ char *get_script(const char *file)
  * Strips off the executable directory position of a filename.
  * @returns A string consisting of the stripped filename
  */
-std::string execdir_strip(const char *file)
+std::string cmFile::execdir_strip(const char *file)
 {
 	string tmp;
 	int i,len;
@@ -209,7 +203,7 @@ std::string execdir_strip(const char *file)
  * Appends the filename and basedir to the data directory
  * @returns A new string of the full filename for the file
  */
-std::string get_filename(const char *basedir, const char *filename)
+std::string cmFile::get_filename(const char *basedir, const char *filename)
 {
 	return(string(datadir)+string("/")+string(basedir)+string("/")+string(filename));
 }

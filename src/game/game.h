@@ -15,7 +15,7 @@ class cmGame {
     public:
         int init(void);
         void run(void);
-        
+
         // Modules
         class cmDraw *mDraw;
         class cmPlayer *mPlayer;
@@ -23,6 +23,7 @@ class cmGame {
         // Misc modules
         class cmTimer *mTimer;
         class cmInput *mIn;
+        class cmFile *mFile;
 };
 
 extern class cmGame *mGame;
