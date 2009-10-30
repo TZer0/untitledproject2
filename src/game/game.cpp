@@ -25,6 +25,7 @@ void cmGame::run(void)
             delta = mTimer->delta();
             
             // Processing functions
+            mPlayer->input();
             mPlayer->process(delta);
             
             // Drawing functions

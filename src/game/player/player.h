@@ -8,6 +8,10 @@ class cmPlayer : public cDataSystem {
     private:
         cVector pos;
         cVector vel;
+        bool flagLeft;
+        bool flagRight;
+        bool flagUp;
+        bool flagDown;
         
     public:
         void level_init() {}
