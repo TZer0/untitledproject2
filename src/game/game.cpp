@@ -8,6 +8,7 @@
 #include "draw.h"
 #include "misc/timer.h"
 #include "misc/input.h"
+#include "player/player.h"
 
 void cmGame::run(void)
 {
@@ -24,8 +25,10 @@ void cmGame::run(void)
             delta = mTimer->delta();
             
             // Processing functions
+            mPlayer->process(delta);
             
             // Drawing functions
+            mPlayer->draw();
             mDraw->draw();
         }
     }

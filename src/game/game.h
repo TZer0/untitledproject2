@@ -18,6 +18,7 @@ class cmGame {
         
         // Modules
         class cmDraw *mDraw;
+        class cmPlayer *mPlayer;
 
         // Misc modules
         class cmTimer *mTimer;
