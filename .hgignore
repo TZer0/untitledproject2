@@ -6,6 +6,6 @@ up2
 *.o
 *.obj
 
-syntax: regexp
-^megaproject/Debug/.*
-^gigaproject/obj/.*
+#syntax: regexp
+#^megaproject/Debug/.*
+#^gigaproject/obj/.*
