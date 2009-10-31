@@ -6,6 +6,6 @@
 void cmGame::load(void)
 {
     LOGL(LNOTE, "Loading data");
-    
+
     mAnim->load();
 }
