@@ -1,4 +1,19 @@
-SOURCEZ = main.cpp game/init.cpp game/game.cpp game/draw.cpp game/misc/timer.cpp game/misc/input.cpp game/misc/file.cpp game/misc/log.cpp game/player/player.cpp game/misc/animation/anim.cpp game/misc/animation/animproc.cpp game/misc/loadimage.cpp game/misc/animation/luaanimation.cpp game/misc/animation/loadanimation.cpp game/load.cpp 
+SOURCEZ = main.cpp\
+          game/init.cpp\
+          game/game.cpp\
+          game/draw.cpp\
+          game/misc/timer.cpp\
+          game/misc/input.cpp\
+          game/misc/file.cpp\
+          game/misc/log.cpp\
+          game/player/player.cpp\
+          game/misc/animation/anim.cpp\
+          game/misc/animation/animproc.cpp\
+          game/misc/loadimage.cpp\
+          game/misc/animation/luaanimation.cpp\
+          game/misc/animation/loadanimation.cpp\
+          game/load.cpp\
+
 CC = g++
 CFLAGZ = $(shell allegro-config --cflags) -Wall -g3
 LDFLAGZ = $(shell allegro-config --libs)
