@@ -4,17 +4,20 @@
 #include "../misc/moduletemplate.h"
 #include "../misc/vector.h"
 
-#define HOR_SPEED   100.0
+#define HOR_SPEED       200
+#define JUMP_HEIGHT     8
 
 class cmPlayer : public cDataSystem {
     private:
         double gravity;
         cVector pos;
         cVector vel;
+        cVector acc;
         bool flagLeft;
         bool flagRight;
         bool flagUp;
         bool flagDown;
+        bool inAir;
         
     public:
         void level_init() {}
