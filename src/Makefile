@@ -15,7 +15,7 @@ SOURCEZ = main.cpp\
           game/load.cpp\
 
 CC = g++
-CFLAGZ = $(shell allegro-config --cflags) -Wall -g3
+CFLAGZ = $(shell allegro-config --cflags) -Wall
 LDFLAGZ = $(shell allegro-config --libs)
 LIB = -Ilua-5.1.4/include/ -Llua-5.1.4/lib/ -llua
 
