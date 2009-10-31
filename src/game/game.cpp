@@ -13,7 +13,7 @@
 void cmGame::run(void)
 {
     double delta;
-    
+   
     // Initializing stuff
     init();
     

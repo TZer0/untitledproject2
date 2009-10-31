@@ -50,6 +50,8 @@ int cmAnim::load(void)
 {
     anim_getItems();
     anim_load();
+
+    return 0;
 }
 
 /**

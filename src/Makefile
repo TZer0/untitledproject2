@@ -1,10 +1,11 @@
-SOURCEZ = main.cpp game/init.cpp game/game.cpp game/draw.cpp game/misc/timer.cpp game/misc/input.cpp game/misc/file.cpp game/misc/log.cpp game/player/player.cpp
+SOURCEZ = main.cpp game/init.cpp game/game.cpp game/draw.cpp game/misc/timer.cpp game/misc/input.cpp game/misc/file.cpp game/misc/log.cpp game/player/player.cpp game/misc/animation/anim.cpp game/misc/animation/animproc.cpp game/misc/loadimage.cpp game/misc/animation/luaanimation.cpp game/misc/animation/loadanimation.cpp game/load.cpp 
 CC = g++
 CFLAGZ = $(shell allegro-config --cflags) -Wall -g3
 LDFLAGZ = $(shell allegro-config --libs)
+LIB = -Ilua-5.1.4/include/ -Llua-5.1.4/lib/ -llua
 
 up2 : $(SOURCEZ)
-	$(CC) $(SOURCEZ) $(OUTPUT_OPTION) $(CFLAGZ) $(LDFLAGZ)
+	$(CC) $(SOURCEZ) $(OUTPUT_OPTION) $(CFLAGZ) $(LDFLAGZ) $(LIB)
 
 clean :
 	rm up2
