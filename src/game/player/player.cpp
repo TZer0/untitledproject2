@@ -8,6 +8,8 @@ void cmPlayer::init() {
     vel = cVector(0, 0);
     acc = cVector(0, 0);
     gravity = 1.1;
+    horSpeed = 48;
+    jumpHeight = 8;
     flagDown = false;
     flagUp = false;
     flagLeft = false;
@@ -45,10 +47,10 @@ void cmPlayer::process(double delta) {
     // Update horizontal velocity and clear flags.
     if (flagLeft) {
         flagLeft = false;
-        vel = cVector(delta * -HOR_SPEED, vel.y);
+        vel = cVector(delta * -horSpeed, vel.y);
     } else if (flagRight) {
         flagRight = false;
-        vel = cVector(delta * HOR_SPEED, vel.y);
+        vel = cVector(delta * horSpeed, vel.y);
     } else {
         vel = cVector(0, vel.y);
     }
@@ -56,7 +58,7 @@ void cmPlayer::process(double delta) {
     // Jump handling.
     if (!inAir && flagUp) {
         inAir = true;
-        acc = cVector(acc.x, -1 * JUMP_HEIGHT);
+        acc = cVector(acc.x, -1 * jumpHeight);
         vel = cVector(vel.x, acc.y);
     }
 
