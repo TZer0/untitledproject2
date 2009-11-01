@@ -1,0 +1,10 @@
+syntax: glob
+up2
+*swp
+*~
+*.o
+*.obj
+
+syntax: regexp
+^megaproject/Debug/.*
+^gigaproject/obj/.*
