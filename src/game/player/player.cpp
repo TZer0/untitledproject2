@@ -80,7 +80,7 @@ void cmPlayer::process(double delta) {
  */
 void cmPlayer::draw() {
     rectfill(mGame->mDraw->buffer, pos.x, pos.y, pos.x + 100,
-            pos.y + 100, 0xff8700);
+            pos.y + 100, 0xff8800);
 }
 
 /*
