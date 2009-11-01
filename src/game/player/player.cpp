@@ -26,19 +26,19 @@ void cmPlayer::init() {
  * Set player flags based on keyboard input.
  */
 void cmPlayer::input() {
-    if (key[KEY_LEFT]) {
+    if (key[KEY_LEFT] || key[KEY_H]) {
         flagLeft = true;
     }
 
-    if (key[KEY_RIGHT]) {
+    if (key[KEY_RIGHT] || key[KEY_L]) {
         flagRight = true;
     }
 
-    if (key[KEY_UP]) {
+    if (key[KEY_UP] || key[KEY_K]) {
         flagUp = true;
     }
     
-    if (key[KEY_DOWN]) {
+    if (key[KEY_DOWN] || key[KEY_J]) {
         flagDown = true;
     }
 }
