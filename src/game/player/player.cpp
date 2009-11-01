@@ -49,6 +49,37 @@ void cmPlayer::input() {
  * @param delta Delta
  */
 void cmPlayer::process(double delta) {
+
+    /*
+        Note form Stian, the evil inspector
+
+        Honestly, the use of the cVector class actually annoys me..
+        If the cVector class have to be used *at all*, use it properly.
+        The code below actually uses very many unneccary processor
+        cycles. For example the line
+
+        vel = cVector(delta * horSpeed, vel.y);
+
+        would
+        1) allocate space for a temporary cVector in memory.
+        2) fill the temporary cVector with the right values. (2 assignments)
+        3) copy the values from the temporary cVector to val. (2 assignments)
+        4) presumeably unallocate memory for the temporary vector.
+    
+        Instead the line
+
+        vel.x = delta * horSpeed;
+
+        would do exactly what we would like to do with the prev. line
+        but would only
+        1) assign a value to vel.x (1 assignment)
+
+        And I would even say it is more readable, and obviously shorter.
+
+        Yes yes, in principle we have about unlimited memory and
+        cpu-cycles, but still, seriously.. :(
+    */
+
     // Update horizontal velocity and clear flags.
     if (flagLeft) {
         flagLeft = false;
@@ -81,6 +112,36 @@ void cmPlayer::process(double delta) {
 
     // Update vertical velocity and clear flags.
     vel = cVector(vel.x + acc.x * delta, vel.y + acc.y * delta);
+    
+    // How about: vel += delta * acc
+    // (still Stian)
+
+
+    /*
+        Anther note from Stian, the evil inspector
+
+        1) Since when did the formula say s = s0 + v?
+            To make things a _Little_ more precise: s = s0 + v * dt..
+            In the code: pos += vel*delta
+
+        2) The note above alone will is actually still unprecise, as
+            the formula actually is as complex as:
+            s = s0 + v * dt + 1/2 * a * dt²
+            Code would be something like:
+            pos += vel*delta + 1.0/2 * acc * delta * delta
+        
+        I will not perform these changes to the code, because, of
+        course, I've not had physics for soon one and a half year, and
+        I do not have any collection of formulas (a truth with 
+        modifications), and I don't bother to wikipedia it, so I'm 
+        only 98% sure I'm right.
+
+        So someone should verify if my suggestion actually is correct,
+        and someone who is responsible for the player class should
+        ensure that everything is actually implemented correctly.
+
+        PS: Yes, I have fun.. No hard feelings I hope..
+    */
     pos += vel;
     flagUp = false;
 }
