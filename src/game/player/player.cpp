@@ -10,9 +10,11 @@ void cmPlayer::init() {
     pos = cVector(200, 50);
     vel = cVector(0, 0);
     acc = cVector(0, 0);
-    gravity = 1.1;
+    gravity = 1.2;
     horSpeed = 48;
     jumpHeight = 8;
+    height = 64;
+    width = 48;
     flagDown = false;
     flagUp = false;
     flagLeft = false;
@@ -65,10 +67,11 @@ void cmPlayer::process(double delta) {
         vel = cVector(vel.x, acc.y);
     }
 
-    // Temporary collision detection. Uses screen height instead of ground.
-    if (pos.y >= SCREEN_H - 100) {
+    // Temporary collision detection.
+    // Uses screen height instead of ground.
+    if (pos.y >= SCREEN_H - height) {
         vel = cVector(vel.x, 0);
-        pos.y = SCREEN_H - 100;
+        pos.y = SCREEN_H - height;
         inAir = false;
     } else {
         acc = cVector(acc.x, acc.y + gravity);
@@ -84,8 +87,8 @@ void cmPlayer::process(double delta) {
  * Draw player sprite.
  */
 void cmPlayer::draw() {
-    rectfill(mGame->mDraw->buffer, pos.x, pos.y, pos.x + 100,
-            pos.y + 100, 0xff8800);
+    rectfill(mGame->mDraw->buffer, pos.x, pos.y, pos.x + width,
+            pos.y + height, 0xff8800);
 }
 
 /*
