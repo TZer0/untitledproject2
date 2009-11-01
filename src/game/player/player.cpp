@@ -10,11 +10,11 @@ void cmPlayer::init() {
     pos = cVector(200, 50);
     vel = cVector(0, 0);
     acc = cVector(0, 0);
-    gravity = 1.2;
+    gravity = 1.6;
     horSpeed = 48;
     jumpHeight = 8;
     height = 64;
-    width = 48;
+    width = 64;
     flagDown = false;
     flagUp = false;
     flagLeft = false;
@@ -61,10 +61,11 @@ void cmPlayer::process(double delta) {
     }
 
     // Jump handling.
-    if (!inAir && flagUp) {
-        inAir = true;
+    if (jumpLife > 0 && flagUp) {
+        // inAir = true;
+        --jumpLife;
         acc = cVector(acc.x, -1 * jumpHeight);
-        vel = cVector(vel.x, acc.y);
+        vel = cVector(vel.x, -jumpHeight);
     }
 
     // Temporary collision detection.
@@ -72,11 +73,12 @@ void cmPlayer::process(double delta) {
     if (pos.y >= SCREEN_H - height) {
         vel = cVector(vel.x, 0);
         pos.y = SCREEN_H - height;
-        inAir = false;
+        // inAir = false;
+        jumpLife = 8;
     } else {
         acc = cVector(acc.x, acc.y + gravity);
     }
-    
+
     // Update vertical velocity and clear flags.
     vel = cVector(vel.x + acc.x * delta, vel.y + acc.y * delta);
     pos += vel;

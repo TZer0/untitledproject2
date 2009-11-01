@@ -11,6 +11,7 @@ class cmPlayer : public cDataSystem {
         int jumpHeight;
         int height;
         int width;
+        int jumpLife;
         cVector pos;
         cVector vel;
         cVector acc;
