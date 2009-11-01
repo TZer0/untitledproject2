@@ -3,6 +3,9 @@
 #include "../draw.h"
 #include "../game.h"
 
+/*
+ * Initialize player.
+ */
 void cmPlayer::init() {
     pos = cVector(200, 50);
     vel = cVector(0, 0);
