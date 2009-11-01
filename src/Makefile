@@ -14,6 +14,12 @@ SOURCEZ = main.cpp\
           game/misc/animation/loadanimation.cpp\
           game/load.cpp\
 
+# Missing? :
+#game/enemy/enemy.cpp
+#game/misc/vector.cpp
+#game/weapon/weapon.cpp
+#game/level/level.cpp
+
 CC = g++
 CFLAGZ = $(shell allegro-config --cflags) -Wall
 LDFLAGZ = $(shell allegro-config --libs)

@@ -221,7 +221,7 @@
 						>
 					</File>
 					<Filter
-						Name="Anim"
+						Name="anim"
 						>
 						<File
 							RelativePath="..\src\game\misc\animation\anim.cpp"
@@ -254,6 +254,14 @@
 					>
 					<File
 						RelativePath="..\src\game\weapon\weapon.cpp"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="level"
+					>
+					<File
+						RelativePath="..\src\game\level\level.cpp"
 						>
 					</File>
 				</Filter>
@@ -356,6 +364,14 @@
 					>
 					<File
 						RelativePath="..\src\game\player\player.h"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="level"
+					>
+					<File
+						RelativePath="..\src\game\level\level.h"
 						>
 					</File>
 				</Filter>
