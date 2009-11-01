@@ -9,6 +9,8 @@ class cmPlayer : public cDataSystem {
         double gravity;
         int horSpeed;
         int jumpHeight;
+        int height;
+        int width;
         cVector pos;
         cVector vel;
         cVector acc;
