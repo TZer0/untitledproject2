@@ -79,6 +79,65 @@ void cmPlayer::process(double delta) {
         Yes yes, in principle we have about unlimited memory and
         cpu-cycles, but still, seriously.. :(
     */
+    /*
+        Stian (is getting a little confused)
+    
+        I think I smell some ill physics.. I will almost suggest an almost
+        complete reimplementation of this function, but maybe substitution
+        of lines will do.
+
+        I kind of hope that the content of this procedure was intended to
+        be temporary, but we seriously have no time for that.
+
+        Ok, basically, what I want is that a value that measures something
+        is tied to a specific unit *all the time*. That meaning for example
+        vel that measures speed, is tied to the unit m/s. Think about it 
+        while programming, it will probably save us for trouble.
+
+        Time variables (think: measured in seconds (s)):
+        delta
+
+        Position variables (think: measured in meters (m)):
+        pos.x, pos.y
+
+        Speed variables (m/s):
+        vel.x, vel.y, horSpeed
+        
+        Acceleration variables (m/s²):
+        acc.x, acc.y
+
+        What i see in the code is:
+        vel = cVector(delta * horSpeed, vel.y);
+        This will make vel.x become measured in meters :S (s * m/s = m)
+        Later in the code:
+        pos += vel;
+        So, ok things MAY turn out right because pos is supposed to be 
+        measured in meters, and vel is by some reason measured in meters.
+    */
+    /*
+        Most importantly: (this will be in norwegean so it gets right)
+
+        Jeg mener ikke å hakke på noen, virke sur eller virke smart, men
+        jeg innser at det kan være nettopp det jeg gjør. Uansett, jeg
+        tror at det å fikse denne funksjonen på en slik form jeg vil ha 
+        den vil være enklere enn det var for meg å skrive disse notisene.
+
+        For all del, det kan også være at det er jeg som tar feil, og at
+        er jeg som sløser bort min og andres tid. Men uansett vil jeg ikke
+        endre koden andre er ansvarlig for. Det er derimot håpet mitt at
+        folk kan bli glad for at noen andre tar seg bryet med å se gjennom
+        andres kode og kommer med tilbakemeldinger på det. 
+        
+        Vi samarbeider.
+
+        Hvis man er usikker på f. eks fysikk har vi ekspertise på det
+        blant andre pong-medlemmer.
+
+        Jeg håper jeg ikke har drete meg ut..
+        Hilsen inspektøren (dere var på en måte uansett advart..)
+
+        PS: Ikke svar i denne filen. Kjeft kan dere ev. sende meg pr mail.
+    */
 
     // Update horizontal velocity and clear flags.
     if (flagLeft) {
