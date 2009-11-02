@@ -26,7 +26,6 @@ static int luaanim_new_sequence(lua_State *l)
     
     // Find bitmap to use for all frames
     mGame->mAnim->animData->seqBmp = mImagesData.retrieve(luaL_checkstring(l,2));
-    LOGS(LDEBUG, "%p", mGame->mAnim->animData->seqBmp);
     
 	return 0;
 }
