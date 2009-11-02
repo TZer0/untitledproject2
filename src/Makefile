@@ -32,8 +32,10 @@ up2 : $(SOURCEZ)
 clean :
 	rm ../bin/up2
 
+# Broken.
 install:
 	cp ../bin/up2 /usr/local/bin/up2
 
+# Broken.
 uninstall:
 	rm /usr/local/bin/up2
