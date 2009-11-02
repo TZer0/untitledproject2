@@ -64,8 +64,8 @@ void cmFile::set_data_directory(const char *dir)
     memset(execdir,0,DATADIR_BUF_SIZE);
     
     // We've first got to retrieve the executable directory
-    get_executable_name(execdir, DATADIR_BUF_SIZE);
     printf("%s\n",execdir);
+    get_executable_name(execdir, DATADIR_BUF_SIZE);
     
     // Then we replace the directory with the datadir
     replace_filename(datadir,execdir, dir, DATADIR_BUF_SIZE);
