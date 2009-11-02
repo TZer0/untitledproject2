@@ -30,3 +30,9 @@ up2 : $(SOURCEZ)
 
 clean :
 	rm up2
+
+install:
+	cp up2 /usr/local/bin/up2
+
+uninstall:
+	rm /usr/local/bin/up2
