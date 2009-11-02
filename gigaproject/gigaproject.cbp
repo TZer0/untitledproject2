@@ -37,6 +37,8 @@
 		<Linker>
 			<Add option="`allegro-config --libs`" />
 		</Linker>
+		<Unit filename="../src/game/collision/collision.cpp" />
+		<Unit filename="../src/game/collision/collision.h" />
 		<Unit filename="../src/game/draw.cpp" />
 		<Unit filename="../src/game/draw.h" />
 		<Unit filename="../src/game/enemy/enemy.cpp" />
@@ -51,6 +53,7 @@
 		<Unit filename="../src/game/misc/animation/animproc.cpp" />
 		<Unit filename="../src/game/misc/animation/loadanimation.cpp" />
 		<Unit filename="../src/game/misc/animation/loadanimation.h" />
+		<Unit filename="../src/game/misc/animation/loadtemplate.h" />
 		<Unit filename="../src/game/misc/animation/luaanimation.cpp" />
 		<Unit filename="../src/game/misc/animation/luaanimation.h" />
 		<Unit filename="../src/game/misc/file.cpp" />
