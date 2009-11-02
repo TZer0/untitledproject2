@@ -146,8 +146,9 @@
 	"../loadimage.h"
 	"../../game.h"
 
-1256993482 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/anim.cpp
+1257197878 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/anim.cpp
 	"anim.h"
+	"../../game.h"
 
 1257195782 /home/avenger/Other/Projects/untitledproject2/src/game/player/player.h
 	"../misc/moduletemplate.h"

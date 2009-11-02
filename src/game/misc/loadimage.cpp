@@ -28,7 +28,6 @@ BITMAP *cmImagesData::retrieve(const char *file) {
 	if((bmp=images.find(file)) == images.end()) {
 		fullname = mGame->mFile->get_filename("images", file);
 		tmp = load_bitmap(fullname.c_str(), NULL);
-		LOGS(LDEBUG, "Loaded bitmap %p from %s", tmp, fullname.c_str());
 		if(tmp==NULL) {
 			return NULL;
 		}
