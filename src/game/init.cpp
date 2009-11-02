@@ -31,10 +31,14 @@ int cmGame::init(void)
     mPlayer = new cmPlayer;
     mAnim = new cmAnim;
     
+    // Loading stuff
+    load();
+    
     // Module initialization
     mDraw->init();
     mTimer->init();
     mPlayer->init();
     mAnim->init();
+    
     return 0;
 }

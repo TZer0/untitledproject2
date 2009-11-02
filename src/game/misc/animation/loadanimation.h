@@ -90,7 +90,6 @@ class cmAnimData : public tLoadingSystem<cAnimData *> {
         cAnimFrameData *cframe;
         BITMAP *seqBmp;
 };
-extern class cmAnimData mAnimData;
 
 
 // Function definitions

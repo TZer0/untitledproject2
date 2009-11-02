@@ -8,13 +8,15 @@
  */
 #include "anim.h"
 
+#include "../../game.h"
+
 using namespace std;
 
 // cmAnim functions:
 class cAnimation *cmAnim::add(string id)
 {
 	// Only a wrapper for a different loader
-	return add(mAnimData.get(id.c_str()));
+	return add(mGame->mAnim->animData->get(id.c_str()));
 }
 
 /**

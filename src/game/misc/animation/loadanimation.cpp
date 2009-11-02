@@ -13,6 +13,9 @@
 #include "loadanimation.h"
 #include "../loadimage.h"
 
+// Module includes
+#include "anim.h"
+
 // Other includes
 #include "../file.h"
 #include "../log.h"
@@ -20,12 +23,10 @@
 // Lua includes
 #include "luaanimation.h"
 
-class cmAnimData mAnimData;
-
 int anim_getItems(void)
 {
-	mAnimData.filedb = mGame->mFile->dirRecursiveGet("animations", "lua");
-	return(mAnimData.filedb.size());
+	mGame->mAnim->animData->filedb = mGame->mFile->dirRecursiveGet("animations", "lua");
+	return(mGame->mAnim->animData->filedb.size());
 }
 
 /**
@@ -59,11 +60,12 @@ int anim_load(void)
 	std::list<std::string>::iterator i;
 	
 	// Load animations as LUA scripts
-	for(i=mAnimData.filedb.begin(); i!=mAnimData.filedb.end(); i++) {
+	for(i=mGame->mAnim->animData->filedb.begin(); i!=mGame->mAnim->animData->filedb.end(); i++) {
+	    LOGS(LDEBUG, "Loading %s", (*i).c_str());
 	    load_anim_file((*i).c_str());
 	    
-	    mAnimData.cur = NULL;
-	    mAnimData.cseq = NULL;
+	    mGame->mAnim->animData->cur = NULL;
+	    mGame->mAnim->animData->cseq = NULL;
 	}
 	
 	return 0;
