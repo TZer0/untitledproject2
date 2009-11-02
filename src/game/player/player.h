@@ -4,6 +4,8 @@
 #include "../misc/moduletemplate.h"
 #include "../misc/vector.h"
 
+#define JUMP_LIFE 0.2
+
 class cmPlayer : public cDataSystem {
     private:
         double gravity;
@@ -11,15 +13,13 @@ class cmPlayer : public cDataSystem {
         int jumpHeight;
         int height;
         int width;
-        int jumpLife;
+        double jumpLife;
         cVector pos;
         cVector vel;
-        cVector acc;
         bool flagLeft;
         bool flagRight;
         bool flagUp;
         bool flagDown;
-        bool inAir;
         
     public:
         void level_init() {}
