@@ -36,6 +36,5 @@ clean :
 install:
 	cp ../bin/up2 /usr/local/bin/up2
 
-# Broken.
 uninstall:
 	rm /usr/local/bin/up2
