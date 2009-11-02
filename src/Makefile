@@ -27,12 +27,13 @@ LIB = -Ilua-5.1.4/include/ -Llua-5.1.4/lib/ -llua
 
 up2 : $(SOURCEZ)
 	$(CC) $(SOURCEZ) $(OUTPUT_OPTION) $(CFLAGZ) $(LDFLAGZ) $(LIB)
+	mv up2 ../bin
 
 clean :
-	rm up2
+	rm ../bin/up2
 
 install:
-	cp up2 /usr/local/bin/up2
+	cp ../bin/up2 /usr/local/bin/up2
 
 uninstall:
 	rm /usr/local/bin/up2
