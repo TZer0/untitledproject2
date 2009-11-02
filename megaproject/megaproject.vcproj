@@ -374,6 +374,14 @@
 						RelativePath="..\src\game\level\level.h"
 						>
 					</File>
+					<File
+						RelativePath="..\src\game\level\levelinfo.h"
+						>
+					</File>
+					<File
+						RelativePath="..\src\game\level\levelinfoattributes.h"
+						>
+					</File>
 				</Filter>
 			</Filter>
 		</Filter>
