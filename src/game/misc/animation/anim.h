@@ -87,6 +87,8 @@ class cmAnim : public cDataSystem {
         
         typedef std::list<cAnimation*>::iterator AnimIter;
 	public:
+        cmAnim()
+        { animData = new cmAnimData; }
         
 		/// @name Creation of new animations
 		//@{
@@ -97,7 +99,7 @@ class cmAnim : public cDataSystem {
 		/// @name Overloaded functions
 		//@{
             void init(void) 
-            { animData = new cmAnimData; }
+            { }
             
             void level_init(void) {}
             int load(void);

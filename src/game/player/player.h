@@ -3,6 +3,7 @@
 
 #include "../misc/moduletemplate.h"
 #include "../misc/vector.h"
+#include "../misc/animation/anim.h"
 
 #define JUMP_LIFE 0.2
 
@@ -20,6 +21,7 @@ class cmPlayer : public cDataSystem {
         bool flagRight;
         bool flagUp;
         bool flagDown;
+        cAnimation *animation;
         
     public:
         void level_init() {}

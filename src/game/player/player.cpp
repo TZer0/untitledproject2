@@ -21,6 +21,9 @@ void cmPlayer::init() {
     flagUp = false;
     flagLeft = false;
     flagRight = false;
+    
+    animation = mGame->mAnim->add("PLAYER");
+    animation->setSequence("IDLE");
 }
 
 /*
@@ -93,6 +96,9 @@ void cmPlayer::process(double delta) {
 void cmPlayer::draw() {
     rectfill(mGame->mDraw->buffer, pos.x, pos.y, pos.x + width,
             pos.y + height, 0xff8800);
+    
+    // Testing animation
+    animation->draw(mGame->mDraw->buffer, pos.x,pos.y);
 }
 
 /*

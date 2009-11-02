@@ -13,12 +13,9 @@
 void cmGame::run(void)
 {
     double delta;
-   
+    
     // Initializing stuff
     init();
-    
-    // Load stuff
-    load();
     
     while(!key[KEY_ESC]) {
         // Input functions
