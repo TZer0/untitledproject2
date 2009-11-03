@@ -65,10 +65,11 @@ void cmLog::log(int logtype, int level, const char *format, va_list argptr)
 			replace_filename(buf,buf, "", sizeof(buf));
 			fn = std::string(buf) + std::string(LOG_DIR) + std::string(logfile[logtype]);
 			p[logtype] = fopen(fn.c_str(), "wb");
-			printf("%s\n", fn.c_str());
+
 			if (p[logtype] == NULL) {
 				printf("Unable to open log file.\n%s\n", fn.c_str());
 				printf("Log will not be saved to file, make sure the directory exists.\n");	// TODO: Make a snippet to check if the directory exists and if not either create it or create the logfile in root dir.
+				is_active[logtype] = 2;
 				return;
 			}
 			taim = time(NULL);

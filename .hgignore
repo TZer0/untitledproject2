@@ -8,3 +8,4 @@ up2
 syntax: regexp
 ^megaproject/Debug/.*
 ^gigaproject/obj/.*
+^bin/log/.*
