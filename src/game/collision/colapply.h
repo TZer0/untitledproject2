@@ -29,9 +29,6 @@ class cApplyCollision : cColMap {
         /// The cApplyCollision that called us for a collision
         cApplyCollision *caller;
         
-        /// The collision object that called us for collision
-        cCollision *col;
-        
         /// Function that iterates through a list of collision map objects
         void iterate_collision(std::vector<sColSectorInstance*>*cols);
     public:
