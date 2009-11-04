@@ -18,6 +18,7 @@
 /// #Defines
 // Typedefs
 // Forward declaration of classes
+class cColMap;
 
 /// Enums
 enum CollisionType {
@@ -35,7 +36,7 @@ enum CollisionType {
     };
     
     /// Collision class
-    class cCollsion {
+    class cCollision {
         private:
             cVector *pos;           ///< The position vector we're attached to
             cVector offset;         ///< The offset from the position vector this instance is
@@ -56,6 +57,15 @@ enum CollisionType {
             bool detect(cCollision *target);                            ///< Detects collision
             sColReturn collide(cCollision *target, cVector vel);        ///< As above, but also sets a return path into a sColReturn instance
             
+            /// Returns our type
+            CollisionType getType() { return type; }
+            
+            /// Returns out position
+            cVector getPos() { return *pos; }
+            
+            /// The extremes of this collision instance
+            cVector tl,br;
+            
             /// Call this function to request destruction of this collision instance
             void eraseMe() { toDie=true; }
     };
@@ -68,7 +78,7 @@ class cmCollision : public cDataSystem {
     public:
         /// Creates a collision instance of the specified type
         cCollision *create(CollisionType type, cVector *pos, cVector offset, double arg1=0.0, double arg2=0.0);        
-}
+};
 
 /// Function declarations
 
