@@ -9,6 +9,7 @@
   <div class="tabs">
     <ul>
       <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&nbsp;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -88,28 +89,30 @@
 <a name="l00087"></a>00087         
 <a name="l00088"></a>00088         <span class="keyword">typedef</span> std::list&lt;cAnimation*&gt;::iterator AnimIter;
 <a name="l00089"></a>00089         <span class="keyword">public</span>:
-<a name="l00090"></a>00090         
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093             <span class="keyword">class </span><a class="code" href="classc_animation.html" title="Animation data block.">cAnimation</a> *<span class="keyword">add</span>(std::string);
-<a name="l00094"></a>00094             <span class="keyword">class </span><a class="code" href="classc_animation.html" title="Animation data block.">cAnimation</a> *<span class="keyword">add</span>(<a class="code" href="classc_anim_data.html" title="Data for an animation.">cAnimData</a> *);
-<a name="l00096"></a>00096                 
-<a name="l00098"></a>00098 
-<a name="l00099"></a><a class="code" href="classcm_anim.html#8e459adbecdd837dca7153b1d956d4ba">00099</a>             <span class="keywordtype">void</span> <a class="code" href="classcm_anim.html#8e459adbecdd837dca7153b1d956d4ba" title="Function to initialize the data system.">init</a>(<span class="keywordtype">void</span>) 
-<a name="l00100"></a>00100             { <a class="code" href="classcm_anim.html#0affdbf81833e3699ad949f3032606fd">animData</a> = <span class="keyword">new</span> <a class="code" href="classcm_anim_data.html">cmAnimData</a>; }
-<a name="l00101"></a>00101             
-<a name="l00102"></a><a class="code" href="classcm_anim.html#ff5ee0ac6af2f52aef8ecdc58c484392">00102</a>             <span class="keywordtype">void</span> <a class="code" href="classcm_anim.html#ff5ee0ac6af2f52aef8ecdc58c484392" title="Function to initialize called for every level change.">level_init</a>(<span class="keywordtype">void</span>) {}
-<a name="l00103"></a>00103             <span class="keywordtype">int</span> <a class="code" href="classcm_anim.html#6f0a503ac13adcef17c283558a3f43a3" title="Function to load all data for a module.">load</a>(<span class="keywordtype">void</span>);
-<a name="l00104"></a>00104             
-<a name="l00105"></a>00105             <span class="keywordtype">void</span> <a class="code" href="classcm_anim.html#b9b0275c520f3d791bb3bf10c0eacedd">process</a>(<span class="keywordtype">double</span>);
-<a name="l00106"></a><a class="code" href="classcm_anim.html#4ab9bbf5a7e065067c0fcbc177dd413d">00106</a>             <span class="keywordtype">void</span> <a class="code" href="classcm_anim.html#4ab9bbf5a7e065067c0fcbc177dd413d" title="Function to draw a data instance.">draw</a>(<span class="keywordtype">void</span>) {}
-<a name="l00107"></a>00107             <span class="keywordtype">void</span> <a class="code" href="classcm_anim.html#f216c33498565f293aa96ad1c1d39ebb">clear_data</a>(<span class="keywordtype">void</span>);
-<a name="l00109"></a>00109         
-<a name="l00110"></a><a class="code" href="classcm_anim.html#0affdbf81833e3699ad949f3032606fd">00110</a>         <a class="code" href="classcm_anim_data.html">cmAnimData</a> *<a class="code" href="classcm_anim.html#0affdbf81833e3699ad949f3032606fd">animData</a>;
-<a name="l00111"></a>00111 };
-<a name="l00112"></a>00112 
-<a name="l00113"></a>00113 <span class="preprocessor">#endif</span>
+<a name="l00090"></a><a class="code" href="classcm_anim.html#9f087d40944d4f0d863747318135f72b">00090</a>         <a class="code" href="classcm_anim.html#9f087d40944d4f0d863747318135f72b">cmAnim</a>()
+<a name="l00091"></a>00091         { <a class="code" href="classcm_anim.html#0affdbf81833e3699ad949f3032606fd">animData</a> = <span class="keyword">new</span> <a class="code" href="classcm_anim_data.html">cmAnimData</a>; }
+<a name="l00092"></a>00092         
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095             <span class="keyword">class </span><a class="code" href="classc_animation.html" title="Animation data block.">cAnimation</a> *<span class="keyword">add</span>(std::string);
+<a name="l00096"></a>00096             <span class="keyword">class </span><a class="code" href="classc_animation.html" title="Animation data block.">cAnimation</a> *<span class="keyword">add</span>(<a class="code" href="classc_anim_data.html" title="Data for an animation.">cAnimData</a> *);
+<a name="l00098"></a>00098                 
+<a name="l00100"></a>00100 
+<a name="l00101"></a><a class="code" href="classcm_anim.html#8e459adbecdd837dca7153b1d956d4ba">00101</a>             <span class="keywordtype">void</span> <a class="code" href="classcm_anim.html#8e459adbecdd837dca7153b1d956d4ba" title="Function to initialize the data system.">init</a>(<span class="keywordtype">void</span>) 
+<a name="l00102"></a>00102             { }
+<a name="l00103"></a>00103             
+<a name="l00104"></a><a class="code" href="classcm_anim.html#ff5ee0ac6af2f52aef8ecdc58c484392">00104</a>             <span class="keywordtype">void</span> <a class="code" href="classcm_anim.html#ff5ee0ac6af2f52aef8ecdc58c484392" title="Function to initialize called for every level change.">level_init</a>(<span class="keywordtype">void</span>) {}
+<a name="l00105"></a>00105             <span class="keywordtype">int</span> <a class="code" href="classcm_anim.html#6f0a503ac13adcef17c283558a3f43a3" title="Function to load all data for a module.">load</a>(<span class="keywordtype">void</span>);
+<a name="l00106"></a>00106             
+<a name="l00107"></a>00107             <span class="keywordtype">void</span> <a class="code" href="classcm_anim.html#b9b0275c520f3d791bb3bf10c0eacedd">process</a>(<span class="keywordtype">double</span>);
+<a name="l00108"></a><a class="code" href="classcm_anim.html#4ab9bbf5a7e065067c0fcbc177dd413d">00108</a>             <span class="keywordtype">void</span> <a class="code" href="classcm_anim.html#4ab9bbf5a7e065067c0fcbc177dd413d" title="Function to draw a data instance.">draw</a>(<span class="keywordtype">void</span>) {}
+<a name="l00109"></a>00109             <span class="keywordtype">void</span> <a class="code" href="classcm_anim.html#f216c33498565f293aa96ad1c1d39ebb">clear_data</a>(<span class="keywordtype">void</span>);
+<a name="l00111"></a>00111         
+<a name="l00112"></a><a class="code" href="classcm_anim.html#0affdbf81833e3699ad949f3032606fd">00112</a>         <a class="code" href="classcm_anim_data.html">cmAnimData</a> *<a class="code" href="classcm_anim.html#0affdbf81833e3699ad949f3032606fd">animData</a>;
+<a name="l00113"></a>00113 };
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115 <span class="preprocessor">#endif</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Generated on Fri Oct 30 23:01:11 2009 for untitledproject2 by&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Generated on Wed Nov 4 17:11:56 2009 for untitledproject2 by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

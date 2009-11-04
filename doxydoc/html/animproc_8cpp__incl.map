@@ -1,5 +1,6 @@
-<area shape="rect" href="$anim_8h.html" title="anim.h" alt="" coords="631,80,689,107">
-<area shape="rect" href="$loadanimation_8h.html" title="loadanimation.h" alt="" coords="321,155,433,181">
-<area shape="rect" href="$game_2port_8h.html" title="../../port.h" alt="" coords="697,229,775,256">
-<area shape="rect" href="$moduletemplate_8h.html" title="../moduletemplate.h" alt="" coords="828,155,964,181">
-<area shape="rect" href="$loadtemplate_8h.html" title="loadtemplate.h" alt="" coords="516,229,623,256">
+<area shape="rect" href="$anim_8h.html" title="anim.h" alt="" coords="279,80,337,107">
+<area shape="rect" href="$loadanimation_8h.html" title="loadanimation.h" alt="" coords="252,155,364,181">
+<area shape="rect" href="$port_8h.html" title="../../port.h" alt="" coords="559,229,636,256">
+<area shape="rect" href="$moduletemplate_8h.html" title="../moduletemplate.h" alt="" coords="489,155,625,181">
+<area shape="rect" href="$lua_8h.html" title="../../lua.h" alt="" coords="439,229,511,256">
+<area shape="rect" href="$loadtemplate_8h.html" title="loadtemplate.h" alt="" coords="207,229,313,256">

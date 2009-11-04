@@ -12,7 +12,6 @@ void cApplyCollision::apply_collision(cApplyCollision *caller, cCollision *col)
 {
     // Set who asked for collision
     this->caller = caller;
-    this->col = col;
     
     // Depending on collision type
     switch(col->getType())
@@ -46,12 +45,13 @@ void cApplyCollision::iterate_collision(std::vector<sColSectorInstance*>*cols)
 {
     for(std::vector<sColSectorInstance*>::iterator i=cols->begin(); i!=cols->end(); i++) {
         if(!(*i)->hasTouched) {
-            // The rule is: We first test the caller for collision
-            // and if it returns true, we test our local collision response function
-            if(caller->test_collision(id, col)) {
-                collision_function(caller->getId(), (*i)->ptr);
-                (*i)->hasTouched = true;
-            }
+            // The rule is: We call our own collision_function, with the associated pointer
+            // that is given to the sector in an sColSectorInstance.
+            //
+            // The collision_function is pretty much required to call test_collision for each
+            // collision object that "ptr" contains
+            collision_function(caller->getId(), (*i)->ptr);
+            (*i)->hasTouched = true;
         }
     }
 }

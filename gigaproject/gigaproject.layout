@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="../src/game/collision/colapply.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="1841" topLine="0" />
+	<File name="../src/game/collision/colapply.cpp" open="1" top="1" tabpos="5">
+		<Cursor position="22" topLine="0" />
 	</File>
-	<File name="../src/game/collision/colapply.h" open="1" top="1" tabpos="4">
-		<Cursor position="819" topLine="0" />
+	<File name="../src/game/collision/colapply.h" open="1" top="0" tabpos="4">
+		<Cursor position="761" topLine="12" />
 	</File>
 	<File name="../src/game/collision/collision.h" open="1" top="0" tabpos="1">
-		<Cursor position="2358" topLine="47" />
+		<Cursor position="2358" topLine="26" />
 	</File>
 	<File name="../src/game/collision/colmap.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="4039" topLine="91" />
+		<Cursor position="4039" topLine="40" />
 	</File>
 	<File name="../src/game/collision/colmap.h" open="1" top="0" tabpos="2">
 		<Cursor position="184" topLine="0" />
