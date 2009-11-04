@@ -37,8 +37,12 @@
 		<Linker>
 			<Add option="`allegro-config --libs`" />
 		</Linker>
+		<Unit filename="../src/game/collision/colapply.cpp" />
+		<Unit filename="../src/game/collision/colapply.h" />
 		<Unit filename="../src/game/collision/collision.cpp" />
 		<Unit filename="../src/game/collision/collision.h" />
+		<Unit filename="../src/game/collision/colmap.cpp" />
+		<Unit filename="../src/game/collision/colmap.h" />
 		<Unit filename="../src/game/draw.cpp" />
 		<Unit filename="../src/game/draw.h" />
 		<Unit filename="../src/game/enemy/enemy.cpp" />

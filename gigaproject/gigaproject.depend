@@ -134,12 +134,12 @@
 	"../../port.h"
 	"../moduletemplate.h"
 
-1257197444 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/loadimage.cpp
+1257198327 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/loadimage.cpp
 	"loadimage.h"
 	"log.h"
 	"../game.h"
 
-1257197867 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/luaanimation.cpp
+1257198337 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/luaanimation.cpp
 	"luaanimation.h"
 	"loadanimation.h"
 	"anim.h"
@@ -168,4 +168,18 @@
 	<lualib.h>
 
 1257192710 source:/home/avenger/Other/Projects/untitledproject2/src/game/collision/collision.cpp
+
+1257346040 source:/home/avenger/Other/Projects/untitledproject2/src/game/collision/colapply.cpp
+
+1257348398 source:/home/avenger/Other/Projects/untitledproject2/src/game/collision/colmap.cpp
+	"../misc/vector.h"
+	"colmap.h"
+	"colapply.h"
+
+1257349373 /home/avenger/Other/Projects/untitledproject2/src/game/collision/colmap.h
+	<vector>
+	"../misc/vector.h"
+
+1257349893 /home/avenger/Other/Projects/untitledproject2/src/game/collision/colapply.h
+	"colmap.h"
 
