@@ -58,6 +58,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="alleg.lib lua51.lib"
+				OutputFile="$(OutDir)\..\..\bin\$(ProjectName).exe"
 				GenerateDebugInformation="true"
 				TargetMachine="1"
 			/>
