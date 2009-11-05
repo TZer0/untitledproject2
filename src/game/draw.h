@@ -15,7 +15,7 @@
 #define STOW_Y mGame->mDraw->stow_y
 
 #define WTOS mGame->mDraw->wtos     // World to screen coordinates
-#define STOW mGame->mDrawstow       // Screen to world coordinates
+#define STOW mGame->mDraw->stow       // Screen to world coordinates
 
 class cmDraw {
     private:
