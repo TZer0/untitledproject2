@@ -50,6 +50,11 @@
 		<Unit filename="../src/game/game.cpp" />
 		<Unit filename="../src/game/game.h" />
 		<Unit filename="../src/game/init.cpp" />
+		<Unit filename="../src/game/level/groundata.h" />
+		<Unit filename="../src/game/level/level.cpp" />
+		<Unit filename="../src/game/level/level.h" />
+		<Unit filename="../src/game/level/levelinfo.h" />
+		<Unit filename="../src/game/level/levelinfoattributes.h" />
 		<Unit filename="../src/game/load.cpp" />
 		<Unit filename="../src/game/lua.h" />
 		<Unit filename="../src/game/misc/animation/anim.cpp" />
