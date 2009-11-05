@@ -78,7 +78,7 @@
     }
     
     double getDelta() {
-        double delta = 1.0/double(timer);
+        double delta = double(timer)/TIMER_SPEED;
         timer = 0;
         return(delta);
     }
