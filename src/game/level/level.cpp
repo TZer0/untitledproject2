@@ -15,10 +15,9 @@ int cmLevel::load() {
 void cmLevel::process(double delta) {
 }
 
-void cmLevel::draw(int x, int y, int tile) {
-    int a, b;
-       rectfill(mGame->mDraw->buffer, x*32, y*32, x*32 + 32,
-            y + 32, 0xff8800);
+void cmLevel::draw() {
+       rectfill(mGame->mDraw->buffer, 0, 0, 32,
+           32, 0xff8800);
 }
 
 void cmLevel::clear_data() {
