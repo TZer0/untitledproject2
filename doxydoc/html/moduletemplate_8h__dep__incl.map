@@ -1,0 +1,14 @@
+<area shape="rect" href="$collision_8h.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/collision/collision.h" alt="" coords="259,80,717,107">
+<area shape="rect" href="$player_8h.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/player/player.h" alt="" coords="537,155,969,181">
+<area shape="rect" href="$anim_8h.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/anim.h" alt="" coords="1237,80,1717,107">
+<area shape="rect" href="$level_8h.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/level/level.h" alt="" coords="2821,80,3240,107">
+<area shape="rect" href="$colapply_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/collision/colapply.cpp" alt="" coords="41,155,513,181">
+<area shape="rect" href="$game_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/game.cpp" alt="" coords="5,229,411,256">
+<area shape="rect" href="$init_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/init.cpp" alt="" coords="907,229,1299,256">
+<area shape="rect" href="$player_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/player/player.cpp" alt="" coords="435,229,883,256">
+<area shape="rect" href="$load_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/load.cpp" alt="" coords="1044,155,1441,181">
+<area shape="rect" href="$anim_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/anim.cpp" alt="" coords="1465,155,1959,181">
+<area shape="rect" href="$animproc_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/animproc.cpp" alt="" coords="1983,155,2503,181">
+<area shape="rect" href="$loadanimation_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/loadanimation.cpp" alt="" coords="2527,155,3073,181">
+<area shape="rect" href="$luaanimation_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/luaanimation.cpp" alt="" coords="3097,155,3636,181">
+<area shape="rect" href="$level_8cpp.html" title="/home/avenger/Other/Projects/untitledproject2/src/game/level/level.cpp" alt="" coords="3660,155,4092,181">

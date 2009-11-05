@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="gigaproject" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="../bin/up2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add option="-llua5.1" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/gigaproject" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add option="`allegro-config --libs`" />
+		</Linker>
+		<Unit filename="../src/game/collision/colapply.cpp" />
+		<Unit filename="../src/game/collision/colapply.h" />
+		<Unit filename="../src/game/collision/collision.cpp" />
+		<Unit filename="../src/game/collision/collision.h" />
+		<Unit filename="../src/game/collision/colmap.cpp" />
+		<Unit filename="../src/game/collision/colmap.h" />
+		<Unit filename="../src/game/draw.cpp" />
+		<Unit filename="../src/game/draw.h" />
+		<Unit filename="../src/game/enemy/enemy.cpp" />
+		<Unit filename="../src/game/enemy/enemy.h" />
+		<Unit filename="../src/game/game.cpp" />
+		<Unit filename="../src/game/game.h" />
+		<Unit filename="../src/game/init.cpp" />
+		<Unit filename="../src/game/load.cpp" />
+		<Unit filename="../src/game/lua.h" />
+		<Unit filename="../src/game/misc/animation/anim.cpp" />
+		<Unit filename="../src/game/misc/animation/anim.h" />
+		<Unit filename="../src/game/misc/animation/animproc.cpp" />
+		<Unit filename="../src/game/misc/animation/loadanimation.cpp" />
+		<Unit filename="../src/game/misc/animation/loadanimation.h" />
+		<Unit filename="../src/game/misc/animation/loadtemplate.h" />
+		<Unit filename="../src/game/misc/animation/luaanimation.cpp" />
+		<Unit filename="../src/game/misc/animation/luaanimation.h" />
+		<Unit filename="../src/game/misc/file.cpp" />
+		<Unit filename="../src/game/misc/file.h" />
+		<Unit filename="../src/game/misc/input.cpp" />
+		<Unit filename="../src/game/misc/input.h" />
+		<Unit filename="../src/game/misc/loadimage.cpp" />
+		<Unit filename="../src/game/misc/loadimage.h" />
+		<Unit filename="../src/game/misc/log.cpp" />
+		<Unit filename="../src/game/misc/log.h" />
+		<Unit filename="../src/game/misc/moduletemplate.h" />
+		<Unit filename="../src/game/misc/timer.cpp" />
+		<Unit filename="../src/game/misc/timer.h" />
+		<Unit filename="../src/game/misc/vector.cpp" />
+		<Unit filename="../src/game/misc/vector.h" />
+		<Unit filename="../src/game/player/player.cpp" />
+		<Unit filename="../src/game/player/player.h" />
+		<Unit filename="../src/game/port.h" />
+		<Unit filename="../src/game/weapon/weapon.cpp" />
+		<Unit filename="../src/game/weapon/weapon.h" />
+		<Unit filename="../src/main.cpp" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
