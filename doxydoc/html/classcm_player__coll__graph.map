@@ -1,0 +1,5 @@
+<area shape="rect" href="$classc_data_system.html" title="cDataSystem" alt="" coords="5,96,104,123">
+<area shape="rect" href="$classc_animation.html" title="Animation data block." alt="" coords="128,96,213,123">
+<area shape="rect" href="$classc_anim_seq_data.html" title="Data for an animation sequence." alt="" coords="57,5,164,32">
+<area shape="rect" href="$classc_anim_data.html" title="Data for an animation." alt="" coords="188,5,273,32">
+<area shape="rect" href="$classc_vector.html" title="cVector" alt="" coords="237,96,301,123">
