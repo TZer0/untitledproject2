@@ -58,9 +58,11 @@ void cmPlayer::process(double delta) {
     if (flagLeft) {
         flagLeft = false;
         vel.x = -horSpeed;
+        animation->setSequence("LEFT");
     } else if (flagRight) {
         flagRight = false;
         vel.x = horSpeed;
+        animation->setSequence("RIGHT");
     } else {
         vel.x = 0;
     }
