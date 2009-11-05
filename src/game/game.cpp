@@ -9,6 +9,7 @@
 #include "misc/timer.h"
 #include "misc/input.h"
 #include "player/player.h"
+#include "level/level.h"
 
 void cmGame::run(void)
 {

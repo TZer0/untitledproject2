@@ -20,12 +20,11 @@ class cmGame {
         // Modules
         class cmDraw *mDraw;
         class cmPlayer *mPlayer;
-
+        class cmLevel *mLevel;
         // Misc modules
         class cmTimer *mTimer;
         class cmInput *mIn;
         class cmFile *mFile;
-        
         class cmAnim *mAnim;
 };
 
