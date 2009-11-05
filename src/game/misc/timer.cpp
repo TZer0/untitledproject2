@@ -12,27 +12,23 @@
 	#include <unistd.h>
 #endif
 
-#if (_POSIX_VERSION) >= 200112L || (BSD) // Which supports gettimeofday()
+#if (_POSIX_VERSION) >= 200112L // Which supports gettimeofday()
 	#include <sys/time.h>
 	
 	struct timeval curTime;
 	struct timeval prevTime;
-	struct timezone timeZ;
 	double __timer_delta;
 	double __frame_time;
 	double __fps_timer;
 	
-	void timer_init() {
-		timeZ.tz_minuteswest = 0;
-		timeZ.tz_dsttime = 0;
-	}
+	void timer_init() {}
 	
 	void setTimer() {
-		gettimeofday(&prevTime, &timeZ);
+		gettimeofday(&prevTime, NULL);
 	}
 
 	bool newFrame() {
-		gettimeofday(&curTime, &timeZ);
+		gettimeofday(&curTime, NULL);
 		if(curTime.tv_usec > prevTime.tv_usec) {
 			__timer_delta = double(curTime.tv_usec-prevTime.tv_usec)/double(1.0e6); // Microsec timer
 		}else {
