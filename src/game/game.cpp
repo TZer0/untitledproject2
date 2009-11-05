@@ -23,6 +23,7 @@ void cmGame::run(void)
         
         if(mTimer->get_timer() > 0) {
             delta = mTimer->delta();
+            LOGS(LDEBUG, "%f", delta);
             
             // Processing functions
             mPlayer->input();
