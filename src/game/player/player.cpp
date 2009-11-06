@@ -21,6 +21,7 @@ void cmPlayer::init() {
     flagUp = false;
     flagLeft = false;
     flagRight = false;
+    flagFire = false;
     
     animation = mGame->mAnim->add("PLAYER");
     animation->setSequence("IDLE");

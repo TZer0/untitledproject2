@@ -21,6 +21,7 @@ class cmPlayer : public cDataSystem {
         bool flagRight;
         bool flagUp;
         bool flagDown;
+        bool flagFire;
         cAnimation *animation;
         
     public:
