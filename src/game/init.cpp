@@ -3,8 +3,10 @@
 #include "misc/file.h"
 #include "misc/animation/anim.h"
 #include "player/player.h"
+#include "level/level.h"
 #include "game.h"
 #include "draw.h"
+
 
 int cmGame::init(void)
 {
@@ -30,6 +32,7 @@ int cmGame::init(void)
     mIn = new cmInput;
     mPlayer = new cmPlayer;
     mAnim = new cmAnim;
+    mLevel = new cmLevel;
     
     // Loading stuff
     load();
