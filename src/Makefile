@@ -25,7 +25,7 @@ LIB = -Ilua-5.1.4/include/ -Llua-5.1.4/lib/ -llua
 
 up2 : $(SOURCEZ)
 	$(CXX) $(SOURCEZ) $(OUTPUT_OPTION) $(CFLAGZ) $(LDFLAGZ) $(LIB)
-	cp up2 ../bin
+	mv up2 ../bin
 
 clean :
 	rm ../bin/up2
