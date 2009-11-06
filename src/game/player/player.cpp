@@ -24,6 +24,9 @@ void cmPlayer::init() {
     
     animation = mGame->mAnim->add("PLAYER");
     animation->setSequence("IDLE");
+
+    // Give the player a weapon.
+    weapon = cmWeapon();
 }
 
 /*
