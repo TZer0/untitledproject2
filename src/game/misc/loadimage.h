@@ -27,3 +27,4 @@ class cmImagesData {
 extern class cmImagesData mImagesData;
 
 #endif
+

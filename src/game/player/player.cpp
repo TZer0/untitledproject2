@@ -27,7 +27,8 @@ void cmPlayer::init() {
     animation->setSequence("IDLE");
 
     // Give the player a weapon.
-    weapon = cmWeapon();
+    // weapon = mGame->mWeapon;
+    weapon = new cmWeapon();
 }
 
 /*
@@ -48,6 +49,10 @@ void cmPlayer::input() {
 
     if (key[KEY_DOWN] || key[KEY_J]) {
         flagDown = true;
+    }
+
+    if (key[KEY_X]) {
+        flagFire = true;
     }
 }
 
@@ -93,6 +98,11 @@ void cmPlayer::process(double delta) {
         vel.y = 0;
         pos.y = SCREEN_H - height;
         jumpLife = JUMP_LIFE;
+    }
+
+    if (flagFire) {
+        flagFire = false;
+        weapon->fire(pos, vel);
     }
 }
 

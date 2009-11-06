@@ -32,3 +32,4 @@ class cmInput {
 };
 
 #endif
+

@@ -21,6 +21,7 @@ class cmGame {
         class cmDraw *mDraw;
         class cmPlayer *mPlayer;
         class cmLevel *mLevel;
+        class cmWeapon *mWeapon;
         // Misc modules
         class cmTimer *mTimer;
         class cmInput *mIn;
@@ -31,3 +32,4 @@ class cmGame {
 extern class cmGame *mGame;
 
 #endif
+

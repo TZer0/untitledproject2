@@ -3,17 +3,17 @@
 
 #include "../misc/moduletemplate.h"
 #include "../misc/vector.h"
-#include "../../lua.h"
+#include "../lua.h"
 
-void luaanim_open(lua_State *l);
+// void luaanim_open(lua_State *l);
 
-class cmWeapon: public cDataSystem {
+class cmWeapon {
     private:
         int ammo;
         bool ean;
         
     public:
-        void fire(cVector pos, cVector vel)
+        void fire(cVector pos, cVector vel);
         void level_init() {}
         
         int load() {
@@ -28,3 +28,4 @@ class cmWeapon: public cDataSystem {
 };
 
 #endif
+

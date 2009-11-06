@@ -6,3 +6,4 @@
 void luaanim_open(lua_State *l);
 
 #endif
+
