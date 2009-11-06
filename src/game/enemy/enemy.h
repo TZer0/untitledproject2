@@ -24,6 +24,7 @@ class cmEnemy : public cDataSystem {
         void process(double delta);
         void draw();
         void clear_data();
+        virtual ~cmEnemy() {}
 };
 
 #endif
