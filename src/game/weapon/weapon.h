@@ -1,30 +1,43 @@
 #ifndef WEAPON_H
 #define WEAPON_H
 
+#include <string>
+#include <list>
+
 #include "../misc/moduletemplate.h"
 #include "../misc/vector.h"
 #include "../lua.h"
 
 // void luaanim_open(lua_State *l);
 
-class cmWeapon {
+class cWeapon {
     private:
         int ammo;
         bool ean;
         
     public:
-        void fire(cVector pos, cVector vel);
-        void level_init() {}
-        
-        int load() {
-            return 0;
+        cWeapon() {
+            ammo = 10;
+            ean = false;
         }
-        
-        void init();
-        void input();
-        void process(double delta);
-        void draw();
-        void clear_data();
+
+        void fire(cVector pos, cVector vel);
+};
+
+class cmWeapon : public cDataSystem {
+    private:
+        // Lists of weapons.
+        std::list<cWeapon*> weapons;
+
+    public:
+        cmWeapon() {}
+        void init(void) {}
+        void level_init(void) {}
+        int load(void) { return 0; }
+        void process(double) {}
+        void draw(void) {}
+        void clear_data(void) {}
+        class cWeapon *add(std::string);
 };
 
 #endif

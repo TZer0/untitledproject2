@@ -27,8 +27,10 @@ void cmPlayer::init() {
     animation->setSequence("IDLE");
 
     // Give the player a weapon.
-    // weapon = mGame->mWeapon;
-    weapon = new cmWeapon();
+    LOGS(LDEBUG, "Adding %s...", "player weapon");
+    weapon = mGame->mWeapon->add("bfg9k1");
+    LOGS(LDEBUG, "Weapon pointer: %p.", weapon);
+    LOGS(LDEBUG, "Added %s...", "player weapon");
 }
 
 /*
