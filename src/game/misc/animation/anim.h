@@ -108,6 +108,7 @@ class cmAnim : public cDataSystem {
         //@}
         
         cmAnimData *animData;
+        virtual ~cmAnim() {}
 };
 
 #endif

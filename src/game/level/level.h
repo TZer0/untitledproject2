@@ -18,6 +18,7 @@ class cmLevel : public cDataSystem{
         void process(double delta);
         void draw();
         void clear_data();
+        virtual ~cmLevel() {}
 };
 
 #endif
