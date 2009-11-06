@@ -33,8 +33,8 @@ class cmDraw {
         void set_cam(double x,double y)
             {cx=x; cy=y;}
         
-        int wtos_x(double x) { return(x-cx); }
-        int wtos_y(double y) { return(y-cy); }
+        int wtos_x(double x) { return(int(x-cx)); }
+        int wtos_y(double y) { return(int(y-cy)); }
         
         double stow_x(int x) { return(x+cx); }
         double stow_y(int y) { return(y+cy); }
