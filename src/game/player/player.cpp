@@ -112,11 +112,11 @@ void cmPlayer::process(double delta) {
  * Draw player sprite.
  */
 void cmPlayer::draw() {
-    rectfill(mGame->mDraw->buffer, pos.x, pos.y, pos.x + width,
-            pos.y + height, 0xff8800);
+    rectfill(mGame->mDraw->buffer, int(pos.x), int(pos.y), int(pos.x) + width,
+            int(pos.y) + height, 0xff8800);
     
     // Testing animation
-    animation->draw(mGame->mDraw->buffer, pos.x,pos.y);
+    animation->draw(mGame->mDraw->buffer, int(pos.x), int(pos.y));
 }
 
 /*
