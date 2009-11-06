@@ -3,8 +3,6 @@
  *
  * Description:	Header for the animation module
  *				and animation instance
- *
- * (c)2009, by Raymond Loeberg
  */
 #ifndef ANIM_H
 #define ANIM_H

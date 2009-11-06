@@ -15,8 +15,8 @@ SOURCEZ = main.cpp\
           game/load.cpp\
           game/enemy/enemy.cpp\
           game/misc/vector.cpp\
-          game/weapon/weapon.cpp\
           game/level/level.cpp\
+          game/weapon/weapon.cpp\
 
 CXX = g++
 CFLAGZ = $(shell allegro-config --cflags) -Wall

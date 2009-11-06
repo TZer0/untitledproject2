@@ -24,7 +24,7 @@ class cmPlayer : public cDataSystem {
         bool flagDown;
         bool flagFire;
         cAnimation *animation;
-        cmWeapon *weapon;
+        cWeapon *weapon;
         
     public:
         void level_init() {}

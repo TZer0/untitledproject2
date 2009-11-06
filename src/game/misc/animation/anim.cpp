@@ -3,8 +3,6 @@
  *
  * Description:	Handles creation and manipulation
  *				of animations.
- *
- * (c)2009, by Raymond Loeberg
  */
 #include "anim.h"
 
