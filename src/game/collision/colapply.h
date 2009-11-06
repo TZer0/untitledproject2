@@ -62,3 +62,4 @@ class cApplyCollision : cColMap {
 };
 
 #endif
+

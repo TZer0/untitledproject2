@@ -4,6 +4,7 @@
 #include "../misc/moduletemplate.h"
 #include "../misc/vector.h"
 #include "../misc/animation/anim.h"
+#include "../weapon/weapon.h"
 
 #define JUMP_LIFE 0.2
 
@@ -23,6 +24,7 @@ class cmPlayer : public cDataSystem {
         bool flagDown;
         bool flagFire;
         cAnimation *animation;
+        cmWeapon *weapon;
         
     public:
         void level_init() {}
@@ -39,3 +41,4 @@ class cmPlayer : public cDataSystem {
 };
 
 #endif
+

@@ -13,3 +13,4 @@ ATTR(mapfile, std::string)
 // etc..
 
 #undef ATTR
+

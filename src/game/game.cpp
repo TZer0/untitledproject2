@@ -10,6 +10,7 @@
 #include "misc/input.h"
 #include "player/player.h"
 #include "level/level.h"
+#include "weapon/weapon.h"
 
 void cmGame::run(void)
 {
@@ -18,7 +19,7 @@ void cmGame::run(void)
     // Initializing stuff
     init();
     
-    while(!key[KEY_ESC]) {
+    while(!key[KEY_ESC] && !key[KEY_Q]) {
         // Input functions
         mIn->update();
         

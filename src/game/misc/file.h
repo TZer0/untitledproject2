@@ -2,8 +2,6 @@
  * File: file.h
  *
  * Description: Header file for miscellaneous file related functions
- *
- * (c)2009, by Raymond Loeberg
  */
 #ifndef DANFILE_H
 #define DANFILE_H
@@ -32,3 +30,4 @@ class cmFile {
 };
 
 #endif
+
