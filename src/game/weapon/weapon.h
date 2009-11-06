@@ -38,6 +38,7 @@ class cmWeapon : public cDataSystem {
         void draw(void) {}
         void clear_data(void) {}
         class cWeapon *add(std::string);
+        virtual ~cmWeapon() {}
 };
 
 #endif

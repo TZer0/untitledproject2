@@ -12,5 +12,10 @@ class cWeapon *cmWeapon::add(string script) {
 }
 
 void cWeapon::fire(cVector pos, cVector vel) {
-    LOGS(LDEBUG, "%s", "Bang!");
+    if (ammo > 0) {
+    --ammo;
+        LOGS(LDEBUG, "%s", "Bang!");
+    } else {
+        LOGS(LDEBUG, "%s", "Out of ammo!");
+    }
 }
