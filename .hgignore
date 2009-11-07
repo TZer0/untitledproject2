@@ -9,3 +9,4 @@ syntax: regexp
 ^megaproject/Debug/.*
 ^gigaproject/obj/.*
 ^bin/log/.*
+^doxydoc/.*
