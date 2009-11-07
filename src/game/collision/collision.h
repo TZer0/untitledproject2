@@ -21,11 +21,14 @@
 class cColMap;
 
 /// Enums
+
+/// Possible collision types.
+/// The number determines the number of points/normals
 enum CollisionType {
-    CollisionPoint,
-    CollisionRectangle,
-    CollisionTriangle,
-    CollisionCircle,
+    CollisionPoint = 0,
+    CollisionRectangle = 4,
+    CollisionTriangle = 3,
+    CollisionCircle = 1,
 };
 
 /// Subclasses
@@ -50,7 +53,8 @@ enum CollisionType {
             bool toDie;             ///< Flag to determine if this collision objects should be removed from processing
         public:
             cCollision(cVector *pos, cVector offset);                   ///< Constructor for a point collision
-            cCollision(cVector *pos, cVector offset, double radius);    ///< Constructor for a circle collision
+            cCollision(cVector *pos, cVector offset, double radius)     ///< Constructor for a circle collision
+                    { cCollision(pos, offset, radius, 0.0, CollisionCircle); }
             cCollision(cVector *pos, cVector offset,
                         double w,double h, CollisionType type);         ///< Constructor for a rectangle/triangle collision
             
@@ -62,6 +66,9 @@ enum CollisionType {
             
             /// Returns out position
             cVector getPos() { return *pos; }
+            
+            cVector *getNormal() { return normals; }
+            cVector *getPoint() { return points; }
             
             /// The extremes of this collision instance
             cVector tl,br;
@@ -78,6 +85,15 @@ class cmCollision : public cDataSystem {
     public:
         /// Creates a collision instance of the specified type
         cCollision *create(CollisionType type, cVector *pos, cVector offset, double arg1=0.0, double arg2=0.0);        
+        
+        /// Overloaded functions from cDataSystem
+        void init(void) {}
+        void level_init(void) {}
+        int load(void) { return 0; }
+        void process(double delta); ///< Handles per-frame destruction of collision instances
+        void draw(void) {}
+        void clear_data(void);
+        
 };
 
 /// Function declarations
