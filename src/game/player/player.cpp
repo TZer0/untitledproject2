@@ -28,7 +28,7 @@ void cmPlayer::init() {
 
     // Give the player a weapon.
     LOGS(LDEBUG, "Adding %s...", "player weapon");
-    weapon = mGame->mWeapon->add("bfg9k1");
+    weapon = mGame->mWeapon->add("bfg9k1", -1, false);
     LOGS(LDEBUG, "Weapon pointer: %p.", weapon);
     LOGS(LDEBUG, "Added %s...", "player weapon");
 }

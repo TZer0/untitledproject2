@@ -12,13 +12,13 @@
 
 class cWeapon {
     private:
-        int ammo;
+        int ammo; // Negative value gives infinite ammo.
         bool ean;
         
     public:
-        cWeapon() {
-            ammo = 10;
-            ean = false;
+        cWeapon(int ammoArg, bool eanArg) {
+            ammo = ammoArg;
+            ean = eanArg;
         }
 
         void fire(cVector pos, cVector vel);
@@ -26,7 +26,6 @@ class cWeapon {
 
 class cmWeapon : public cDataSystem {
     private:
-        // Lists of weapons.
         std::list<cWeapon*> weapons;
 
     public:
@@ -37,7 +36,7 @@ class cmWeapon : public cDataSystem {
         void process(double) {}
         void draw(void) {}
         void clear_data(void) {}
-        class cWeapon *add(std::string);
+        class cWeapon *add(std::string, int, bool);
         virtual ~cmWeapon() {}
 };
 
