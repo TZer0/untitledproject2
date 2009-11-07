@@ -5,6 +5,7 @@
 #include "player/player.h"
 #include "level/level.h"
 #include "weapon/weapon.h"
+#include "enemy/enemy.h"
 #include "game.h"
 #include "draw.h"
 
@@ -35,23 +36,26 @@ int cmGame::init(void)
     mAnim = new cmAnim;
     mLevel = new cmLevel;
     mWeapon = new cmWeapon;
+    mEnemy = new cmEnemy;
     
     // Loading stuff
     load();
     
     // Module initialization
-    LOGS(LDEBUG, "Initializing %s...", "mDraw");
+    LOGS(LDEBUG, "Initializing mDraw...");
     mDraw->init();
-    LOGS(LDEBUG, "Initializing %s...", "mTimer");
+    LOGS(LDEBUG, "Initializing mTimer...");
     mTimer->init();
-    LOGS(LDEBUG, "Initializing %s...", "mPlayer");
+    LOGS(LDEBUG, "Initializing mPlayer...");
     mPlayer->init();
-    LOGS(LDEBUG, "Initializing %s...", "mAnim");
+    LOGS(LDEBUG, "Initializing mAnim...");
     mAnim->init();
-    LOGS(LDEBUG, "Initializing %s...", "mLevel");
+    LOGS(LDEBUG, "Initializing mLevel...");
     mLevel->init();
-    LOGS(LDEBUG, "Initializing %s...", "mWeapon");
+    LOGS(LDEBUG, "Initializing mWeapon...");
     mWeapon->init();
+    LOGS(LDEBUG, "Initializing mEnemy...");
+    mEnemy->init();
     
     return 0;
 }
