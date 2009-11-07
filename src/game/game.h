@@ -22,6 +22,7 @@ class cmGame {
         class cmPlayer *mPlayer;
         class cmLevel *mLevel;
         class cmWeapon *mWeapon;
+        class cmEnemy *mEnemy;
         // Misc modules
         class cmTimer *mTimer;
         class cmInput *mIn;
