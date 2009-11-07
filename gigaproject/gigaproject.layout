@@ -7,17 +7,20 @@
 	<File name="../src/game/collision/colapply.h" open="0" top="0" tabpos="4">
 		<Cursor position="761" topLine="0" />
 	</File>
-	<File name="../src/game/collision/collision.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="1894" topLine="39" />
+	<File name="../src/game/collision/collision.cpp" open="1" top="1" tabpos="2">
+		<Cursor position="2084" topLine="60" />
 	</File>
-	<File name="../src/game/collision/collision.h" open="1" top="1" tabpos="1">
-		<Cursor position="1965" topLine="39" />
+	<File name="../src/game/collision/collision.h" open="1" top="0" tabpos="1">
+		<Cursor position="3582" topLine="68" />
 	</File>
 	<File name="../src/game/collision/colmap.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="4039" topLine="25" />
 	</File>
 	<File name="../src/game/collision/colmap.h" open="0" top="0" tabpos="2">
 		<Cursor position="184" topLine="0" />
+	</File>
+	<File name="../src/game/collision/sat.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="2178" topLine="70" />
 	</File>
 	<File name="../src/game/draw.h" open="0" top="0" tabpos="7">
 		<Cursor position="487" topLine="0" />
