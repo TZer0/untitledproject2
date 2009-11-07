@@ -13,7 +13,7 @@
 class cWeapon {
     private:
         int ammo; // Negative value gives infinite ammo.
-        bool ean;
+        bool ean; // Enemy And Netherworld. Weapon hurts player if true.
         
     public:
         cWeapon(int ammoArg, bool eanArg) {
