@@ -1,8 +1,7 @@
 /**
  * File: anim.cpp
  *
- * Description:	Handles creation and manipulation
- *				of animations.
+ * Description:	Handles creation and manipulation of animations.
  */
 #include "anim.h"
 
@@ -18,8 +17,7 @@ class cAnimation *cmAnim::add(string id)
 }
 
 /**
- * Allocates memory for a new animation and stores it in
- * the database
+ * Allocates memory for a new animation and stores it in the database.
  */
 class cAnimation *cmAnim::add(cAnimData *animdata)
 {
