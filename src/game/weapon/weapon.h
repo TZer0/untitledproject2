@@ -1,24 +1,30 @@
 #ifndef WEAPON_H
 #define WEAPON_H
 
-#include <string>
 #include <list>
+#include <string>
 
+#include "../game.h"
+#include "../misc/file.h"
 #include "../misc/moduletemplate.h"
 #include "../misc/vector.h"
 #include "../lua.h"
-
-// void luaanim_open(lua_State *l);
 
 class cWeapon {
     private:
         int ammo; // Negative value gives infinite ammo.
         bool ean; // Enemy And Netherworld. Weapon hurts player if true.
+        char *script;
+        lua_State *l;
         
     public:
-        cWeapon(int ammoArg, bool eanArg) {
-            ammo = ammoArg;
-            ean = eanArg;
+        cWeapon(char *script, int ammo, bool ean) {
+            this->ammo = ammo;
+            this->ean = ean;
+            this->script = script;
+
+            l = luaL_newstate();
+            luaL_openlibs(l);
         }
 
         void fire(cVector pos, cVector vel);
@@ -36,7 +42,7 @@ class cmWeapon : public cDataSystem {
         void process(double) {}
         void draw(void) {}
         void clear_data(void) {}
-        class cWeapon *add(std::string, int, bool);
+        class cWeapon *add(char *script, int ammo, bool ean);
         virtual ~cmWeapon() {}
 };
 

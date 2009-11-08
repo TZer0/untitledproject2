@@ -2,8 +2,6 @@
  * File: loadanimation.cpp
  *
  * Description:	Handles loading of animations
- *
- * (c)2009, by Raymond Loeberg
  */
 // Global includes
 #include "../../port.h"

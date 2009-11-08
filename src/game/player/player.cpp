@@ -7,9 +7,9 @@
  * Initialize player.
  */
 void cmPlayer::init() {
-    gravity = 750.0;
-    horSpeed = 180;
-    jumpHeight = 300;
+    gravity = 1000.0;
+    horSpeed = 300;
+    jumpHeight = 400;
     jumpLife = JUMP_LIFE;
     height = 64;
     width = 64;
@@ -28,7 +28,7 @@ void cmPlayer::init() {
 
     // Give the player a weapon.
     LOGS(LDEBUG, "Adding %s...", "player weapon");
-    weapon = mGame->mWeapon->add("bfg9k1", -1, false);
+    weapon = mGame->mWeapon->add("print(1)\n", -1, false);
     LOGS(LDEBUG, "Weapon pointer: %p.", weapon);
     LOGS(LDEBUG, "Added %s...", "player weapon");
 }

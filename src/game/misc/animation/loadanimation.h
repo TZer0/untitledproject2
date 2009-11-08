@@ -3,8 +3,6 @@
  *
  * Description:	Header file for animation loading.
  *              Stores all loaded animation data
- *
- * (c)2009, by Raymond Loeberg
  */
 #ifndef ANIMATIONLOAD_H
 #define ANIMATIONLOAD_H
