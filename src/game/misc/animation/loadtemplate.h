@@ -2,8 +2,6 @@
  * File: loadtemplate.h
  *
  * Description:	Template for loading systems
- *
- * (c)2009, by Raymond Loeberg
  */
 #ifndef LOADTEMPLATE_H
 #define LOADTEMPLATE_H
