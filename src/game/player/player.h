@@ -6,7 +6,7 @@
 #include "../misc/animation/anim.h"
 #include "../weapon/weapon.h"
 
-#define JUMP_LIFE 0.2
+#define JUMP_LIFE 0.3
 
 class cmPlayer : public cDataSystem {
     private:

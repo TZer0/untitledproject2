@@ -2,8 +2,6 @@
  * File: animproc.cpp
  *
  * Description:	Processes animations
- *
- * (c)2009, by Raymond Loeberg
  */
 // Global headers
 #include <math.h>
