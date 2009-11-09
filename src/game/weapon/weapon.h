@@ -41,7 +41,7 @@ class cmWeapon : public cDataSystem {
         int load(void) { return 0; }
         void process(double) {}
         void draw(void) {}
-        void clear_data(void) {}
+        void clear_data(void);
         class cWeapon *add(char *script, int ammo, bool ean);
         virtual ~cmWeapon() {}
 };
