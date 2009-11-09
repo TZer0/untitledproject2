@@ -34,6 +34,7 @@ void cmGame::run(void)
             // Drawing functions
             mPlayer->draw();
             mDraw->draw();
+            mLevel->draw();
         }
     }
     
