@@ -12,6 +12,7 @@
 #include "level/level.h"
 #include "weapon/weapon.h"
 #include "enemy/enemy.h"
+#include "bullet/bullet.h"
 
 void cmGame::run(void)
 {
