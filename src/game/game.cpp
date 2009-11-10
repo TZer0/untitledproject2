@@ -31,11 +31,13 @@ void cmGame::run(void)
             // Processing functions
             mPlayer->input();
             mPlayer->process(delta);
-            
+            mBullet->process(delta);
+
             // Drawing functions
             mPlayer->draw();
             mDraw->draw();
             mLevel->draw();
+            mBullet->draw();
         }
     }
     
