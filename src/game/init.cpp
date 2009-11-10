@@ -6,6 +6,7 @@
 #include "level/level.h"
 #include "weapon/weapon.h"
 #include "enemy/enemy.h"
+#include "bullet/bullet.h"
 #include "game.h"
 #include "draw.h"
 
@@ -37,6 +38,7 @@ int cmGame::init(void)
     mLevel = new cmLevel;
     mWeapon = new cmWeapon;
     mEnemy = new cmEnemy;
+    mBullet = new cmBullet;
     
     // Loading stuff
     load();
@@ -56,6 +58,8 @@ int cmGame::init(void)
     mWeapon->init();
     LOGS(LDEBUG, "Initializing mEnemy...");
     mEnemy->init();
-    
+    LOGS(LDEBUG, "Initializing mBullet...");
+    mBullet->init();
+  
     return 0;
 }

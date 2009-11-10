@@ -17,12 +17,12 @@ SOURCEZ = main.cpp\
 		  game/misc/vector.cpp\
 		  game/level/level.cpp\
 		  game/weapon/weapon.cpp\
+		  game/bullet/bullet.cpp
 
 OBJECTZ = $(SOURCEZ:.cpp=.o)
-CXX = g++
-CFLAGZ = $(shell allegro-config --cflags) -c -Wall
-LDFLAGZ = $(shell allegro-config --libs)
-LIB = -Ilua-5.1.4/include/ -Llua-5.1.4/lib/ -llua
+	CFLAGZ = $(shell allegro-config --cflags) -c -Wall
+	LDFLAGZ = $(shell allegro-config --libs)
+	LIB = -Ilua-5.1.4/include/ -Llua-5.1.4/lib/ -llua
 
 all: $(SOURCEZ) up2
 
@@ -32,7 +32,7 @@ up2: $(OBJECTZ)
 
 .cpp.o:
 	$(CXX) $(CFLAGZ) $< -o $@
-	
+
 
 clean:
 	rm -f $(OBJECTZ)
