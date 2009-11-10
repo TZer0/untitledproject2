@@ -4,6 +4,7 @@
 #include <list>
 #include <string>
 
+#include "../bullet/bullet.h"
 #include "../game.h"
 #include "../misc/file.h"
 #include "../misc/moduletemplate.h"

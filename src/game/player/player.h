@@ -23,6 +23,7 @@ class cmPlayer : public cDataSystem {
         bool flagUp;
         bool flagDown;
         bool flagFire;
+        bool left;
         cAnimation *animation;
         cWeapon *weapon;
         
