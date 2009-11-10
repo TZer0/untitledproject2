@@ -4,20 +4,22 @@
 #include <list>
 #include <string>
 
+#include "../draw.h"
 #include "../game.h"
 #include "../misc/file.h"
 #include "../misc/moduletemplate.h"
 #include "../misc/vector.h"
 #include "../lua.h"
+#include "../misc/animation/anim.h"
 
 class cBullet {
 
     private:
-        cVector pos;
-        cVector vel;
+        // cVector pos;
+        // cVector vel;
         char *script;
         lua_State *l;
-        cAnimation *animation;
+
 
     public:
         cBullet(char *script, cVector pos, cVector vel) {
@@ -31,19 +33,24 @@ class cBullet {
             animation = mGame->mAnim->add("PLAYER");
             animation->setSequence("IDLE");
         }
+        cAnimation *animation;
+        cVector pos;
+        cVector vel;
 };
 
 class cmBullet : public cDataSystem {
     private:
         std::list<cBullet*> bullets;
         
+        typedef std::list<cBullet*>::iterator EatBullets;
+
     public:
         cmBullet() {}
         void init(void){}
         void level_init(void) {}
         int load(void) {return 0;}
-        void process(double) {}
-        void draw(void){}
+        void process(double); 
+        void draw(void);
         void clear_data(void) {}
         class cBullet *add(char *script, cVector pos, cVector vel);  
         virtual ~cmBullet() {}
