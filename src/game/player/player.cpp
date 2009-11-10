@@ -22,6 +22,7 @@ void cmPlayer::init() {
     flagLeft = false;
     flagRight = false;
     flagFire = false;
+    left = false;
     
     animation = mGame->mAnim->add("PLAYER");
     animation->setSequence("IDLE");
@@ -70,10 +71,12 @@ void cmPlayer::process(double delta) {
         flagLeft = false;
         vel.x = -horSpeed;
         animation->setSequence("LEFT");
+        left = true;
     } else if (flagRight) {
         flagRight = false;
         vel.x = horSpeed;
         animation->setSequence("RIGHT");
+        left = false;
     } else {
         vel.x = 0;
     }
@@ -105,7 +108,11 @@ void cmPlayer::process(double delta) {
     if (flagFire) {
         cVector bulVel;
         flagFire = false;
-        bulVel.x = vel.x;
+        if (left) {
+            bulVel.x = -3 * horSpeed;
+        } else {
+            bulVel.x = 3 * horSpeed;
+        }
         weapon->fire(pos, bulVel);
     }
 }
