@@ -16,6 +16,7 @@ void cmWeapon::clear_data() {
 void cWeapon::fire(cVector pos, cVector vel) {
     if (ammo != 0) {
         luaL_dostring(l, script);
+        // mGame->mBullet->add("print(1)\n", pos, vel);
         if (ammo > 0)
             --ammo;
     } else {

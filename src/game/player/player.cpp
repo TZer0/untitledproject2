@@ -103,8 +103,10 @@ void cmPlayer::process(double delta) {
     }
 
     if (flagFire) {
+        cVector bulVel;
         flagFire = false;
-        weapon->fire(pos, vel);
+        bulVel.x = vel.x;
+        weapon->fire(pos, bulVel);
     }
 }
 
