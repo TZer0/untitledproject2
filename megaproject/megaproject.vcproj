@@ -266,6 +266,14 @@
 						>
 					</File>
 				</Filter>
+				<Filter
+					Name="bullet"
+					>
+					<File
+						RelativePath="..\src\game\bullet\bullet.cpp"
+						>
+					</File>
+				</Filter>
 			</Filter>
 		</Filter>
 		<Filter
@@ -381,6 +389,14 @@
 					</File>
 					<File
 						RelativePath="..\src\game\level\levelinfoattributes.h"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="bullet"
+					>
+					<File
+						RelativePath="..\src\game\bullet\bullet.h"
 						>
 					</File>
 				</Filter>

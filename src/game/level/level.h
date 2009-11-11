@@ -10,7 +10,7 @@ class cmLevel : public cDataSystem{
     private:
         std::map <std::string, cLevelInfo> levelInfo;
         cLevelInfo *currentLevel;
-        int tiles[5][2];
+        int tiles[5][5];
     public:
         void init();
         void level_init();      
