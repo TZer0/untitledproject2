@@ -9,6 +9,9 @@ void cmLevel::init() {
         tiles[j].resize(30);
         tiles[j][21] = 1;
     }
+    tiles[10][20] = 1;
+    tiles[10][19] = 1;
+    tiles[10][18] = 1;
 }
 
 void cmLevel::level_init() {
