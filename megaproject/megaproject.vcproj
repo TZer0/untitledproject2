@@ -221,26 +221,6 @@
 						RelativePath="..\src\game\misc\vector.cpp"
 						>
 					</File>
-					<Filter
-						Name="anim"
-						>
-						<File
-							RelativePath="..\src\game\misc\animation\anim.cpp"
-							>
-						</File>
-						<File
-							RelativePath="..\src\game\misc\animation\animproc.cpp"
-							>
-						</File>
-						<File
-							RelativePath="..\src\game\misc\animation\loadanimation.cpp"
-							>
-						</File>
-						<File
-							RelativePath="..\src\game\misc\animation\luaanimation.cpp"
-							>
-						</File>
-					</Filter>
 				</Filter>
 				<Filter
 					Name="player"
@@ -271,6 +251,26 @@
 					>
 					<File
 						RelativePath="..\src\game\bullet\bullet.cpp"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="animation"
+					>
+					<File
+						RelativePath="..\src\game\misc\animation\anim.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\game\misc\animation\animproc.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\game\misc\animation\loadanimation.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\game\misc\animation\luaanimation.cpp"
 						>
 					</File>
 				</Filter>
@@ -331,26 +331,6 @@
 						RelativePath="..\src\game\misc\vector.h"
 						>
 					</File>
-					<Filter
-						Name="anim"
-						>
-						<File
-							RelativePath="..\src\game\misc\animation\anim.h"
-							>
-						</File>
-						<File
-							RelativePath="..\src\game\misc\animation\loadanimation.h"
-							>
-						</File>
-						<File
-							RelativePath="..\src\game\misc\animation\loadtemplate.h"
-							>
-						</File>
-						<File
-							RelativePath="..\src\game\misc\animation\luaanimation.h"
-							>
-						</File>
-					</Filter>
 				</Filter>
 				<Filter
 					Name="enemy"
@@ -397,6 +377,26 @@
 					>
 					<File
 						RelativePath="..\src\game\bullet\bullet.h"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="animation"
+					>
+					<File
+						RelativePath="..\src\game\misc\animation\anim.h"
+						>
+					</File>
+					<File
+						RelativePath="..\src\game\misc\animation\loadanimation.h"
+						>
+					</File>
+					<File
+						RelativePath="..\src\game\misc\animation\loadtemplate.h"
+						>
+					</File>
+					<File
+						RelativePath="..\src\game\misc\animation\luaanimation.h"
 						>
 					</File>
 				</Filter>
