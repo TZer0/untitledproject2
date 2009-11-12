@@ -23,7 +23,8 @@
 
 int anim_getItems(void)
 {
-	mGame->mAnim->animData->filedb = mGame->mFile->dirRecursiveGet("animations", "lua");
+	mGame->mAnim->animData->filedb =
+	    mGame->mFile->dirRecursiveGet("animations", "lua");
 	return(mGame->mAnim->animData->filedb.size());
 }
 
@@ -58,7 +59,9 @@ int anim_load(void)
 	std::list<std::string>::iterator i;
 	
 	// Load animations as LUA scripts
-	for(i=mGame->mAnim->animData->filedb.begin(); i!=mGame->mAnim->animData->filedb.end(); i++) {
+	for (i = mGame->mAnim->animData->filedb.begin();
+	        i != mGame->mAnim->animData->filedb.end(); i++)
+	{
 	    LOGS(LDEBUG, "Loading %s", (*i).c_str());
 	    load_anim_file((*i).c_str());
 	    
