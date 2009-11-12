@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/icons/toolbar" >
+        <file alias="color-fill" >Tango-art-libre/color-fill.png</file>
+        <file alias="draw-freehand" >Tango-art-libre/draw-freehand.png</file>
+        <file alias="draw-rectangle" >Tango-art-libre/draw-rectangle.png</file>
+        <file alias="select-by-color" >Tango-art-libre/select-by-color.png</file>
+        <file alias="select-rectangular" >Tango-art-libre/select-rectangular.png</file>
+    </qresource>
+</RCC>
