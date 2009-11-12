@@ -11,6 +11,16 @@ class cWeapon *cmWeapon::add(char *script, int ammo, bool ean) {
 
 void cmWeapon::clear_data() {
     // Delete cWeapon instances.
+    for (Loadout i = weapons.begin(); i != weapons.end(); ++i) {
+        LOGS(LDEBUG, "Removing weapon.");
+        delete (*i);
+    }
+
+    weapons.clear();
+}
+
+int cmWeapon::load(void) {
+    return 0;
 }
 
 void cWeapon::fire(cVector pos, cVector vel) {

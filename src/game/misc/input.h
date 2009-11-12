@@ -2,8 +2,6 @@
  * File: input.h
  *
  * Description:	Header file for input.cpp
- *
- * (c)2009, by Raymond Loeberg
  */
 #ifndef INPUT_H
 #define INPUT_H
