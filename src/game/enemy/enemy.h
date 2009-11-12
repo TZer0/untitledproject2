@@ -3,6 +3,7 @@
 
 #include <list>
 #include <string>
+#include <map>
 
 #include "../bullet/bullet.h"
 #include "../game.h"
@@ -13,22 +14,30 @@
 #include "../animation/anim.h"
 #include "../weapon/weapon.h"
 
+class cEnemyData {
+
+    public:
+        char *script;
+
+};
+
 class cEnemy {
 
     private:
         cWeapon *weapon;
-        char *script;
+        cEnemyData *data;
         lua_State *l;
 
     public:
 
         cAnimation *animation;
         
-        cEnemy(char *script) {
+        cEnemy(cEnemyData *data) {
 
-            this->script = script;
             l = luaL_newstate();
             luaL_openlibs(l);
+
+            this->data = data;
 
             animation = mGame->mAnim->add("PLAYER");
             animation->setSequence("IDLE");
@@ -45,6 +54,7 @@ class cEnemy {
 class cmEnemy : public cDataSystem {
     private:
         std::list<cEnemy*> enemies;
+        std::map<std::string, cEnemyData*> datas;
 
     public:
         cmEnemy() {}
