@@ -258,19 +258,19 @@
 					Name="animation"
 					>
 					<File
-						RelativePath="..\src\game\misc\animation\anim.cpp"
+						RelativePath="..\src\game\animation\anim.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\src\game\misc\animation\animproc.cpp"
+						RelativePath="..\src\game\animation\animproc.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\src\game\misc\animation\loadanimation.cpp"
+						RelativePath="..\src\game\animation\loadanimation.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\src\game\misc\animation\luaanimation.cpp"
+						RelativePath="..\src\game\animation\luaanimation.cpp"
 						>
 					</File>
 				</Filter>
@@ -384,19 +384,19 @@
 					Name="animation"
 					>
 					<File
-						RelativePath="..\src\game\misc\animation\anim.h"
+						RelativePath="..\src\game\animation\anim.h"
 						>
 					</File>
 					<File
-						RelativePath="..\src\game\misc\animation\loadanimation.h"
+						RelativePath="..\src\game\animation\loadanimation.h"
 						>
 					</File>
 					<File
-						RelativePath="..\src\game\misc\animation\loadtemplate.h"
+						RelativePath="..\src\game\animation\loadtemplate.h"
 						>
 					</File>
 					<File
-						RelativePath="..\src\game\misc\animation\luaanimation.h"
+						RelativePath="..\src\game\animation\luaanimation.h"
 						>
 					</File>
 				</Filter>
