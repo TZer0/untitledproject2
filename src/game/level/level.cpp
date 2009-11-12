@@ -4,20 +4,11 @@
 #include "../game.h"
 
 void cmLevel::init() {
-    tiles.resize(6);
-    for (int j = 0; j<5; j++) {
-        tiles[j].resize(6);
+    tiles.resize(30);
+    for (int j = 0; j<30; j++) {
+        tiles[j].resize(30);
+        tiles[j][21] = 1;
     }
-    tiles[0][0] = 1;
-    tiles[0][1] = 1;
-    tiles[1][0] = 1;
-    tiles[1][1] = 1;
-    tiles[2][0] = 1;
-    tiles[2][1] = 1;
-    tiles[3][0] = 1;
-    tiles[3][1] = 1;
-    tiles[4][0] = 1;
-    tiles[4][1] = 1;
 }
 
 void cmLevel::level_init() {
@@ -32,11 +23,11 @@ void cmLevel::process(double delta) {
 
 void cmLevel::draw() {
     int i, k;
-    for (k = 0; k<5; k++){
-        for (i = 0; i<5; i++){
+    for (k = 0; k<30; k++){
+        for (i = 0; i<30; i++){
             if (tiles[k][i] == 1){
-            rectfill(mGame->mDraw->buffer, WTOS_X(k*32), WTOS_Y(i*32),WTOS_X(k*32)+ 32,
-                WTOS_Y(i*32+32), 0xff8800);
+            rectfill(mGame->mDraw->buffer, WTOS_X(k*32), WTOS_Y(i*32),WTOS_X(k*32+ 31),
+                WTOS_Y(i*32+31), 0xff8800);
             }
         }
     }
