@@ -3,7 +3,7 @@
 
 #include "../misc/moduletemplate.h"
 #include "../misc/vector.h"
-#include "../misc/animation/anim.h"
+#include "../animation/anim.h"
 #include "../weapon/weapon.h"
 
 #define JUMP_LIFE 0.3

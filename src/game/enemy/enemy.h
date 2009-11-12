@@ -3,7 +3,7 @@
 
 #include "../misc/moduletemplate.h"
 #include "../misc/vector.h"
-#include "../misc/animation/anim.h"
+#include "../animation/anim.h"
 #include "../misc/log.h"
 
 class cmEnemy : public cDataSystem {

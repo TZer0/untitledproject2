@@ -1,5 +1,5 @@
 #include "misc/log.h"
-#include "misc/animation/anim.h"
+#include "animation/anim.h"
 
 #include "game.h"
 
