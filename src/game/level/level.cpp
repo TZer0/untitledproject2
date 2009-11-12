@@ -4,6 +4,10 @@
 #include "../game.h"
 
 void cmLevel::init() {
+    tiles.resize(6);
+    for (int j = 0; j<5; j++) {
+        tiles[j].resize(6);
+    }
     tiles[0][0] = 1;
     tiles[0][1] = 1;
     tiles[1][0] = 1;
