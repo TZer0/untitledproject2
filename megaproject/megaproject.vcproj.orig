@@ -221,7 +221,7 @@
 						>
 					</File>
 					<Filter
-						Name="Anim"
+						Name="anim"
 						>
 						<File
 							RelativePath="..\src\game\misc\animation\anim.cpp"
@@ -260,6 +260,10 @@
 				<Filter
 					Name="level"
 					>
+					<File
+						RelativePath="..\src\game\level\level.cpp"
+						>
+					</File>
 				</Filter>
 			</Filter>
 		</Filter>
@@ -364,7 +368,7 @@
 					</File>
 				</Filter>
 				<Filter
-					Name="Level"
+					Name="level"
 					>
 					<File
 						RelativePath="..\src\game\level\level.h"

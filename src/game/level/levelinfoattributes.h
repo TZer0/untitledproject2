@@ -6,9 +6,10 @@
 #error ATTR(name, type) macro should be defined
 #endif
 
-ATTR(sizex, int)
-ATTR(sizey, int)
-ATTR(mapfile, std::string)
+ATTR(sizex, 'SIZX', int, int)
+ATTR(sizey, 'SIZY', int, int)
+ATTR(mapfile, 'MAPF', std::string, string)
+
 
 // etc..
 

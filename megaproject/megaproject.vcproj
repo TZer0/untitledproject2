@@ -265,6 +265,10 @@
 						RelativePath="..\src\game\level\level.cpp"
 						>
 					</File>
+					<File
+						RelativePath="..\src\game\level\levelinfo.cpp"
+						>
+					</File>
 				</Filter>
 				<Filter
 					Name="bullet"
