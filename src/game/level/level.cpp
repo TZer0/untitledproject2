@@ -35,8 +35,8 @@ void cmLevel::draw() {
     for (k = 0; k<5; k++){
         for (i = 0; i<5; i++){
             if (tiles[k][i] == 1){
-            rectfill(mGame->mDraw->buffer, k*32, i*32,k*32+ 32,
-                i*32+32, 0xff8800);
+            rectfill(mGame->mDraw->buffer, WTOS_X(k*32), WTOS_Y(i*32),WTOS_X(k*32)+ 32,
+                WTOS_Y(i*32+32), 0xff8800);
             }
         }
     }

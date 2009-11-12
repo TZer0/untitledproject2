@@ -13,7 +13,7 @@ class cBullet *cmBullet::add(char *script, cVector pos, cVector vel) {
 void cmBullet::draw(void) {
     for (EatBullets i = bullets.begin(); i!=bullets.end(); i++) {
         cBullet *tmp = (*i);
-        tmp->animation->draw(mGame->mDraw->buffer, int(tmp->pos.x), int(tmp->pos.y)); 
+        tmp->animation->draw(mGame->mDraw->buffer, int(WTOS_X(tmp->pos.x)), int(WTOS_Y(tmp->pos.y))); 
     }
 
 }
