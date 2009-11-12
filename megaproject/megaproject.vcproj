@@ -278,6 +278,14 @@
 						>
 					</File>
 				</Filter>
+				<Filter
+					Name="sound"
+					>
+					<File
+						RelativePath="..\src\game\sound\sound.cpp"
+						>
+					</File>
+				</Filter>
 			</Filter>
 		</Filter>
 		<Filter
@@ -401,6 +409,14 @@
 					</File>
 					<File
 						RelativePath="..\src\game\animation\luaanimation.h"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="sound"
+					>
+					<File
+						RelativePath="..\src\game\sound\sound.h"
 						>
 					</File>
 				</Filter>
