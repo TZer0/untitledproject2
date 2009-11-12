@@ -12,7 +12,7 @@
 	"../draw.h"
 	"../game.h"
 
-1257616428 source:/home/avenger/Other/Projects/untitledproject2/src/game/game.cpp
+1258046921 source:/home/avenger/Other/Projects/untitledproject2/src/game/game.cpp
 	"port.h"
 	"game.h"
 	"draw.h"
@@ -22,14 +22,15 @@
 	"level/level.h"
 	"weapon/weapon.h"
 	"enemy/enemy.h"
+	"bullet/bullet.h"
 
-1257616428 /home/avenger/Other/Projects/untitledproject2/src/game/game.h
+1258046921 /home/avenger/Other/Projects/untitledproject2/src/game/game.h
 	"misc/log.h"
 
 1257616428 /home/avenger/Other/Projects/untitledproject2/src/game/misc/timer.h
 	<time.h>
 
-1257616428 source:/home/avenger/Other/Projects/untitledproject2/src/game/init.cpp
+1258046921 source:/home/avenger/Other/Projects/untitledproject2/src/game/init.cpp
 	"misc/timer.h"
 	"misc/input.h"
 	"misc/file.h"
@@ -38,6 +39,7 @@
 	"level/level.h"
 	"weapon/weapon.h"
 	"enemy/enemy.h"
+	"bullet/bullet.h"
 	"game.h"
 	"draw.h"
 
@@ -60,9 +62,8 @@
 	"../port.h"
 	<math.h>
 
-1257616428 source:/home/avenger/Other/Projects/untitledproject2/src/game/weapon/weapon.cpp
+1258046921 source:/home/avenger/Other/Projects/untitledproject2/src/game/weapon/weapon.cpp
 	"weapon.h"
-	"../game.h"
 
 1256938004 source:/home/avenger/Other/Projects/untitledproject2/src/main.cpp
 	"game/port.h"
@@ -97,13 +98,13 @@
 	<list>
 	<string>
 
-1257616428 source:/home/avenger/Other/Projects/untitledproject2/src/game/player/player.cpp
+1258046921 source:/home/avenger/Other/Projects/untitledproject2/src/game/player/player.cpp
 	"../port.h"
 	"player.h"
 	"../draw.h"
 	"../game.h"
 
-1257197837 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/loadanimation.cpp
+1258046921 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/loadanimation.cpp
 	"../../port.h"
 	"../../game.h"
 	"loadanimation.h"
@@ -113,14 +114,14 @@
 	"../log.h"
 	"luaanimation.h"
 
-1257616428 /home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/loadanimation.h
+1258046921 /home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/loadanimation.h
 	<vector>
 	<list>
 	"../../lua.h"
 	"../../port.h"
 	"loadtemplate.h"
 
-1257616428 /home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/loadtemplate.h
+1258046921 /home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/loadtemplate.h
 	<string>
 	<map>
 	<list>
@@ -134,7 +135,7 @@
 1257616428 /home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/luaanimation.h
 	"../../lua.h"
 
-1256934249 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/animproc.cpp
+1258046921 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/animproc.cpp
 	<math.h>
 	"anim.h"
 
@@ -159,11 +160,11 @@
 	"../loadimage.h"
 	"../../game.h"
 
-1257616428 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/anim.cpp
+1258046921 source:/home/avenger/Other/Projects/untitledproject2/src/game/misc/animation/anim.cpp
 	"anim.h"
 	"../../game.h"
 
-1257616428 /home/avenger/Other/Projects/untitledproject2/src/game/player/player.h
+1258046921 /home/avenger/Other/Projects/untitledproject2/src/game/player/player.h
 	"../misc/moduletemplate.h"
 	"../misc/vector.h"
 	"../misc/animation/anim.h"
@@ -181,7 +182,7 @@
 	<lauxlib.h>
 	<lualib.h>
 
-1257615586 source:/home/avenger/Other/Projects/untitledproject2/src/game/collision/collision.cpp
+1257616477 source:/home/avenger/Other/Projects/untitledproject2/src/game/collision/collision.cpp
 	"collision.h"
 
 1257355553 source:/home/avenger/Other/Projects/untitledproject2/src/game/collision/colapply.cpp
@@ -211,22 +212,24 @@
 	"../misc/animation/anim.h"
 	"../misc/log.h"
 
-1257616428 /home/avenger/Other/Projects/untitledproject2/src/game/level/level.h
+1258046921 /home/avenger/Other/Projects/untitledproject2/src/game/level/level.h
 	"../misc/moduletemplate.h"
 	"levelinfo.h"
 	<map>
 	<string>
 
-1257616428 /home/avenger/Other/Projects/untitledproject2/src/game/level/levelinfo.h
+1258046921 /home/avenger/Other/Projects/untitledproject2/src/game/level/levelinfo.h
 	<string>
 	<iostream>
+	<map>
 	"../misc/vector.h"
+	"../misc/file.h"
 	"levelinfoattributes.h"
 	"levelinfoattributes.h"
 
-1257616428 /home/avenger/Other/Projects/untitledproject2/src/game/level/levelinfoattributes.h
+1258046921 /home/avenger/Other/Projects/untitledproject2/src/game/level/levelinfoattributes.h
 
-1257457207 source:/home/avenger/Other/Projects/untitledproject2/src/game/level/level.cpp
+1258046921 source:/home/avenger/Other/Projects/untitledproject2/src/game/level/level.cpp
 	"../port.h"
 	"level.h"
 	"../draw.h"
@@ -236,10 +239,24 @@
 	"collision.h"
 	<limits>
 
-1257616428 /home/avenger/Other/Projects/untitledproject2/src/game/weapon/weapon.h
-	<string>
+1258046921 /home/avenger/Other/Projects/untitledproject2/src/game/weapon/weapon.h
 	<list>
+	<string>
+	"../bullet/bullet.h"
+	"../game.h"
+	"../misc/file.h"
 	"../misc/moduletemplate.h"
 	"../misc/vector.h"
 	"../lua.h"
+
+1258046921 /home/avenger/Other/Projects/untitledproject2/src/game/bullet/bullet.h
+	<list>
+	<string>
+	"../draw.h"
+	"../game.h"
+	"../misc/file.h"
+	"../misc/moduletemplate.h"
+	"../misc/vector.h"
+	"../lua.h"
+	"../misc/animation/anim.h"
 
