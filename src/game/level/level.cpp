@@ -2,6 +2,7 @@
 #include "level.h"
 #include "../draw.h"
 #include "../game.h"
+
 void cmLevel::init() {
     tiles[0][0] = 1;
     tiles[0][1] = 1;
