@@ -9,6 +9,7 @@
 #include "bullet/bullet.h"
 #include "game.h"
 #include "draw.h"
+#include "sound/sound.h"
 
 
 int cmGame::init(void)
@@ -39,6 +40,7 @@ int cmGame::init(void)
     mWeapon = new cmWeapon;
     mEnemy = new cmEnemy;
     mBullet = new cmBullet;
+    mSound = new cmSound;
     
     // Loading stuff
     load();

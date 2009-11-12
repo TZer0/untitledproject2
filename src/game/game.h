@@ -29,6 +29,7 @@ class cmGame {
         class cmInput *mIn;
         class cmFile *mFile;
         class cmAnim *mAnim;
+        class cmSound *mSound;
 };
 
 extern class cmGame *mGame;
