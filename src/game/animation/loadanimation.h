@@ -13,7 +13,7 @@
 
 // Other includes
 #include "../port.h"
-#include "loadtemplate.h"
+#include "../misc/loadtemplate.h"
 
 /// Data for a single frame of animation
 class cAnimFrameData {
