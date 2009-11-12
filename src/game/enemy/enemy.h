@@ -18,7 +18,6 @@ class cEnemyData {
 
     public:
         char *script;
-
 };
 
 class cEnemy {
@@ -47,7 +46,6 @@ class cEnemy {
             weapon = mGame->mWeapon->add("print(1)\n", -1, false);
             LOGS(LDEBUG, "Weapon pointer: %p.", weapon);
             LOGS(LDEBUG, "Added %s...", "enemy weapon");
-
         }
 };
 
@@ -55,12 +53,14 @@ class cmEnemy : public cDataSystem {
     private:
         std::list<cEnemy*> enemies;
         std::map<std::string, cEnemyData*> datas;
+    
+        typedef std::list<std::string>::iterator Fileeater;
 
     public:
         cmEnemy() {}
         void init(void);
         void level_init(void) {}
-        int load(void) { return 0; }
+        int load(void);
         void process(double) {}
         void draw(void) {}
         void clear_data(void);
