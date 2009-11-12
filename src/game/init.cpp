@@ -1,7 +1,7 @@
 #include "misc/timer.h"
 #include "misc/input.h"
 #include "misc/file.h"
-#include "misc/animation/anim.h"
+#include "animation/anim.h"
 #include "player/player.h"
 #include "level/level.h"
 #include "weapon/weapon.h"
