@@ -1,0 +1,26 @@
+#ifndef LEVEL_H
+#define LEVEL_H
+
+#include "../misc/moduletemplate.h"
+#include "levelinfo.h"
+#include <map>
+#include <string>
+#include <vector>
+
+class cmLevel : public cDataSystem{
+    private:
+        std::map <std::string, cLevelInfo> levelInfo;
+        cLevelInfo *currentLevel;
+        std::vector<std::vector <int> > tiles;
+    public:
+        void init();
+        void level_init();      
+        int load();
+        void process(double delta);
+        void draw();
+        void clear_data();
+        virtual ~cmLevel() {}
+};
+
+#endif
+
