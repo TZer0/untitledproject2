@@ -68,21 +68,6 @@ class cmDraw {
             { return(cVector(v.x-cx, v.y-cy)); }
         cVector stow(cVector v)
             { return(cVector(v.x+cx, v.y+cy)); }
-		
-		cVector itow(cVector v)
-			{ return cVector(v.x+cx, v.y+cy)*zoom; }
-		double itow_x(double x)
-			{ return (x+cx)*zoom; }
-		double itow_y(double y)
-			{ return (y+cy)*zoom; }
-		
-        
-        void cam_cap() {
-            if(cx<0.0) cx = 0.0;
-            if(cy<0.0) cy = 0.0;
-            if(cx > mGame.xmax-al_get_display_width()) cx = mGame.xmax-al_get_display_width();
-            if(cy > mGame.ymax-al_get_display_height()) cy = mGame.ymax-al_get_display_height();
-        }
 };
 
 extern class cmDraw mDraw;

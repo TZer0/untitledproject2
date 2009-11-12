@@ -1,6 +1,6 @@
 #include "log.h"
-#include "../port.h"
 #include <time.h>
+#include <string.h>
 
 #define get_ptime() (double(clock())/double(CLOCKS_PER_SEC))
 
@@ -16,7 +16,7 @@ const char *llevel[LOG_MAX] = {"ERROR:  ", "WARNING:", "NOTIFY: ", "DEBUG:  "};
 int cmLog::init(int ll)
 {
 	int i;
-
+	
 	for(i=0;i<LOG_ID_COUNT;i++) {
 		is_active[i] = 0;
 		indent[i] = 0;
@@ -37,7 +37,7 @@ void cmLog::log(int logtype, int level, const char *format, va_list argptr)
 	struct tm *t;
 	time_t taim;
 	std::string fn;
-
+	
 	// Check if the logging level is acceptable
 	if(!(level <= loglevel)) {
 		return;
@@ -61,29 +61,23 @@ void cmLog::log(int logtype, int level, const char *format, va_list argptr)
 		else {
 			memset(buf,0,sizeof(buf));
 			is_active[logtype]=1;
-			get_executable_name(buf,sizeof(buf)); // TODO: Figure out why this doesnt work!
-			replace_filename(buf,buf, "", sizeof(buf));
-			fn = std::string(buf) + std::string(LOG_DIR) + std::string(logfile[logtype]);
+			
+			/// @todo Temporary solution: Fix it
+			fn = std::string(LOG_DIR) + std::string(logfile[logtype]);
+			printf("%s\n", fn.c_str());
 			p[logtype] = fopen(fn.c_str(), "wb");
-
-			if (p[logtype] == NULL) {
-				printf("Unable to open log file.\n%s\n", fn.c_str());
-				printf("Log will not be saved to file, make sure the directory exists.\n");	// TODO: Make a snippet to check if the directory exists and if not either create it or create the logfile in root dir.
-				is_active[logtype] = 2;
-				return;
-			}
+			
 			taim = time(NULL);
 			t = localtime(&taim);
 			fprintf(p[logtype],"Logging started at %s", asctime(t));
-			
 		}
 	}
-
+	
 	// Prepares indentation level
 	std::string ind;
 	ind.clear();
 	ind.insert(ind.begin(), indent[logtype], '\t');
-
+	
 	// Print actual log
 	if(is_active[logtype]==2) {		// Prints to console
 		printf("(%08.2f)%s %s%s", get_ptime(), llevel[level], ind.c_str(), pref[logtype].c_str());

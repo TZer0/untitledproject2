@@ -11,6 +11,7 @@
 
 // Other includes
 #include "input.h"
+#include "log.h"
 
 class cmInput mIn;
 
