@@ -1,0 +1,45 @@
+SOURCEZ = main.cpp\
+		  game/init.cpp\
+		  game/game.cpp\
+		  game/draw.cpp\
+		  game/misc/timer.cpp\
+		  game/misc/input.cpp\
+		  game/misc/file.cpp\
+		  game/misc/log.cpp\
+		  game/misc/animation/anim.cpp\
+		  game/misc/animation/animproc.cpp\
+		  game/misc/loadimage.cpp\
+		  game/misc/animation/luaanimation.cpp\
+		  game/misc/animation/loadanimation.cpp\
+		  game/load.cpp\
+		  game/player/player.cpp\
+		  game/enemy/enemy.cpp\
+		  game/misc/vector.cpp\
+		  game/level/level.cpp\
+		  game/weapon/weapon.cpp\
+		  game/bullet/bullet.cpp
+
+OBJECTZ = $(SOURCEZ:.cpp=.o)
+CFLAGZ = $(shell allegro-config --cflags) -c -Wall
+LDFLAGZ = $(shell allegro-config --libs)
+LIB = -Ilua-5.1.4/include/ -Llua-5.1.4/lib/ -llua
+
+all: $(SOURCEZ) up2
+
+up2: $(OBJECTZ)
+	$(CXX) $(LDFLAGZ) $(LIB) $(OBJECTZ) -o $@
+	mv up2 ../bin
+
+.cpp.o:
+	$(CXX) $(CFLAGZ) $< -o $@
+
+
+clean:
+	rm -f $(OBJECTZ)
+
+install:
+	install -d $(INSTALL_PREFIX)/bin/
+	$(LT) --mode=install install ../bin/up2 $(INSTALL_PREIX)/bin/up2
+
+uninstall:
+	rm -f $(INSTALL_PREFIX)/bin/up2
