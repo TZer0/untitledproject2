@@ -6,6 +6,7 @@
 #include <map>
 #include "../misc/vector.h"
 #include "../misc/file.h"
+#include "../game.h"
 
 
 
