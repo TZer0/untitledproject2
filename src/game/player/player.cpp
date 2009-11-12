@@ -80,6 +80,7 @@ void cmPlayer::process(double delta) {
     } else {
         vel.x = 0;
     }
+    
 
     // Jump handling.
     if (flagUp) {
@@ -115,17 +116,18 @@ void cmPlayer::process(double delta) {
         }
         weapon->fire(pos, bulVel);
     }
+    mGame->mDraw->set_cam(pos.x-SCREEN_W/2, pos.y-SCREEN_H/2);
 }
 
 /*
  * Draw player sprite.
  */
 void cmPlayer::draw() {
-    rectfill(mGame->mDraw->buffer, int(pos.x), int(pos.y), int(pos.x) + width,
-            int(pos.y) + height, 0xff8800);
+    rectfill(mGame->mDraw->buffer, WTOS_X(int(pos.x)), WTOS_Y(int(pos.y)), WTOS_X(int(pos.x)) + width,
+            WTOS_Y(int(pos.y)) + height, 0xff8800);
     
     // Testing animation
-    animation->draw(mGame->mDraw->buffer, int(pos.x), int(pos.y));
+    animation->draw(mGame->mDraw->buffer, WTOS_X(int(pos.x)), WTOS_Y(int(pos.y)));
 }
 
 /*
