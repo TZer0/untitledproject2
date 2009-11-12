@@ -23,13 +23,14 @@ void cmPlayer::init() {
     flagRight = false;
     flagFire = false;
     left = false;
+    shot = false;
     
     animation = mGame->mAnim->add("PLAYER");
     animation->setSequence("IDLE");
 
     // Give the player a weapon.
     LOGS(LDEBUG, "Adding %s...", "player weapon");
-    weapon = mGame->mWeapon->add("print(1)\n", -1, false);
+    weapon = mGame->mWeapon->add("BFG9001", -1, false);
     LOGS(LDEBUG, "Weapon pointer: %p.", weapon);
     LOGS(LDEBUG, "Added %s...", "player weapon");
 }
@@ -108,12 +109,17 @@ void cmPlayer::process(double delta) {
     if (flagFire) {
         cVector bulVel;
         flagFire = false;
-        if (left) {
-            bulVel.x = -3 * horSpeed;
+        if (!shot) {
+            if (left) {
+                bulVel.x = -3 * horSpeed;
+            } else {
+                bulVel.x = 3 * horSpeed;
+            }
+            weapon->fire(pos, bulVel);
+            shot = true;
         } else {
-            bulVel.x = 3 * horSpeed;
+            shot = false;
         }
-        weapon->fire(pos, bulVel);
     }
 }
 
