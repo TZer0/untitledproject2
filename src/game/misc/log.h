@@ -61,4 +61,3 @@ LOGDEF(LOGU)
 extern class cmLog mLog;
 
 #endif
-

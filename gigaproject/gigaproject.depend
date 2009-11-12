@@ -2,8 +2,10 @@
 1256249285 source:/home/avenger/Other/Projects/untitledproject2/src/game/draw.cpp
 	"draw.h"
 
-1257616428 /home/avenger/Other/Projects/untitledproject2/src/game/draw.h
-	"port.h"
+1258038074 /home/avenger/Other/Projects/untitledproject2/src/game/draw.h
+	<allegro5/allegro5.h>
+	<allegro5/allegro_font.h>
+	"game.h"
 	"misc/vector.h"
 
 1257464681 source:/home/avenger/Other/Projects/untitledproject2/src/game/enemy/enemy.cpp
@@ -73,10 +75,10 @@
 	"../port.h"
 	"input.h"
 
-1257616428 /home/avenger/Other/Projects/untitledproject2/src/game/misc/input.h
-	"../port.h"
+1257971200 /home/avenger/Other/Projects/untitledproject2/src/game/misc/input.h
+	<allegro5/allegro5.h>
 
-1257616428 /home/avenger/Other/Projects/untitledproject2/src/game/misc/log.h
+1251972098 /home/avenger/Other/Projects/untitledproject2/src/game/misc/log.h
 	<string>
 	<stdio.h>
 	<stdarg.h>
@@ -259,4 +261,7 @@
 	"../misc/vector.h"
 	"../lua.h"
 	"../misc/animation/anim.h"
+
+1258046921 source:/home/avenger/Other/Projects/untitledproject2/src/game/bullet/bullet.cpp
+	"bullet.h"
 

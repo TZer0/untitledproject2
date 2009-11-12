@@ -8,7 +8,6 @@
  */
 // Module includes
 #include "draw.h"
-#include "editor/editor.h"
 
 #include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_opengl.h>
@@ -49,12 +48,6 @@ int cmDraw::gl_init()
 
 void cmDraw::persp_cam()
 {
-	// We will always revert to orthogonal cam, when editor is active
-	if(mEditor.active) {
-		ortho_cam();
-		return;
-	}
-	
     glShadeModel(GL_SMOOTH);
     glClearColor(0.0,0,0,0);
     glClearDepth(1.0);
@@ -79,19 +72,10 @@ void cmDraw::ortho_cam(bool isIntf)
 	glDisable(GL_DEPTH_TEST);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	if(isIntf)
-		glOrtho(0,1024,768,0, 0.01, 1e18);
-	else
-		glOrtho(0,1024*zoom, 768*zoom, 0, 0.01, 1e18);
+    glOrtho(0,1024,768,0, 0.01, 1e18);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	//glViewport(0,0,1024,768);
 	glTranslatef(0,0,1);
-}
-
-void cmDraw::intf_cam()
-{
-	ortho_cam(true);
 }
 
 /**
