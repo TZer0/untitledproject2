@@ -20,9 +20,9 @@ SOURCEZ = main.cpp\
 		  game/bullet/bullet.cpp
 
 OBJECTZ = $(SOURCEZ:.cpp=.o)
-CFLAGZ = $(shell allegro-config --cflags) -c -Wall
-LDFLAGZ = $(shell allegro-config --libs)
-LIB = -Ilua-5.1.4/include/ -Llua-5.1.4/lib/ -llua
+	CFLAGZ = $(shell allegro-config --cflags) -c -Wall
+	LDFLAGZ = $(shell allegro-config --libs)
+	LIB = -Ilua-5.1.4/include/ -Llua-5.1.4/lib/ -llua
 
 all: $(SOURCEZ) up2
 

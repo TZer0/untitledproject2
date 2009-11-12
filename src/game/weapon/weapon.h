@@ -35,8 +35,6 @@ class cmWeapon : public cDataSystem {
     private:
         std::list<cWeapon*> weapons;
 
-        typedef std::list<cWeapon*>::iterator Loadout;
-
     public:
         cmWeapon() {}
         void init(void) {}
