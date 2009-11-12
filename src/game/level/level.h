@@ -5,12 +5,13 @@
 #include "levelinfo.h"
 #include <map>
 #include <string>
+#include <vector>
 
 class cmLevel : public cDataSystem{
     private:
         std::map <std::string, cLevelInfo> levelInfo;
         cLevelInfo *currentLevel;
-        int tiles[5][5];
+        std::vector<std::vector <int> > tiles;
     public:
         void init();
         void level_init();      
