@@ -6,11 +6,11 @@ SOURCEZ = main.cpp\
 		  game/misc/input.cpp\
 		  game/misc/file.cpp\
 		  game/misc/log.cpp\
-		  game/misc/animation/anim.cpp\
-		  game/misc/animation/animproc.cpp\
+		  game/animation/anim.cpp\
+		  game/animation/animproc.cpp\
 		  game/misc/loadimage.cpp\
-		  game/misc/animation/luaanimation.cpp\
-		  game/misc/animation/loadanimation.cpp\
+		  game/animation/luaanimation.cpp\
+		  game/animation/loadanimation.cpp\
 		  game/load.cpp\
 		  game/player/player.cpp\
 		  game/enemy/enemy.cpp\
