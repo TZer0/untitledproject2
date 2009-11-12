@@ -9,10 +9,10 @@
 // Global includes
 #include <vector>
 #include <list>
-#include "../../lua.h"
+#include "../lua.h"
 
 // Other includes
-#include "../../port.h"
+#include "../port.h"
 #include "loadtemplate.h"
 
 /// Data for a single frame of animation

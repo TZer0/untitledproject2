@@ -1,8 +1,8 @@
 #include "luaanimation.h"
 #include "loadanimation.h"
 #include "anim.h"
-#include "../loadimage.h"
-#include "../../game.h"
+#include "../misc/loadimage.h"
+#include "../game.h"
 
 // Hidden functions
 /**

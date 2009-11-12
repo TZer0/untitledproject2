@@ -19,8 +19,8 @@
 #include "loadanimation.h"
 
 // Other headers
-#include "../../port.h"
-#include "../moduletemplate.h"
+#include "../port.h"
+#include "../misc/moduletemplate.h"
 
 
 /// Animation data block

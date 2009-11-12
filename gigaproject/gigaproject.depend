@@ -230,7 +230,7 @@
 
 1258046921 /home/avenger/Other/Projects/untitledproject2/src/game/level/levelinfoattributes.h
 
-1258046921 source:/home/avenger/Other/Projects/untitledproject2/src/game/level/level.cpp
+1258054527 source:/home/avenger/Other/Projects/untitledproject2/src/game/level/level.cpp
 	"../port.h"
 	"level.h"
 	"../draw.h"
@@ -263,10 +263,10 @@
 	"../port.h"
 	"../misc/moduletemplate.h"
 
-1258053208 /home/avenger/Other/Projects/untitledproject2/src/game/animation/loadanimation.h
+1258054842 /home/avenger/Other/Projects/untitledproject2/src/game/animation/loadanimation.h
 	<vector>
 	<list>
-	"../../lua.h"
+	"../lua.h"
 	"../port.h"
 	"loadtemplate.h"
 

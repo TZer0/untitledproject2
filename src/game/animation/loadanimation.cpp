@@ -4,19 +4,19 @@
  * Description:	Handles loading of animations
  */
 // Global includes
-#include "../../port.h"
-#include "../../game.h"
+#include "../port.h"
+#include "../game.h"
 
 // Loading includes
 #include "loadanimation.h"
-#include "../loadimage.h"
+#include "../misc/loadimage.h"
 
 // Module includes
 #include "anim.h"
 
 // Other includes
-#include "../file.h"
-#include "../log.h"
+#include "../misc/file.h"
+#include "../misc/log.h"
 
 // Lua includes
 #include "luaanimation.h"
