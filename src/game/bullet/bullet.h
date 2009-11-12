@@ -10,7 +10,7 @@
 #include "../misc/moduletemplate.h"
 #include "../misc/vector.h"
 #include "../lua.h"
-#include "../misc/animation/anim.h"
+#include "../animation/anim.h"
 
 class cBullet {
 
