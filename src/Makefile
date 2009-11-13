@@ -1,23 +1,28 @@
 SOURCEZ = main.cpp\
-		  game/init.cpp\
-		  game/game.cpp\
-		  game/draw.cpp\
-		  game/misc/timer.cpp\
-		  game/misc/input.cpp\
-		  game/misc/file.cpp\
-		  game/misc/log.cpp\
-		  game/animation/anim.cpp\
-		  game/animation/animproc.cpp\
-		  game/misc/loadimage.cpp\
-		  game/animation/luaanimation.cpp\
-		  game/animation/loadanimation.cpp\
-		  game/load.cpp\
-		  game/player/player.cpp\
-		  game/enemy/enemy.cpp\
-		  game/misc/vector.cpp\
-		  game/level/level.cpp\
-		  game/weapon/weapon.cpp\
-		  game/bullet/bullet.cpp
+		game/init.cpp\
+		game/game.cpp\
+		game/draw.cpp\
+        game/load.cpp\
+		game/animation/anim.cpp\
+		game/animation/animproc.cpp\
+		game/animation/luaanimation.cpp\
+		game/animation/loadanimation.cpp\
+		game/bullet/bullet.cpp\
+		game/collision/colapply.cpp\
+		game/collision/collision.cpp\
+		game/collision/colmap.cpp\
+		game/collision/sat.cpp\
+		game/enemy/enemy.cpp\
+		game/level/level.cpp\
+		game/misc/timer.cpp\
+		game/misc/input.cpp\
+		game/misc/file.cpp\
+		game/misc/log.cpp\
+		game/misc/loadimage.cpp\
+		game/misc/vector.cpp\
+		game/player/player.cpp\
+		game/weapon/weapon.cpp\
+
 
 OBJECTZ = $(SOURCEZ:.cpp=.o)
 	CFLAGZ = $(shell allegro-config --cflags) -c -Wall
