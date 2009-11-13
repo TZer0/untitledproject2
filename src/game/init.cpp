@@ -41,6 +41,7 @@ int cmGame::init(void)
     mEnemy = new cmEnemy;
     mBullet = new cmBullet;
     mSound = new cmSound;
+    mCollision = new cmCollision;
     
     // Loading stuff
     load();
@@ -62,6 +63,8 @@ int cmGame::init(void)
     mEnemy->init();
     LOGS(LDEBUG, "Initializing mBullet...");
     mBullet->init();
+    LOGS(LDEBUG, "Initializing mCollision...");
+    mCollision->init();
   
     return 0;
 }

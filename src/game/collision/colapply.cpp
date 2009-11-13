@@ -1,5 +1,7 @@
 #include "collision.h"
 #include "colapply.h"
+#include "../game.h"
+#include "../misc/log.h"
 
 /**
  * Applies a function on all instances in a collision map in range of a given collision object.
@@ -54,4 +56,9 @@ void cApplyCollision::iterate_collision(std::vector<sColSectorInstance*>*cols)
             (*i)->hasTouched = true;
         }
     }
+}
+
+void cApplyCollision::register_collision(cCollision *col, sColSectorInstance *inst)
+{
+    setbox(col->getPos() + col->tl, col->getPos()+col->br, inst);
 }

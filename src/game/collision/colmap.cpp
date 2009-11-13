@@ -6,7 +6,9 @@
  * (c)2009, by Raymond Loeberg
  */
 // Other includes
+#include "../game.h"
 #include "../misc/vector.h"
+#include "../misc/log.h"
 #include "colmap.h"
 #include "colapply.h"
 
@@ -34,22 +36,22 @@ cColMap::cColMap(int depth, double w, double h)
 		l = &layers[i];
 		
 		// Allocate memory for rows
-		l->md.reserve(res);     // Bitmap
+		l->md.resize(res);     // Bitmap
 		
 		if(i==depth-1)
-            l->data.reserve(res);   // Sector data: Only for bottom layer
+            l->data.resize(res);   // Sector data: Only for bottom layer
 		
 		// For each row in layer
 		for(int j=0;j<res;j++) {
 		    // Allocate bitfield
 		    std::vector<bool> v;
-		    v.reserve(res);
+		    v.resize(res);
 			l->md[j] = v;
 			
 			// Data field, only for bottom layer
 			if(i==depth-1) {
                 std::vector<std::vector<sColSectorInstance*>*> dt;
-                dt.reserve(res);
+                dt.resize(res);
                 
                 l->data[j] = dt; // Add data vector
                 
@@ -120,6 +122,7 @@ void cColMap::checkbox(cVector tl, cVector br, cApplyCollision *apc)
     cLayer *lay;
     int xl,xr;
     int yt,yb;
+    
     // For each layer, starting at the top
     for(int i=0;i<lc;i++) {
         lay = &layers[i];
@@ -151,7 +154,7 @@ void cColMap::checkbox(cVector tl, cVector br, cApplyCollision *apc)
         }
 
         // Clear everything at the last layer
-        if(isCol) { // This should always be true, the gotos skips to below if false
+        if(i==lc-1) { // This should always be true, the gotos skips to below if false
             layers[lc-1].untouch_data(xl,yt,xr,yb);
         }
         
@@ -201,7 +204,6 @@ void cColMap::setbox(cVector tl, cVector br, sColSectorInstance *data)
 			}
 		}
 	}
-	
 }
 
 /**
@@ -222,5 +224,25 @@ void cColMap::clear()
                     cl->data[yi][xi]->clear();
             }
         }
+    }
+}
+
+void cColMap::print()
+{
+    printf("\n");
+    for(int l=0;l<lc;l++) {
+		cLayer *cl = &layers[l];
+		
+		for(int ty=0; ty < cl->xys; ty++) {
+			for(int tx=0; tx < cl->xys; tx++) {
+			    if(cl->md[ty][tx]) {
+			        printf("#");
+			    }else
+                    printf(" ");
+			}
+			
+			printf(" | \n");
+		}
+		printf("\n\n");
     }
 }

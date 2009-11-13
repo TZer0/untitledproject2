@@ -73,7 +73,8 @@ class cVector {
 		cVector rot(const cVector  &b);
 		cVector unrot(const cVector &b);
 		cVector swap(void)                  { return(cVector(y,x)); }
-		double angle(cVector &b)             { return atan2(-(b.y-y),(b.x-y))-M_PI/2.0; }
+		//double angle(cVector &b)             { return atan2(-(b.y-y),(b.x-y))-M_PI/2.0; }
+		double angle(void)                  { return atan2(-y,x); }
 		
 		double x,y;
 };
