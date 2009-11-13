@@ -12,6 +12,15 @@
 #include "../lua.h"
 #include "../animation/anim.h"
 
+class cBullData {
+    public:
+};
+
+class cmBullData : public tLoadingSystem<cBullData *> {
+    public:
+        cBullData *bullData;
+};
+
 class cBullet {
 
     private:
@@ -41,19 +50,22 @@ class cBullet {
 class cmBullet : public cDataSystem {
     private:
         std::list<cBullet*> bullets;
-        
         typedef std::list<cBullet*>::iterator EatBullets;
 
     public:
-        cmBullet() {}
+        cmBullet() {
+            bullData = new cmBullData;
+        }
         void init(void){}
         void level_init(void) {}
-        int load(void) {return 0;}
+        int load(void); 
         void process(double); 
         void draw(void);
-        void clear_data(void) {}
+        void clear_data(void);
         class cBullet *add(char *script, cVector pos, cVector vel);  
         virtual ~cmBullet() {}
+
+        cmBullData *bullData;
 };
 
 #endif

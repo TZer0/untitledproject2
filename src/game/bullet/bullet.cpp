@@ -19,11 +19,28 @@ void cmBullet::draw(void) {
 }
 
 void cmBullet::process(double delta) {
-    // pos += vel * delta;
     for (EatBullets i = bullets.begin(); i!=bullets.end(); i++) {
         cBullet *tmp = (*i);
         tmp->pos += tmp->vel * delta;
     }
-
 }
 
+void cmBullet::clear_data(void) {
+    for (EatBullets i = bullets.begin(); i != bullets.end(); i++)
+        delete (*i);
+}
+
+int cmBullet::load(void) {
+    // Fetches all the files in the directory named "bullet" with the suffix
+    // .lua(*.lua)
+    mGame->mBullet->bullData->filedb = mGame->mFile->dirRecursiveGet("bullet", "lua");
+     
+    std::list<std::string>::iterator i;
+    
+    for (i = mGame->mBullet->bullData->filedb.begin(); i!=mGame->mBullet->bullData->filedb.end(); i++) {
+       // LOGS(DEBUG, "Loading %s", (*i).c_str());
+
+       // load_bullet_file((*i).c_str());
+    }
+    return 0;
+}
