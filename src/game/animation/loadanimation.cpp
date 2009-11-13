@@ -57,16 +57,17 @@ void load_anim_file(const char *file)
 int anim_load(void)
 {
 	std::list<std::string>::iterator i;
-	
+    cmAnimData *cAD = mGame->mAnim->animData;
+
 	// Load animations as LUA scripts
-	for (i = mGame->mAnim->animData->filedb.begin();
-	        i != mGame->mAnim->animData->filedb.end(); i++)
+	for (i = cAD->filedb.begin();
+	        i != cAD->filedb.end(); i++)
 	{
 	    LOGS(LDEBUG, "Loading %s", (*i).c_str());
 	    load_anim_file((*i).c_str());
 	    
-	    mGame->mAnim->animData->cur = NULL;
-	    mGame->mAnim->animData->cseq = NULL;
+	    cAD->cur = NULL;
+	    cAD->cseq = NULL;
 	}
 	
 	return 0;

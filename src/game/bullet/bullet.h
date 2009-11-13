@@ -18,7 +18,7 @@ class cBullData {
 
 class cmBullData : public tLoadingSystem<cBullData *> {
     public:
-        cBullData *bullData;
+        cBullData *cBData;
 };
 
 class cBullet {
