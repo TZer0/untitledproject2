@@ -21,7 +21,7 @@ sColReturn cCollision::collide(cCollision *target, cVector vel)
     ret.isCol = true; // We assume initially that there is a collision
     
     // Relative distance between the two instances
-    cVector off = target->getPos() - getPos();
+    cVector dif = getPos() - target->getPos();
     
     // Get target's normals
     cVector *targnorm = target->getNormal();
@@ -51,9 +51,9 @@ sColReturn cCollision::collide(cCollision *target, cVector vel)
             n = targnorm[ax-type];
         
         // Project me onto the normal
-        my_min = my_max = (points[0]+off).dot(n);
+        my_min = my_max = (points[0]+dif).dot(n);
         for(int i=1;i<type;i++) {
-            double dot = (points[i]+off).dot(n);
+            double dot = (points[i]+dif).dot(n);
             
             if(dot < my_min) my_min = dot;
             if(dot > my_max) my_max = dot;
@@ -88,8 +88,8 @@ sColReturn cCollision::collide(cCollision *target, cVector vel)
     }
     
     if(ret.isCol) {
-        ret.orp.x = minn.x*(-mindist);
-        ret.orp.y = minn.y*(-mindist);
+        ret.orp.x = minn.x*mindist;
+        ret.orp.y = minn.y*mindist;
     }
     
     return ret;

@@ -20,7 +20,10 @@ class cApplyCollision;
  */
 struct sColSectorInstance {
     public:
-        sColSectorInstance() {ptr=NULL, hasTouched=false;}
+        sColSectorInstance() : ptr(NULL), hasTouched(false)
+            { }
+        sColSectorInstance(void *ptr) : ptr(ptr), hasTouched(false)
+            { }
         void *ptr;          ///< Pointer to the data object
         bool hasTouched;    ///< Internal flag that determines if this sector instance has been collided against
 };
@@ -118,6 +121,7 @@ class cColMap {
 		//@{
             // Helper function to clean out a collision map
             void clear();
+            void print();
         //@}
 };
 

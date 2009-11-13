@@ -94,6 +94,7 @@ cCollision::cCollision(cVector *pos, cVector off, double w, double h, CollisionT
     generate_normals();
 }
 
+#include <stdio.h>
 /**
  * Generates the collision normals for the object
  */
@@ -106,8 +107,13 @@ void cCollision::generate_normals()
     // Last normal points back to the first
     normals[type-1] = points[0]-points[type-1];
     
-    for(int i=0;i<type;i++)
-        normals[i] = (normals[i].normal()).norm();
+    for(int i=0;i<type;i++) {
+        normals[i] = -(normals[i].normal()).norm();
+    }
+    
+    
+    if(type == CollisionTriangle)
+        normals[0] = -normals[0];
 }
 
 

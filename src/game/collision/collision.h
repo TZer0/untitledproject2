@@ -90,9 +90,9 @@ class cmCollision : public cDataSystem {
         void init(void) {}
         void level_init(void) {}
         int load(void) { return 0; }
-        void process(double delta); ///< Handles per-frame destruction of collision instances
+        void process(double delta) {}
         void draw(void) {}
-        void clear_data(void);
+        void clear_data(void) {}
         
 };
 

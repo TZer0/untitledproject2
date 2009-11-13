@@ -19,7 +19,7 @@ class cCollision;
  * This class derives from the collision map, and utilizes it heavily
  * for determining which instances to collide with
  */
-class cApplyCollision : cColMap {
+class cApplyCollision : public cColMap {
     private:
         /// All cApplyCollision instances keeps an identifier
         /// to be used when identifying which modules interact with
@@ -36,9 +36,13 @@ class cApplyCollision : cColMap {
             { }
         
         int getId() { return id; }
+        cApplyCollision *getCaller() { return caller; }
         
         /// Resizes the collision map
         void resize_colmap(double w,double h) { resize(w,h); }
+        
+        /// Registers a collision object to the collision map
+        void register_collision(cCollision *col, sColSectorInstance *inst);
         
         /// Function to apply collision onto a collision map
         void apply_collision(cApplyCollision *caller, cCollision *col);
@@ -55,7 +59,7 @@ class cApplyCollision : cColMap {
         ///
         /// @param dial_id The module ID we're testing against
         /// @param col The collision block that we have to test against
-        virtual bool test_collision(int dial_id, cCollision *col);
+        virtual bool test_collision(int dial_id, cCollision *col)=0;
         
         // We're friends with the colmap function that applies onto a function
         friend class cColMap;
