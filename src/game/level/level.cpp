@@ -2,12 +2,19 @@
 #include "level.h"
 #include "../draw.h"
 #include "../game.h"
+#include <algorithm>
+
+using namespace std;
 
 void cmLevel::init() {
+
+    // todo: put this call where it really belongs:
+    load();
+
     tiles.resize(LEVEL_HEIGHT);
     for (int j = 0; j<LEVEL_HEIGHT; j++) {
         tiles[j].resize(LEVEL_WIDTH);
-        tiles[j][21] = 1;
+                tiles[j][21] = 1;
     }
     tiles[10][20] = 1;
     tiles[10][19] = 1;
@@ -18,7 +25,7 @@ void cmLevel::init() {
     // Register the tiles to the collision map
     for (int k = 0; k<LEVEL_WIDTH; k++) {
         for (int i = 0; i<LEVEL_HEIGHT; i++) {
-            if(tiles[k][i]) {
+            if(tiles[k][i] != 0) {
                 // Moves the collision position
                 colpos = cVector(k*32, i*32);
             
@@ -27,6 +34,7 @@ void cmLevel::init() {
             }// if(isTile)
         }// for(y)
     }// for(x)
+    
 }
 
 void cmLevel::collision_function(int caller_id, void *inst)
@@ -46,6 +54,51 @@ void cmLevel::level_init() {
 }
 
 int cmLevel::load() {
+    PACKFILE *pf;
+    string filename;
+
+    // creates a new levelinfo instance.
+    // todo: create more instances and put them in the levelinfo map.
+    curLev = new cLevelInfo();
+
+    LOGL(LDEBUG, "Loading levelinfo..");
+
+    // opens the levelfile (todo: make a way to choose a file)
+    filename = mGame->mFile->get_filename("levels","levelinfo.lvl");
+    pf = pack_fopen(filename.c_str(), "r");
+    if (!pf){
+        LOGL(LERR, "pack_fopen(%s) failed", filename.c_str());
+        return 1; // hope this is what we are supposed to return..
+    }
+
+    curLev->load(pf);
+    pack_fclose(pf);
+
+    // resize level size:
+    tiles.resize(curLev->get_sizex());
+
+    for (int x=0; x < get_sizex(); x++){
+        tiles[x].resize(get_sizey());
+    }
+
+    LOGL(LDEBUG, "Loading tiles..");
+
+    // open tile file:
+    filename = mGame->mFile->get_filename("levels", curLev->get_mapfile().c_str());
+    pf = pack_fopen(filename.c_str(), "r");
+    if (!pf){
+        LOGL(LERR, "pack_fopen(%s) failed", filename.c_str());
+        return 1;
+    }
+
+    for (int y=0; y < get_sizey(); y++){
+        for (int x=0; x < get_sizex(); x++){
+            tiles[x][y] = pack_igetl(pf);
+        }
+    }
+
+    pack_fclose(pf);
+
     return 0;
 }
 
