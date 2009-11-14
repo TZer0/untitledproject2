@@ -249,6 +249,10 @@
 						RelativePath="..\src\game\level\levelinfo.cpp"
 						>
 					</File>
+					<File
+						RelativePath="..\src\game\level\tile.cpp"
+						>
+					</File>
 				</Filter>
 				<Filter
 					Name="bullet"
@@ -283,6 +287,26 @@
 					>
 					<File
 						RelativePath="..\src\game\sound\sound.cpp"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="collision"
+					>
+					<File
+						RelativePath="..\src\game\collision\colapply.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\game\collision\collision.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\game\collision\colmap.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\src\game\collision\sat.cpp"
 						>
 					</File>
 				</Filter>
@@ -383,6 +407,10 @@
 						RelativePath="..\src\game\level\levelinfoattributes.h"
 						>
 					</File>
+					<File
+						RelativePath="..\src\game\level\tile.h"
+						>
+					</File>
 				</Filter>
 				<Filter
 					Name="bullet"
@@ -417,6 +445,22 @@
 					>
 					<File
 						RelativePath="..\src\game\sound\sound.h"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="collision"
+					>
+					<File
+						RelativePath="..\src\game\collision\colapply.h"
+						>
+					</File>
+					<File
+						RelativePath="..\src\game\collision\collision.h"
+						>
+					</File>
+					<File
+						RelativePath="..\src\game\collision\colmap.h"
 						>
 					</File>
 				</Filter>

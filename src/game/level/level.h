@@ -1,6 +1,9 @@
 #ifndef LEVEL_H
 #define LEVEL_H
 
+#include "../misc/moduletemplate.h"
+#include "levelinfo.h"
+#include "tile.h"
 #include <map>
 #include <string>
 #include <vector>
@@ -28,9 +31,9 @@ struct sLevelCollision {
 
 class cmLevel : public cDataSystem, public cApplyCollision {
     private:
-        std::map <std::string, cLevelInfo> levelInfo;
-        cLevelInfo *currentLevel;
-        std::vector<std::vector <int> > tiles;
+        std::map <std::string, cLevelInfo*> levelInfo;
+        cLevelInfo *curLev; // current level
+        std::vector<std::vector <cTile> > tiles;
         
         cCollision *rect;   // Rectangle collision instance
         cVector colpos;     // Position of collision instance
@@ -44,6 +47,10 @@ class cmLevel : public cDataSystem, public cApplyCollision {
         void process(double delta);
         void draw();
         void clear_data();
+
+        int get_sizex() {return curLev->get_sizex();}
+        int get_sizey() {return curLev->get_sizey();}
+
         virtual ~cmLevel() {}
         
         // Collision functions
