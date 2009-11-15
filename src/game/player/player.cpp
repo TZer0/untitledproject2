@@ -15,7 +15,7 @@ void cmPlayer::init() {
     height = 48;
     width = 32;
     
-    pos = cVector(200, SCREEN_H - height);
+    pos = cVector(200, SCREEN_H - height- 50);
     vel = cVector(0.0, 0.0);
 
     flagDown = false;
