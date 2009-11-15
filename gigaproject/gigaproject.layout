@@ -22,8 +22,8 @@
 	<File name="../src/game/bullet/bullet.h" open="0" top="0" tabpos="0">
 		<Cursor position="235" topLine="0" />
 	</File>
-	<File name="../src/game/collision/colapply.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="2048" topLine="10" />
+	<File name="../src/game/collision/colapply.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="2048" topLine="0" />
 	</File>
 	<File name="../src/game/collision/colapply.h" open="0" top="0" tabpos="4">
 		<Cursor position="472" topLine="19" />
@@ -34,14 +34,14 @@
 	<File name="../src/game/collision/collision.h" open="0" top="0" tabpos="1">
 		<Cursor position="2209" topLine="0" />
 	</File>
-	<File name="../src/game/collision/colmap.cpp" open="1" top="0" tabpos="3">
+	<File name="../src/game/collision/colmap.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="6160" topLine="18" />
 	</File>
-	<File name="../src/game/collision/colmap.h" open="1" top="0" tabpos="4">
-		<Cursor position="2804" topLine="20" />
+	<File name="../src/game/collision/colmap.h" open="0" top="0" tabpos="4">
+		<Cursor position="2804" topLine="0" />
 	</File>
-	<File name="../src/game/collision/sat.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="2620" topLine="5" />
+	<File name="../src/game/collision/sat.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="2620" topLine="0" />
 	</File>
 	<File name="../src/game/draw.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="1601" topLine="65" />
@@ -61,11 +61,11 @@
 	<File name="../src/game/init.cpp" open="0" top="0" tabpos="5">
 		<Cursor position="1628" topLine="42" />
 	</File>
-	<File name="../src/game/level/level.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="1854" topLine="39" />
+	<File name="../src/game/level/level.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="2736" topLine="41" />
 	</File>
-	<File name="../src/game/level/level.h" open="0" top="0" tabpos="12">
-		<Cursor position="1006" topLine="25" />
+	<File name="../src/game/level/level.h" open="1" top="1" tabpos="4">
+		<Cursor position="1006" topLine="0" />
 	</File>
 	<File name="../src/game/level/levelinfo.h" open="0" top="0" tabpos="0">
 		<Cursor position="0" topLine="3" />
@@ -73,8 +73,8 @@
 	<File name="../src/game/load.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="32" topLine="0" />
 	</File>
-	<File name="../src/game/lua.h" open="1" top="1" tabpos="7">
-		<Cursor position="23" topLine="0" />
+	<File name="../src/game/lua.h" open="0" top="0" tabpos="7">
+		<Cursor position="50" topLine="0" />
 	</File>
 	<File name="../src/game/misc/file.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="404" topLine="24" />
@@ -100,17 +100,23 @@
 	<File name="../src/game/misc/log.h" open="0" top="0" tabpos="0">
 		<Cursor position="822" topLine="2" />
 	</File>
+	<File name="../src/game/misc/luautil.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="21" topLine="0" />
+	</File>
+	<File name="../src/game/misc/luautil.h" open="1" top="0" tabpos="1">
+		<Cursor position="3406" topLine="104" />
+	</File>
 	<File name="../src/game/misc/timer.cpp" open="0" top="0" tabpos="10">
 		<Cursor position="478" topLine="51" />
 	</File>
 	<File name="../src/game/misc/timer.h" open="0" top="0" tabpos="11">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="../src/game/misc/vector.h" open="1" top="0" tabpos="6">
+	<File name="../src/game/misc/vector.h" open="0" top="0" tabpos="6">
 		<Cursor position="2768" topLine="7" />
 	</File>
-	<File name="../src/game/player/player.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="3883" topLine="3" />
+	<File name="../src/game/player/player.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="336" topLine="0" />
 	</File>
 	<File name="../src/game/player/player.h" open="0" top="0" tabpos="0">
 		<Cursor position="1206" topLine="29" />

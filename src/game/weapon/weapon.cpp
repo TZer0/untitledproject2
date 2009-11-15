@@ -2,7 +2,7 @@
 
 using namespace std;
 
-class cWeapon *cmWeapon::add(char *script, int ammo, bool ean) {
+class cWeapon *cmWeapon::add(const char *script, int ammo, bool ean) {
     class cWeapon *newWeapon;
     newWeapon = new cWeapon(script, ammo, ean);
     weapons.push_back(newWeapon);
