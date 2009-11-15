@@ -77,8 +77,8 @@ class cColMap {
                 
                 /// Untouches a part of the bottom [data] layer denoted by the box
                 void untouch_data(int tlx, int tly, int brx, int bry) {
-                    for(int iy=tly;iy<=bry;iy++) {
-                        for(int ix=tlx;ix<=brx;ix++) {
+                    for(int iy=tly;iy<bry;iy++) {
+                        for(int ix=tlx;ix<brx;ix++) {
                             for(std::vector<sColSectorInstance*>::iterator i = data[iy][ix]->begin(); i != data[iy][ix]->end(); i++) {
                                 (*i)->hasTouched = false;
                             }

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class cBullet *cmBullet::add(char *script, cVector pos, cVector vel) {
+class cBullet *cmBullet::add(const char *script, cVector pos, cVector vel) {
 
     class cBullet *newBullet;
     newBullet = new cBullet(script, pos, vel);
