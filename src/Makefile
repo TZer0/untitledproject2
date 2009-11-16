@@ -14,11 +14,14 @@ SOURCEZ = main.cpp\
 		game/collision/sat.cpp\
 		game/enemy/enemy.cpp\
 		game/level/level.cpp\
+        game/level/levelinfo.cpp\
+        game/level/tile.cpp\
 		game/misc/timer.cpp\
 		game/misc/input.cpp\
 		game/misc/file.cpp\
 		game/misc/log.cpp\
 		game/misc/loadimage.cpp\
+        game/misc/luautil.cpp\
 		game/misc/vector.cpp\
 		game/player/player.cpp\
 		game/weapon/weapon.cpp\
