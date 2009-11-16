@@ -36,31 +36,39 @@ class cLuaClass {
 	
 		/// Creates a hash value for a variable name
 		uint_hash hashFunc(const char *varname) {
-			uint_hash hash = 0;
-			
-			int i = 0;
-			while(varname[i] != '\0') {
-				char c = varname[i];
-				
-				// Variable names are assumed to be single-cased, and
-				// pure-text
-				if(c>='a') c -= 'a';
-				else if(c>='A') c -= 'A';
-				
-				// We will find a shift to apply to the number
-				// clamped to the size of a 32-bit integer
-				// Any character will always be 5 bits or less (as we've moved it into the 0-26 range)
-				int shift = (c+i*6)%(32-5);
-				
-				// Hash it up!
-				hash *= c;
-				hash += c;
-				hash ^= (c<<shift);
-				
-				i++;
-			}
-			
-			return(hash);
+            int len = strlen(varname);
+            
+            const unsigned int m = 0x5bd1e995;
+            const int r = 24;
+            
+            uint_hash h = 0;
+            
+            while(len >= 4) {
+                uint_hash k = *(uint_hash *)varname;
+                
+                k *= m;
+                k ^= k >> r;
+                k *= m;
+                
+                h *= m;
+                h ^= k;
+                
+                varname += 4;
+                len -= 4;
+            }
+            
+            switch(len) {
+                case 3: h^=varname[2] << 16;
+                case 2: h^=varname[1] << 8;
+                case 1: h^=varname[0];
+                h *= m;
+            }
+            
+            h ^= h >> 13;
+            h *= m;
+            h ^= h >> 15;
+            
+            return h;
 		}
 		
 		/// Associates a hash value with a variable
