@@ -21,6 +21,7 @@ void cmGame::run(void)
     // Initializing stuff
     init();
     
+    mTimer->reset_timer();
     while(!key[KEY_ESC] && !key[KEY_Q]) {
         // Input functions
         mIn->update();
