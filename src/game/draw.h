@@ -30,13 +30,14 @@ class cmDraw {
         void init(void);
         void draw(void);
         
-        void set_cam(double x,double y)
-            {cx=x; cy=y;}
+        void set_cam(double x,double y) {cx=x; cy=y;}
         
         int wtos_x(double x) { return(int(x-cx)); }
         int wtos_y(double y) { return(int(y-cy)); }
 
-        int htons(int h) {return 3;}
+        int htonz(int h) {
+            return 3;
+        }
         
         double stow_x(int x) { return(x+cx); }
         double stow_y(int y) { return(y+cy); }
