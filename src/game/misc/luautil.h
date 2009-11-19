@@ -1,23 +1,21 @@
 #ifndef LUAUTIL_H
 #define LUAUTIL_H
 #include <map>
-#include "vector.h"
 #include "../lua.h"
 #include "log.h"
 
 /**
  * Class to register variables to a LUA script "class"
  * in such a way that the LUA-C++ bridge is always synchronized
- *
  */
 class cLuaClass {
 	private:
 		typedef unsigned int uint_hash;
 		
 		enum varType {
-			varInt,
-			varDouble,
-			varVector
+            varInt,
+            varDouble,
+            varVector
 		};
 		
 		struct sVar {
