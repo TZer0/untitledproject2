@@ -45,10 +45,13 @@ class cBullet {
             animation->setSequence("IDLE");
             
             // Hijacking some code for testing:
-            lc.register_self(l, "cls");					// Registers the class to the LUA script, with the name "cls"
-            lc.register_double("x", &this->pos.x);		// Registers a new variable to the class, of type double
+            // Registers the class to the LUA script, with the name "cls"
+            lc.register_self(l, "cls");				
+            // Registers a new variable to the class, of type double
+            lc.register_double("x", &this->pos.x);	
             lc.register_double("y", &this->pos.y);
-            lc.register_vector("vel", &this->vel);		// Registers a vector
+            // Registers a vector
+            lc.register_vector("vel", &this->vel);	
             
             // Simple LUA script example, showcasing both reading and writing
             // to the registered variables.
