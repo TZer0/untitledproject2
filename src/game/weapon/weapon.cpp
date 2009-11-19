@@ -10,7 +10,11 @@ class cWeapon *cmWeapon::add(const char *script, int ammo, bool ean) {
 }
 
 void cmWeapon::clear_data() {
-    // Delete cWeapon instances.
+}
+
+int cmWeapon::load(void) {
+	scripts = mGame->mFile->dirRecursiveGet("weapons", "lua");
+    return 0;
 }
 
 void cWeapon::fire(cVector pos, cVector vel) {
