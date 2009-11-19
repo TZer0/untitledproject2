@@ -14,8 +14,8 @@ void cmPlayer::init() {
     jumpLife = JUMP_LIFE;
     height = 48;
     width = 32;
-    
-    pos = cVector(200, SCREEN_H - height- 50);
+
+    pos = cVector(200, SCREEN_H - height - 50);
     vel = cVector(0.0, 0.0);
 
     flagDown = false;
@@ -24,11 +24,12 @@ void cmPlayer::init() {
     flagRight = false;
     flagFire = false;
     left = false;
-    
+
     animation = mGame->mAnim->add("PLAYER");
     animation->setSequence("IDLE");
-    
-    col = mGame->mCollision->create(CollisionRectangle, &pos, cVector(0,0), 32, 48);
+
+    col = mGame->mCollision->create(CollisionRectangle, &pos, cVector(0,0),
+            32, 48);
 
     // Give the player a weapon.
     LOGS(LDEBUG, "Adding %s...", "player weapon");
@@ -83,7 +84,7 @@ void cmPlayer::process(double delta) {
     } else {
         vel.x = 0;
     }
-    
+
 
     // Jump handling.
     if (flagUp) {
@@ -100,17 +101,17 @@ void cmPlayer::process(double delta) {
     // Update vertical velocity and position
     vel.y += gravity * delta;
     pos += vel * delta;
-    
+
     // Test for collision
     mGame->mLevel->apply_collision(this, col);
 
     // Temporary collision detection.
     // Uses screen height instead of ground.
     /*if (pos.y >= SCREEN_H - height) {
-        vel.y = 0;
-        pos.y = SCREEN_H - height;
-        jumpLife = JUMP_LIFE;
-    }*/
+      vel.y = 0;
+      pos.y = SCREEN_H - height;
+      jumpLife = JUMP_LIFE;
+      }*/
 
     if (flagFire) {
         cVector bulVel;
@@ -129,11 +130,13 @@ void cmPlayer::process(double delta) {
  * Draw player sprite.
  */
 void cmPlayer::draw() {
-    rectfill(mGame->mDraw->buffer, WTOS_X(int(pos.x)), WTOS_Y(int(pos.y)), WTOS_X(int(pos.x)) + width,
-            WTOS_Y(int(pos.y)) + height, 0xff8800);
-    
+    rectfill(mGame->mDraw->buffer, WTOS_X(int(pos.x)), WTOS_Y(int(pos.y)),
+            WTOS_X(int(pos.x)) + width, WTOS_Y(int(pos.y)) + height,
+            0xff8800);
+
     // Testing animation
-    animation->draw(mGame->mDraw->buffer, WTOS_X(int(pos.x)), WTOS_Y(int(pos.y)));
+    animation->draw(mGame->mDraw->buffer, WTOS_X(int(pos.x)),
+            WTOS_Y(int(pos.y)));
 }
 
 /*
@@ -150,23 +153,24 @@ void cmPlayer::clear_data() {
 bool cmPlayer::test_collision(int dial_id, cCollision *target)
 {
     sColReturn ret = col->collide(target, vel);
-    
+
     if(ret.isCol) {
         switch(dial_id)
         {
             case MOD_LEVEL:
                 pos+=ret.orp;
-            break;
+                break;
         }
-        
+
         // We will also permit a new jump, if the normal is sensible.
         double angle = ret.orp.angle();
-        if(fabs(angle-M_PI/2.0) < 0.1) {
-            // Currently, we kill off the velocity, based on the the return path normal
+        if (fabs(angle-M_PI/2.0) < 0.1) {
+            // Currently, we kill off the velocity, based on the the
+            // return path normal
             vel = vel*ret.orp.normal().norm();
             jumpLife = JUMP_LIFE;
         }
-        
+
         return true;
     }
     return false;

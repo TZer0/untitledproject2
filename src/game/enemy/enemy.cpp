@@ -6,7 +6,7 @@
 void cmEnemy::init() {
 
 }
-        
+
 void cmEnemy::clear_data(void) {
     // clear
 }
@@ -29,4 +29,18 @@ int cmEnemy::load(void) {
 class cEnemy *cmEnemy::add(char *script) {
 
     return NULL;
+}
+
+void cmEnemy::draw(void) {
+
+    std::list<cEnemy*>::iterator it;
+
+    for (it = enemies.begin(); it != enemies.end(); it++) {
+
+        cEnemy *e = *it;
+        rectfill(mGame->mDraw->buffer, WTOS_X(int(e->pos.x)),
+                WTOS_Y(int(e->pos.y)), WTOS_X(int(e->pos.x)) + e->width,
+                WTOS_Y(int(e->pos.y)) + e->height, 0xff8800);
+        // Here goes animation
+    }
 }

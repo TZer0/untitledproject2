@@ -29,6 +29,9 @@ class cEnemy {
 
     public:
 
+        int height;
+        int width;
+        cVector pos;
         cAnimation *animation;
         
         cEnemy(cEnemyData *data) {
@@ -52,8 +55,6 @@ class cEnemy {
 class cmEnemy : public cDataSystem {
     private:
         std::list<cEnemy*> enemies;
-        std::map<std::string, cEnemyData*> datas;
-    
         typedef std::list<std::string>::iterator Fileeater;
 
     public:
@@ -62,7 +63,7 @@ class cmEnemy : public cDataSystem {
         void level_init(void) {}
         int load(void);
         void process(double) {}
-        void draw(void) {}
+        void draw(void);
         void clear_data(void);
         class cEnemy *add(char *script);
         virtual ~cmEnemy() {}
