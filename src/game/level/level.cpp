@@ -3,13 +3,13 @@
 #include "../draw.h"
 #include "../game.h"
 #include <algorithm>
+#include "../misc/loadimage.h"
 
 using namespace std;
 
 void cmLevel::init() {
 
     // todo: put this call where it really belongs:
-    load();
     //tiles.resize(LEVEL_HEIGHT);
     for (int j = 0; j<get_sizex(); j++) {
         //tiles[j].resize(LEVEL_WIDTH);
@@ -55,7 +55,12 @@ void cmLevel::level_init() {
 int cmLevel::load() {
     PACKFILE *pf;
     string filename;
-
+    BITMAP *tilemap = mImagesData.retrieve("tiles.bmp"); 
+    for (int i = 0; i<16; i++) {
+        for (int k = 0; k<16; k++) {
+        t[i][k] = create_sub_bitmap(tilemap, i*32, k*32, 32, 32);
+        }
+    }
     // creates a new levelinfo instance.
     // todo: create more instances and put them in the levelinfo map.
     curLev = new cLevelInfo();
@@ -109,8 +114,7 @@ void cmLevel::draw() {
     for (k = 0; k<get_sizex(); k++){
         for (i = 0; i<get_sizey(); i++){
             if (tiles[k][i] == 1){
-            rectfill(mGame->mDraw->buffer, WTOS_X(k*32), WTOS_Y(i*32),WTOS_X(k*32+ 31),
-                WTOS_Y(i*32+31), 0xff8800);
+                draw_sprite(mGame->mDraw->buffer,t[0][0], WTOS_X(k*32), WTOS_Y(i*32));
             }
         }
     }
