@@ -52,7 +52,7 @@ void cmEnemy::draw(void) {
         cEnemy *e = *it;
         rectfill(mGame->mDraw->buffer, WTOS_X(int(e->pos.x)),
                 WTOS_Y(int(e->pos.y)), WTOS_X(int(e->pos.x)) + e->width,
-                WTOS_Y(int(e->pos.y)) + e->height, 0xff0000);
+                WTOS_Y(int(e->pos.y)) + e->height, 0x00ff00);
 
         e->animation->draw(mGame->mDraw->buffer, WTOS_X(int(e->pos.x)),
                 WTOS_Y(int(e->pos.y)));
