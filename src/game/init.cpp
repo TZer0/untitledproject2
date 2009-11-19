@@ -42,7 +42,7 @@ int cmGame::init(void)
     mBullet = new cmBullet;
     mSound = new cmSound;
     mCollision = new cmCollision;
-    
+
     // Loading stuff
     load();
     

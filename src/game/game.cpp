@@ -36,6 +36,7 @@ void cmGame::run(void)
 
             // Drawing functions
             mPlayer->draw();
+            mEnemy->draw();
             mDraw->draw();
             mLevel->draw();
             mBullet->draw();

@@ -4,7 +4,7 @@
  * Initialize enemy.
  */
 void cmEnemy::init() {
-
+    add(NULL);
 }
 
 void cmEnemy::clear_data(void) {
@@ -28,7 +28,17 @@ int cmEnemy::load(void) {
 
 class cEnemy *cmEnemy::add(char *script) {
 
-    return NULL;
+    cEnemy *e = new cEnemy(new cEnemyData);
+
+    e->height = 128;    /* should be height of sprite */
+    e->width = 128;     /* should be width of sprite */
+
+    /* testing purposes */
+    e->pos = cVector(200, SCREEN_H - e->height - 50);
+
+    enemies.push_back(e);
+
+    return e;
 }
 
 void cmEnemy::draw(void) {
@@ -40,7 +50,7 @@ void cmEnemy::draw(void) {
         cEnemy *e = *it;
         rectfill(mGame->mDraw->buffer, WTOS_X(int(e->pos.x)),
                 WTOS_Y(int(e->pos.y)), WTOS_X(int(e->pos.x)) + e->width,
-                WTOS_Y(int(e->pos.y)) + e->height, 0xff8800);
+                WTOS_Y(int(e->pos.y)) + e->height, 0xff0000);
         // Here goes animation
     }
 }

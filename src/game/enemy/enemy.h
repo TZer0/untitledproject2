@@ -3,8 +3,7 @@
 
 #include <list>
 #include <string>
-#include <map>
-
+#include <map> 
 #include "../bullet/bullet.h"
 #include "../game.h"
 #include "../misc/file.h"
@@ -28,7 +27,6 @@ class cEnemy {
         lua_State *l;
 
     public:
-
         int height;
         int width;
         cVector pos;
