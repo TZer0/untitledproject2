@@ -10,14 +10,11 @@
 
 #include "../misc/moduletemplate.h"
 #include "levelinfo.h"
-
 #include "../collision/collision.h"
 #include "../collision/colapply.h"
 #include "../collision/colmap.h"
 
 #define MOD_LEVEL 42
-#define LEVEL_WIDTH 30
-#define LEVEL_HEIGHT 30
 
 struct sLevelCollision {
     // Short is short, saves us some memory.
@@ -38,7 +35,7 @@ class cmLevel : public cDataSystem, public cApplyCollision {
         cCollision *rect;   // Rectangle collision instance
         cVector colpos;     // Position of collision instance
     public:
-        cmLevel() : cApplyCollision(MOD_LEVEL, 4, LEVEL_WIDTH*32, LEVEL_HEIGHT*32)
+        cmLevel() : cApplyCollision(MOD_LEVEL, 4, 70*32, 35*32)
             { }
         
         void init();
