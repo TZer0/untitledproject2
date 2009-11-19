@@ -1,6 +1,7 @@
 #ifndef LUAUTIL_H
 #define LUAUTIL_H
 #include <map>
+#include "../misc/vector.h"
 #include "../lua.h"
 #include "log.h"
 
