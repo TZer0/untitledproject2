@@ -65,8 +65,10 @@ class cBullet {
             // slowing the algorithm
             // down significantly.
             //
-            // If desirable, it might be easier to just register all vector variables
-            // as doubles, which probably will make scripting a little more intuitive.
+            // If desirable, it might be easier to just register all vector
+            // variables
+            // as doubles, which probably will make scripting a little more
+            // intuitive.
             luaL_dostring(l, 	"cls.y = cls.y/2        \n"
 								"cls.x = cls.x/2        \n"
 								"a = cls.vel            \n"
