@@ -61,7 +61,8 @@ class cBullet {
             // components ("cls.vel.x"),
             // but, as shown here, accessing and reading it is still possible,
             // although slightly different.
-            // Sadly I don't think I can do anything about that, without slowing the algorithm
+            // Sadly I don't think I can do anything about that, without
+            // slowing the algorithm
             // down significantly.
             //
             // If desirable, it might be easier to just register all vector variables
