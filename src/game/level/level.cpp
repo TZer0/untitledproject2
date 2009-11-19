@@ -18,6 +18,7 @@ void cmLevel::init() {
     for (int i = 0; i<16; i++) {
         for (int k = 0; k<16; k++) {
         tiles[i+20][k].tile = k*16+i;
+        tiles[i+20][k].invisible = 0;
         }
     }
     
@@ -26,7 +27,7 @@ void cmLevel::init() {
     // Register the tiles to the collision map
     for (int k = 0; k<get_sizex(); k++) {
         for (int i = 0; i<get_sizey(); i++) {
-            if(tiles[k][i] != 0) {
+            if(tiles[k][i].invisible == 0) {
                 // Moves the collision position
                 colpos = cVector(k*32, i*32);
             
