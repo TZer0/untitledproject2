@@ -57,10 +57,12 @@ class cBullet {
             // to the registered variables.
             //
             // Vectors must be handled in a special way:
-            // It isn't possible to access a vector by their individual components ("cls.vel.x"),
+            // It isn't possible to access a vector by their individual
+            // components ("cls.vel.x"),
             // but, as shown here, accessing and reading it is still possible,
             // although slightly different.
-            // Sadly I don't think I can do anything about that, without slowing the algorithm
+            // Sadly I don't think I can do anything about that, without
+            // slowing the algorithm
             // down significantly.
             //
             // If desirable, it might be easier to just register all vector variables
