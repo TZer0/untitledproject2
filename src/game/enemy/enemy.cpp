@@ -32,9 +32,11 @@ class cEnemy *cmEnemy::add(char *script) {
 
     e->height = 128;    /* should be height of sprite */
     e->width = 128;     /* should be width of sprite */
+    e->animation = mGame->mAnim->add("EULER");
+    e->animation->setSequence("EVIL");
 
     /* testing purposes */
-    e->pos = cVector(200, SCREEN_H - e->height - 50);
+    e->pos = cVector(300, SCREEN_H - e->height - 24);
 
     enemies.push_back(e);
 
@@ -51,6 +53,9 @@ void cmEnemy::draw(void) {
         rectfill(mGame->mDraw->buffer, WTOS_X(int(e->pos.x)),
                 WTOS_Y(int(e->pos.y)), WTOS_X(int(e->pos.x)) + e->width,
                 WTOS_Y(int(e->pos.y)) + e->height, 0xff0000);
+
+        e->animation->draw(mGame->mDraw->buffer, WTOS_X(int(e->pos.x)),
+                WTOS_Y(int(e->pos.y)));
         // Here goes animation
     }
 }
