@@ -35,6 +35,8 @@ class cmDraw {
         
         int wtos_x(double x) { return(int(x-cx)); }
         int wtos_y(double y) { return(int(y-cy)); }
+
+        int htons(int h) {return 3;}
         
         double stow_x(int x) { return(x+cx); }
         double stow_y(int y) { return(y+cy); }
