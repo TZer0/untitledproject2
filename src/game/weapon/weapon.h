@@ -34,12 +34,13 @@ class cWeapon {
 class cmWeapon : public cDataSystem {
     private:
         std::list<cWeapon*> weapons;
+        std::list<std::string> scripts;
 
     public:
         cmWeapon() {}
         void init(void) {}
         void level_init(void) {}
-        int load(void) { return 0; }
+        int load(void);
         void process(double) {}
         void draw(void) {}
         void clear_data(void);
