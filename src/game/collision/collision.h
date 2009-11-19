@@ -93,7 +93,7 @@ class cmCollision : public cDataSystem {
         void process(double delta) {}
         void draw(void) {}
         void clear_data(void) {}
-        virtual ~cmWeapon() {}
+        virtual ~cmCollision() {}
 };
 
 /// Function declarations
