@@ -35,11 +35,11 @@ void cmGame::run(void)
             mBullet->process(delta);
 
             // Drawing functions
-            mPlayer->draw();
             mEnemy->draw();
             mDraw->draw();
             mLevel->draw();
             mBullet->draw();
+            mPlayer->draw();
         }
     }
     

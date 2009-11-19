@@ -15,9 +15,11 @@ void cmLevel::init() {
         //tiles[j].resize(LEVEL_WIDTH);
         tiles[j][18] = 1;
     }
-    tiles[10][20] = 1;
-    tiles[10][19] = 1;
-    tiles[10][18] = 1;
+    for (int i = 0; i<16; i++) {
+        for (int k = 0; k<16; k++) {
+        tiles[i+20][k].tile = k*16+i;
+        }
+    }
     
     rect = mGame->mCollision->create(CollisionRectangle, &colpos, cVector(0,0), 32, 32);
     
@@ -58,7 +60,7 @@ int cmLevel::load() {
     BITMAP *tilemap = mImagesData.retrieve("tiles.bmp"); 
     for (int i = 0; i<16; i++) {
         for (int k = 0; k<16; k++) {
-        t[i][k] = create_sub_bitmap(tilemap, i*32, k*32, 32, 32);
+        t[k*16+i] = create_sub_bitmap(tilemap, i*32, k*32, 32, 32);
         }
     }
     // creates a new levelinfo instance.
@@ -113,8 +115,8 @@ void cmLevel::draw() {
     int i, k;
     for (k = 0; k<get_sizex(); k++){
         for (i = 0; i<get_sizey(); i++){
-            if (tiles[k][i] == 1){
-                draw_sprite(mGame->mDraw->buffer,t[0][0], WTOS_X(k*32), WTOS_Y(i*32));
+            if (tiles[k][i].invisible == 0){
+                draw_sprite(mGame->mDraw->buffer,t[tiles[k][i].tile], WTOS_X(k*32), WTOS_Y(i*32));
             }
         }
     }
