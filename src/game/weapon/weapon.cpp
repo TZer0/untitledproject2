@@ -13,14 +13,15 @@ void cmWeapon::clear_data() {
 }
 
 int cmWeapon::load(void) {
-	scripts = mGame->mFile->dirRecursiveGet("weapons", "lua");
+    for (list<string>::iterator i = scripts.begin(); i != scripts.end(); ++i) {
+        scripts = mGame->mFile->dirRecursiveGet("weapons", "lua");
+    }
     return 0;
 }
 
 void cWeapon::fire(cVector pos, cVector vel) {
     if (ammo != 0) {
-        luaL_dostring(l, script);
-        mGame->mBullet->add("print(1)\n", pos, vel);
+        // Call Lua function which adds bullet(s).
         if (ammo > 0)
             --ammo;
     } else {
