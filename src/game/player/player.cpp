@@ -4,6 +4,11 @@
 #include "../game.h"
 #include "../level/level.h"
 
+#define OUTER_BORDER_W 200
+#define INNER_BORDER_W 300
+#define OUTER_BORDER_H 150
+#define INNER_BORDER_H 200
+
 /*
  * Initialize player.
  */
@@ -17,6 +22,9 @@ void cmPlayer::init() {
 
     pos = cVector(200, SCREEN_H - height - 50);
     vel = cVector(0.0, 0.0);
+
+    // Initate camera position
+    mGame->mDraw->set_cam(pos.x-SCREEN_W/2, pos.y-SCREEN_H/2);
 
     flagDown = false;
     flagUp = false;
@@ -123,7 +131,41 @@ void cmPlayer::process(double delta) {
         }
         weapon->fire(pos, bulVel);
     }
+    
+    // old code:
+    /*
     mGame->mDraw->set_cam(pos.x-SCREEN_W/2, pos.y-SCREEN_H/2);
+    */
+
+    /*
+        Makes the camera follow only when the player is approaching the border,
+        that meaning that there is a zone in the middle of the screen where the
+        camera does not follow at all, an inner border where the camera follows
+        with delay, and an outer border where the camera follows the player at
+        the same speed as the player.
+
+        OUTER_BORDER_W/_H and INNER_BORDER_W/_H is currently defined at the top 
+        of this document.
+    */
+
+    cVector cam = mGame->mDraw->get_cam();
+    cVector player = mGame->mDraw->wtos(pos);
+    if (player.x < OUTER_BORDER_W)            cam.x = pos.x - OUTER_BORDER_W;
+    if (player.x > SCREEN_W - OUTER_BORDER_W) cam.x = pos.x + OUTER_BORDER_W - SCREEN_W;
+    if (player.y < OUTER_BORDER_H)            cam.y = pos.y - OUTER_BORDER_H;
+    if (player.y > SCREEN_H - OUTER_BORDER_H) cam.y = pos.y + OUTER_BORDER_H - SCREEN_H;
+    
+    // Here different formulas can be applied to give desired effect, f.ex can
+    // the camera move slower if the player is closing to the center of the
+    // screen, or the camera wont move in this region if the player is moving
+    if (player.x < INNER_BORDER_W)            cam.x -= delta * horSpeed/3;
+    if (player.x > SCREEN_W - INNER_BORDER_W) cam.x += delta * horSpeed/3;
+    if (player.y < INNER_BORDER_H)            cam.y -= delta * horSpeed/3;
+    if (player.y > SCREEN_H - INNER_BORDER_H) cam.y += delta * horSpeed/3;
+
+    // Please notice that if the player is inside the inner border, then nothing
+    // happens to cam, so it was necessary to know where the camera initially was.
+    mGame->mDraw->set_cam(cam.x, cam.y);
 }
 
 /*
