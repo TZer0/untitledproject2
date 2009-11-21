@@ -18,6 +18,7 @@ class cmPlayer : public cDataSystem, public cApplyCollision {
         int jumpHeight;
         int height;
         int width;
+        double prevy;
         double jumpLife;
         bool flagLeft;
         bool flagRight;
