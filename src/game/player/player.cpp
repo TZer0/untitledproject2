@@ -108,6 +108,7 @@ void cmPlayer::process(double delta) {
 
     // Update vertical velocity and position
     vel.y += gravity * delta;
+    prevy = pos.y;
     pos += vel * delta;
 
     // Test for collision
@@ -190,7 +191,7 @@ void cmPlayer::clear_data() {
 }
 
 /**
- * Called by the one whe collide with
+ * Called by the one when collide with
  */
 bool cmPlayer::test_collision(int dial_id, cCollision *target)
 {
@@ -206,12 +207,22 @@ bool cmPlayer::test_collision(int dial_id, cCollision *target)
 
         // We will also permit a new jump, if the normal is sensible.
         double angle = ret.orp.angle();
-        if (fabs(angle-M_PI/2.0) < 0.1) {
+        if (fabs(angle-M_PI/2.0) < 0.01) {
             // Currently, we kill off the velocity, based on the the
             // return path normal
             vel = vel*ret.orp.normal().norm();
             jumpLife = JUMP_LIFE;
         }
+        
+        if (fabs(angle+M_PI/2.0) < 0.01) {
+            if (prevy == pos.y) {
+                // Currently, we kill off the velocity, based on the the
+                // return path normal
+                vel = vel*ret.orp.normal().norm();
+                jumpLife = 0;
+            }
+        }
+        
 
         return true;
     }
