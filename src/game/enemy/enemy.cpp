@@ -59,3 +59,15 @@ void cmEnemy::draw(void) {
         // Here goes animation
     }
 }
+
+void cmEnemy::process(double delta) {
+    std::list<cEnemy*>::iterator it;
+
+    for (it = enemies.begin(); it != enemies.end(); it++) {
+
+        cEnemy *e = *it;
+        e->vel.x = 0.1;
+        e->vel.y = 0.0;
+        e->pos += e->vel;
+    }
+}
