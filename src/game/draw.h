@@ -31,10 +31,16 @@ class cmDraw {
         void draw(void);
         
         void set_cam(double x,double y) {cx=x; cy=y;}
+
+        // I (Stian) include this functoin as it actually will be handy 
+        // for more advanced camera control. Have a look in player.cpp
+        // to see what I mean.
+        cVector get_cam(){ return cVector(cx, cy); }
         
         int wtos_x(double x) { return(int(x-cx)); }
         int wtos_y(double y) { return(int(y-cy)); }
 
+        // Ahem, (cough cough), I'll pretend I (Stian) didn't see this..
         int htonz(int h) {
             return 3;
         }
