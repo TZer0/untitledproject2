@@ -19,8 +19,6 @@ class cmPlayer : public cDataSystem, public cApplyCollision {
         int height;
         int width;
         double jumpLife;
-        cVector pos;
-        cVector vel;
         bool flagLeft;
         bool flagRight;
         bool flagUp;
@@ -32,6 +30,8 @@ class cmPlayer : public cDataSystem, public cApplyCollision {
         cCollision *col;
         
     public:
+        cVector pos;
+        cVector vel;
         cmPlayer() : cApplyCollision(MOD_PLAYER, 1, 1.0,1.0)
             { }
         

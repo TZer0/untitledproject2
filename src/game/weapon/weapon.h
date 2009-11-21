@@ -8,29 +8,38 @@
 #include "../game.h"
 #include "../misc/file.h"
 #include "../misc/moduletemplate.h"
+#include "../misc/loadtemplate.h"
 #include "../misc/vector.h"
 #include "../lua.h"
+
+class cWeaponData {
+    public:
+        const char *script;
+};
 
 class cWeapon {
     private:
         int ammo; // Negative value gives infinite ammo.
         bool ean; // Enemy And Netherworld. Weapon hurts player if true.
         lua_State *l;
+        cWeaponData *data;
         
     public:
-        cWeapon(const char *script, int ammo, bool ean) {
-            this->ammo = ammo;
-            this->ean = ean;
+        cWeapon(cWeaponData *data, int ammo, bool ean):
+            ammo(ammo),
+            ean(ean),
+            data(data) {
 
             l = luaL_newstate();
             luaL_openlibs(l);
-            luaL_dostring(l, script);
+            luaL_dostring(l, data->script);
         }
 
+        void spawnBullet(std::string, double, double, double, double);
         void fire(cVector pos, cVector vel);
 };
 
-class cmWeapon : public cDataSystem {
+class cmWeapon: public cDataSystem, public tLoadingSystem<cWeaponData *> {
     private:
         std::list<cWeapon*> weapons;
         std::list<std::string> scripts;

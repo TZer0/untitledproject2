@@ -1,3 +1,4 @@
+#include "weapon/weapon.h"
 #include "misc/log.h"
 #include "animation/anim.h"
 #include "level/level.h"
@@ -6,6 +7,8 @@
 void cmGame::load(void)
 {
     LOGL(LNOTE, "Loading data");
+    // F1RST!
+    mWeapon->load();
     mLevel->load();
     mAnim->load();
 }

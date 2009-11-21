@@ -32,10 +32,10 @@ void cmPlayer::init() {
             32, 48);
 
     // Give the player a weapon.
-    LOGS(LDEBUG, "Adding %s...", "player weapon");
-    weapon = mGame->mWeapon->add("print(1)\n", -1, false);
+    LOGS(LDEBUG, "Adding player weapon...");
+    weapon = mGame->mWeapon->add("data/weapons/bfg9k1.lua", -1, false);
     LOGS(LDEBUG, "Weapon pointer: %p.", weapon);
-    LOGS(LDEBUG, "Added %s...", "player weapon");
+    LOGS(LDEBUG, "Added player weapon...");
 }
 
 /*

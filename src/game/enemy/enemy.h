@@ -30,6 +30,7 @@ class cEnemy {
         int height;
         int width;
         cVector pos;
+        cVector vel;
         cAnimation *animation;
         
         cEnemy(cEnemyData *data) {
@@ -44,7 +45,7 @@ class cEnemy {
 
             // Give the enemy a weapon.
             LOGS(LDEBUG, "Adding %s...", "enemy weapon");
-            weapon = mGame->mWeapon->add("print(1)\n", -1, false);
+            // weapon = mGame->mWeapon->add("print(1)\n", -1, false);
             LOGS(LDEBUG, "Weapon pointer: %p.", weapon);
             LOGS(LDEBUG, "Added %s...", "enemy weapon");
         }
@@ -60,7 +61,7 @@ class cmEnemy : public cDataSystem {
         void init(void);
         void level_init(void) {}
         int load(void);
-        void process(double) {}
+        void process(double);
         void draw(void);
         void clear_data(void);
         class cEnemy *add(char *script);
