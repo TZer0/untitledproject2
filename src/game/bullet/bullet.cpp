@@ -23,6 +23,14 @@ void cmBullet::process(double delta) {
     for (EatBullets i = bullets.begin(); i!=bullets.end(); i++) {
         cBullet *tmp = (*i);
         tmp->pos += tmp->vel * delta;
+
+        if (tmp->life % 8 == 0) {
+            tmp->animation->setSequence("FRAMEA");
+        } else {
+            tmp->animation->setSequence("FRAMEB");
+        }
+
+        ++tmp->life;
     }
 }
 

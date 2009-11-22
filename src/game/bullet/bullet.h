@@ -33,16 +33,19 @@ class cBullet {
 		cLuaClass lc;
 
     public:
+        int life;
         cBullet(const char *script, cVector pos, cVector vel) {
             this->pos = pos;
             this->vel = vel;
             this->script = script;
 
+            this->life = 0;
+
             l = luaL_newstate();
             luaL_openlibs(l); 
             /* TODO: Make animation type dynamic. */
-            animation = mGame->mAnim->add("PLAYER");
-            animation->setSequence("IDLE");
+            animation = mGame->mAnim->add("BULLET");
+            animation->setSequence("FRAMEA");
             
             // Hijacking some code for testing:
             // Registers the class to the LUA script, with the name "cls"
