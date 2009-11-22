@@ -5,6 +5,7 @@
 #include <string>
 #include <map> 
 #include "../bullet/bullet.h"
+#include "../player/player.h"
 #include "../game.h"
 #include "../misc/file.h"
 #include "../misc/moduletemplate.h"
