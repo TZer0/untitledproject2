@@ -64,10 +64,9 @@ void cmEnemy::process(double delta) {
     std::list<cEnemy*>::iterator it;
 
     for (it = enemies.begin(); it != enemies.end(); it++) {
-
         cEnemy *e = *it;
-        e->vel.x = 0.1;
-        e->vel.y = 0.0;
+        e->vel.x = 0.04 * (mGame->mPlayer->pos.x - e->pos.x);
+        e->vel.y = 0.04 * (mGame->mPlayer->pos.y - e->pos.y);
         e->pos += e->vel;
     }
 }

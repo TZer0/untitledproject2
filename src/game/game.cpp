@@ -32,6 +32,7 @@ void cmGame::run(void)
             // Processing functions
             mPlayer->input();
             mPlayer->process(delta);
+            mEnemy->process(delta);
             mBullet->process(delta);
 
             // Drawing functions
