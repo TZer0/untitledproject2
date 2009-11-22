@@ -173,9 +173,12 @@ void cmPlayer::process(double delta) {
  * Draw player sprite.
  */
 void cmPlayer::draw() {
+    /*
     rectfill(mGame->mDraw->buffer, WTOS_X(int(pos.x)), WTOS_Y(int(pos.y)),
             WTOS_X(int(pos.x)) + width, WTOS_Y(int(pos.y)) + height,
             0xff8800);
+            */
+    // UGLY!
 
     // Testing animation
     animation->draw(mGame->mDraw->buffer, WTOS_X(int(pos.x)),
