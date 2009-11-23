@@ -356,8 +356,7 @@
 
 1258216299 /home/avenger/project/untitledproject2/src/game/misc/moduletemplate.h
 
-1258216299 /home/avenger/project/untitledproject2/src/game/misc/vector.h
-	"../port.h"
+1259010277 /home/avenger/project/untitledproject2/src/game/misc/vector.h
 	<math.h>
 
 1258216299 /home/avenger/project/untitledproject2/src/game/port.h
@@ -459,7 +458,7 @@
 1258997782 source:/home/avenger/project/untitledproject2/src/game/bullet/bullet.cpp
 	"bullet.h"
 
-1258997770 /home/avenger/project/untitledproject2/src/game/bullet/bullet.h
+1259010185 /home/avenger/project/untitledproject2/src/game/bullet/bullet.h
 	<list>
 	<string>
 	"../draw.h"
@@ -473,16 +472,18 @@
 	"../lua.h"
 	"../animation/anim.h"
 
-1258846753 /home/avenger/project/untitledproject2/src/game/draw.h
+1259010185 /home/avenger/project/untitledproject2/src/game/draw.h
 	"port.h"
 	"misc/vector.h"
 
-1258847148 source:/home/avenger/project/untitledproject2/src/game/collision/sat.cpp
+1259010185 source:/home/avenger/project/untitledproject2/src/game/collision/sat.cpp
 	"collision.h"
 	<limits>
 
-1258216299 source:/home/avenger/project/untitledproject2/src/game/draw.cpp
+1259010185 source:/home/avenger/project/untitledproject2/src/game/draw.cpp
 	"draw.h"
+	"game.h"
+	"level/level.h"
 
 1258918846 source:/home/avenger/project/untitledproject2/src/game/enemy/enemy.cpp
 	"enemy.h"
@@ -581,7 +582,7 @@
 
 1258846753 /home/avenger/project/untitledproject2/src/game/sound/sound.h
 
-1258992003 source:/home/avenger/project/untitledproject2/src/game/level/level.cpp
+1259010185 source:/home/avenger/project/untitledproject2/src/game/level/level.cpp
 	"../port.h"
 	"level.h"
 	"../draw.h"
@@ -624,11 +625,11 @@
 	<unistd.h>
 	<sys/time.h>
 
-1258216299 source:/home/avenger/project/untitledproject2/src/game/misc/vector.cpp
+1257519626 source:/home/avenger/project/untitledproject2/src/game/misc/vector.cpp
 	<math.h>
 	"vector.h"
 
-1258990409 source:/home/avenger/project/untitledproject2/src/game/player/player.cpp
+1259010185 source:/home/avenger/project/untitledproject2/src/game/player/player.cpp
 	"../port.h"
 	"player.h"
 	"../draw.h"
@@ -647,8 +648,9 @@
 1258292816 source:/home/avenger/project/untitledproject2/src/game/misc/luautil.cpp
 	"luautil.h"
 
-1258846753 /home/avenger/project/untitledproject2/src/game/misc/luautil.h
+1259010653 /home/avenger/project/untitledproject2/src/game/misc/luautil.h
 	<map>
+	<string.h>
 	"../misc/vector.h"
 	"../lua.h"
 	"log.h"
