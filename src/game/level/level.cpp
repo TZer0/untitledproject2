@@ -25,19 +25,19 @@ void cmLevel::init() {
     rect = mGame->mCollision->create(CollisionRectangle, &colpos, cVector(0,0), 32, 32);
     
     // Register the tiles to the collision map
-   for (int k = 0; k<get_sizex(); k++) {
-        for (int i = 0; i<get_sizey(); i++) {
-            if(tiles[k][i].invisible == 0 && start == -1) {
-                start = i;
+  for (int x = 0; x<get_sizex(); x++) {
+        for (int y = 0; y<get_sizey(); y++) {
+            if(tiles[x][y].invisible == 0 && start == -1) {
+                start = y;
                 
             }// if(isTile)
-            if((tiles[k][i].invisible == 1 && start != -1) || (i == get_sizey()-1 && start != -1)){
+            if((tiles[x][y].invisible == 1 && start != -1) || (y == get_sizey()-1 && start != -1)){
                 if (start == -1) {
                     start = 0; 
                 }
-                colpos = cVector(k*32, start*32);
-                rect = mGame->mCollision->create(CollisionRectangle, &colpos, cVector(0,0), 32, (i-start)*32);
-                register_collision(rect, new sColSectorInstance(new sLevelCollision(rect,k,start)));
+                colpos = cVector(x*32, start*32);
+                rect = mGame->mCollision->create(CollisionRectangle, &colpos, cVector(0,0), 32, (y-start)*32);
+                register_collision(rect, new sColSectorInstance(new sLevelCollision(rect,x,start)));
                 start = -1;
             }
            
