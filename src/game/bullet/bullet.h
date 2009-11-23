@@ -55,11 +55,12 @@ class cBullet {
                 lc.register_double("dx", &this->vel.x);
                 lc.register_double("dy", &this->vel.y);
                 lc.register_int("life", &this->life);
-            
+            // Simple LUA script example, showcasing both reading and writing
             // Run script
             if(luaL_dostring(l, data->script)) {
                 LOGU(LERR, "Lua script error %s", lua_tostring(l, -1));
             }
+
         }
         
         lua_State *l;
