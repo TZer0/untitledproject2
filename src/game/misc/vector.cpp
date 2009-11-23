@@ -1,13 +1,9 @@
-/**
- * File: vector.cpp
- *
- * Description:	Advanced vector class functions
- *
- * (c)2009, by Raymond Loeberg
- */
 // Global includes
+#if !defined(WIN32) && !defined(WIN64) && !defined(_MSC_VER)
 #include <math.h>
-
+#else
+#define _USE_MATH_DEFINES
+#endif
 // Other includes
 #include "vector.h"
 
