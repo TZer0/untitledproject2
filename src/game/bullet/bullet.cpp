@@ -1,3 +1,4 @@
+#include "../level/level.h"
 #include "bullet.h"
 
 using namespace std;
@@ -22,6 +23,7 @@ void cmBullet::draw(void) {
 void cmBullet::process(double delta) {
     for (EatBullets i = bullets.begin(); i!=bullets.end(); i++) {
         cBullet *tmp = (*i);
+        cur = tmp;
         
         // Runs the script function
         lua_getglobal(tmp->l, "process");
@@ -29,8 +31,19 @@ void cmBullet::process(double delta) {
         lua_pcall(tmp->l, 1, 0, 0);
         
         tmp->pos += tmp->vel * delta;
+        
+        colpoint = cur->pos;
+        mGame->mLevel->apply_collision(this, col);
 
         ++tmp->life;
+        
+        if(tmp->toDie) {
+            EatBullets ti;
+            ti = i;
+            i++;
+            bullets.erase(ti);
+            i--;
+        }
     }
 }
 
@@ -56,4 +69,16 @@ int cmBullet::load(void) {
              insert(mGame->mFile->execdir_strip((*i).c_str()), tmp);
     }
     return 0;
+}
+
+bool cmBullet::test_collision(int dial_id, cCollision *target)
+{
+    sColReturn ret = col->collide(target, cur->vel);
+
+    if(ret.isCol) {
+        cur->toDie = true;
+        
+        return true;
+    }
+    return false;
 }

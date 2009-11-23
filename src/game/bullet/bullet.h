@@ -12,8 +12,12 @@
 #include "../misc/vector.h"
 #include "../misc/luautil.h"
 #include "../misc/log.h"
+#include "../collision/collision.h"
+#include "../collision/colapply.h"
 #include "../lua.h"
 #include "../animation/anim.h"
+
+#define MOD_BULLET 101
 
 class cBullData {
     public:
@@ -34,6 +38,8 @@ class cBullet {
 		cLuaClass lc;
 
     public:
+        bool toDie;
+        
         int life;
         cBullet(cBullData *data, cVector pos, cVector vel) {
             this->pos = pos;
@@ -41,6 +47,8 @@ class cBullet {
             this->data= data;
 
             this->life = 0;
+            
+            toDie = false;
 
             l = luaL_newstate();
             luaL_openlibs(l); 
@@ -69,16 +77,20 @@ class cBullet {
         cVector vel;
 };
 
-class cmBullet : public cDataSystem, public tLoadingSystem<cBullData *> {
+class cmBullet : public cDataSystem, public cApplyCollision, public tLoadingSystem<cBullData *> {
     private:
         std::list<cBullet*> bullets;
         typedef std::list<cBullet*>::iterator EatBullets;
 
     public:
-        cmBullet() {
+        cmBullet() : cApplyCollision(MOD_BULLET, 1, 1.0,1.0) {
             bullData = new cmBullData;
         }
-        void init(void){}
+        
+        void init(void) {
+            col = mGame->mCollision->create(CollisionPoint, &colpoint, cVector(0,0));
+        }
+        
         void level_init(void) {}
         int load(void); 
         void process(double); 
@@ -86,8 +98,16 @@ class cmBullet : public cDataSystem, public tLoadingSystem<cBullData *> {
         void clear_data(void);
         class cBullet *add(const char *script, cVector pos, cVector vel);  
         virtual ~cmBullet() {}
-
+        
+        cBullet *cur;
+        
         cmBullData *bullData;
+        cVector colpoint;
+        cCollision *col;
+        
+        // Collision functions
+        void collision_function(int caller_id, void* inst) {}
+        bool test_collision(int dial_id, cCollision *target);
 };
 
 #endif

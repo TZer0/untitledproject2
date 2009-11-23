@@ -356,7 +356,7 @@
 
 1258216299 /home/avenger/project/untitledproject2/src/game/misc/moduletemplate.h
 
-1259010277 /home/avenger/project/untitledproject2/src/game/misc/vector.h
+1259010824 /home/avenger/project/untitledproject2/src/game/misc/vector.h
 	<math.h>
 
 1258216299 /home/avenger/project/untitledproject2/src/game/port.h
@@ -458,7 +458,7 @@
 1258997782 source:/home/avenger/project/untitledproject2/src/game/bullet/bullet.cpp
 	"bullet.h"
 
-1259010185 /home/avenger/project/untitledproject2/src/game/bullet/bullet.h
+1259011809 /home/avenger/project/untitledproject2/src/game/bullet/bullet.h
 	<list>
 	<string>
 	"../draw.h"
@@ -469,6 +469,8 @@
 	"../misc/vector.h"
 	"../misc/luautil.h"
 	"../misc/log.h"
+	"../collision/collision.h"
+	"../collision/colapply.h"
 	"../lua.h"
 	"../animation/anim.h"
 
@@ -625,7 +627,7 @@
 	<unistd.h>
 	<sys/time.h>
 
-1257519626 source:/home/avenger/project/untitledproject2/src/game/misc/vector.cpp
+1259010945 source:/home/avenger/project/untitledproject2/src/game/misc/vector.cpp
 	<math.h>
 	"vector.h"
 
