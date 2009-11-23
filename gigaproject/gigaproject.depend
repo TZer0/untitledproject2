@@ -456,10 +456,10 @@
 	"../misc/loadimage.h"
 	"../game.h"
 
-1258992154 source:/home/avenger/project/untitledproject2/src/game/bullet/bullet.cpp
+1258997782 source:/home/avenger/project/untitledproject2/src/game/bullet/bullet.cpp
 	"bullet.h"
 
-1258992307 /home/avenger/project/untitledproject2/src/game/bullet/bullet.h
+1258997770 /home/avenger/project/untitledproject2/src/game/bullet/bullet.h
 	<list>
 	<string>
 	"../draw.h"
@@ -513,7 +513,7 @@
 	"../misc/vector.h"
 	"../lua.h"
 
-1258918846 source:/home/avenger/project/untitledproject2/src/game/game.cpp
+1258997906 source:/home/avenger/project/untitledproject2/src/game/game.cpp
 	"port.h"
 	"game.h"
 	"draw.h"
@@ -524,6 +524,7 @@
 	"weapon/weapon.h"
 	"enemy/enemy.h"
 	"bullet/bullet.h"
+	"animation/anim.h"
 
 1258216299 /home/avenger/project/untitledproject2/src/game/misc/timer.h
 	<time.h>

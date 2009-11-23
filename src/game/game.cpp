@@ -13,6 +13,7 @@
 #include "weapon/weapon.h"
 #include "enemy/enemy.h"
 #include "bullet/bullet.h"
+#include "animation/anim.h"
 
 void cmGame::run(void)
 {
@@ -34,6 +35,7 @@ void cmGame::run(void)
             mPlayer->process(delta);
             mEnemy->process(delta);
             mBullet->process(delta);
+            mAnim->process(delta);
 
             // Drawing functions
             mEnemy->draw();

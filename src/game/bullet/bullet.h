@@ -31,7 +31,6 @@ class cBullet {
         // cVector pos;
         // cVector vel;
         cBullData *data;
-        lua_State *l;
 		cLuaClass lc;
 
     public:
@@ -47,7 +46,7 @@ class cBullet {
             luaL_openlibs(l); 
             /* TODO: Make animation type dynamic. */
             animation = mGame->mAnim->add("BULLET");
-            animation->setSequence("FRAMEA");
+            animation->setSequence("IDLE");
             
             // Registers the class to the LUA script
             lc.register_self(l, "shot");
@@ -62,6 +61,8 @@ class cBullet {
                 LOGU(LERR, "Lua script error %s", lua_tostring(l, -1));
             }
         }
+        
+        lua_State *l;
         cAnimation *animation;
         cVector pos;
         cVector vel;
