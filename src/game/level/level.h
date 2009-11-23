@@ -31,7 +31,6 @@ class cmLevel : public cDataSystem, public cApplyCollision {
         std::map <std::string, cLevelInfo*> levelInfo;
         cLevelInfo *curLev; // current level
         std::vector<std::vector <cTile> > tiles;
-        std::vector<cCollision*> rect1;
         BITMAP *t[256];
         cCollision *rect;   // Rectangle collision instance
         cVector colpos;     // Position of collision instance

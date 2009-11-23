@@ -31,13 +31,13 @@ void cWeapon::spawnBullet(string id, double px, double py, double vx, double vy)
     pos.y = py;
     vel.x = vx;
     vel.y = vy;
-    mGame->mBullet->add(id.c_str(), pos, vel);
+    mGame->mBullet->add("asdf", pos, vel);
 }
 
 void cWeapon::fire(cVector pos, cVector vel) {
     if (ammo != 0) {
         // Call Lua function which adds bullet(s).
-        spawnBullet("data/bullet/test.lua", pos.x, pos.y, vel.x, vel.y);
+        spawnBullet("sneakyShot", pos.x, pos.y, vel.x, vel.y);
         if (ammo > 0)
             --ammo;
     } else {

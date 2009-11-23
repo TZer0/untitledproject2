@@ -8,7 +8,6 @@
 #include "../game.h"
 #include "../misc/file.h"
 #include "../misc/moduletemplate.h"
-#include "../misc/loadtemplate.h"
 #include "../misc/vector.h"
 #include "../misc/luautil.h"
 #include "../misc/log.h"
@@ -17,7 +16,6 @@
 
 class cBullData {
     public:
-        const char *script;
 };
 
 class cmBullData : public tLoadingSystem<cBullData *> {
@@ -30,47 +28,67 @@ class cBullet {
     private:
         // cVector pos;
         // cVector vel;
-        cBullData *data;
+        const char *script;
         lua_State *l;
 		cLuaClass lc;
 
     public:
         int life;
-        cBullet(cBullData *data, cVector pos, cVector vel) {
+        cBullet(const char *script, cVector pos, cVector vel) {
             this->pos = pos;
             this->vel = vel;
-            this->data = data;
+            this->script = script;
 
             this->life = 0;
 
             l = luaL_newstate();
-            luaL_openlibs(l);
-            
+            luaL_openlibs(l); 
             /* TODO: Make animation type dynamic. */
             animation = mGame->mAnim->add("BULLET");
             animation->setSequence("FRAMEA");
             
-            // Registers the class to the LUA script
-            lc.register_self(l, "shot");
-                lc.register_double("x", &this->pos.x);
-                lc.register_double("y", &this->pos.y);
-                
-                lc.register_double("dx", &this->vel.x);
-                lc.register_double("dy", &this->vel.y);
-                
-                lc.register_int("life", &this->life);
+            // Hijacking some code for testing:
+            // Registers the class to the LUA script, with the name "cls"
+            lc.register_self(l, "cls");				
+            // Registers a new variable to the class, of type double
+            lc.register_double("x", &this->pos.x);	
+            lc.register_double("y", &this->pos.y);
+            // Registers a vector
+            lc.register_vector("vel", &this->vel);	
             
-            // Run script
-            if(luaL_dostring(l, data->script)) {
-                LOGU(LERR, "Lua script error %s", lua_tostring(l, -1));
-            }
+            // Simple LUA script example, showcasing both reading and writing
+            // to the registered variables.
+            //
+            // Vectors must be handled in a special way:
+            // It isn't possible to access a vector by their individual
+            // components ("cls.vel.x"),
+            // but, as shown here, accessing and reading it is still possible,
+            // although slightly different.
+            // Sadly I don't think I can do anything about that, without
+            // slowing the algorithm
+            // down significantly.
+            //
+            // If desirable, it might be easier to just register all vector
+            // variables
+            // as doubles, which probably will make scripting a little more
+            // intuitive.
+            luaL_dostring(l, 	"cls.y = cls.y/2        \n"
+								"cls.x = cls.x/2        \n"
+								"a = cls.vel            \n"
+								"cls.vel = {a[2],a[1]}	\n"
+								"print(a[1])            \n"
+								"print(a[2])            \n");
+            LOGS(LDEBUG, "cls.x is %f", this->pos.x);
+            LOGS(LDEBUG, "cls.y is %f", this->pos.y);
+            LOGS(LDEBUG, "vel.x is %f", this->vel.x);
+            LOGS(LDEBUG, "vel.y is %f", this->vel.y);
         }
         cAnimation *animation;
         cVector pos;
         cVector vel;
 };
 
-class cmBullet : public cDataSystem, public tLoadingSystem<cBullData *> {
+class cmBullet : public cDataSystem {
     private:
         std::list<cBullet*> bullets;
         typedef std::list<cBullet*>::iterator EatBullets;
