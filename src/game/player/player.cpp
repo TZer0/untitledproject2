@@ -167,6 +167,7 @@ void cmPlayer::process(double delta) {
     // Please notice that if the player is inside the inner border, then nothing
     // happens to cam, so it was necessary to know where the camera initially was.
     mGame->mDraw->set_cam(cam.x, cam.y);
+    mGame->mDraw->cam_cap();
 }
 
 /*

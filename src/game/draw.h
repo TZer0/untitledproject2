@@ -53,12 +53,7 @@ class cmDraw {
         cVector stow(cVector v)
             { return(cVector(v.x+cx, v.y+cy)); }
         
-        void cam_cap() {
-            if(cx<0.0) cx = 0.0;
-            if(cy<0.0) cy = 0.0;
-            if(cx > SCREEN_W) cx = SCREEN_W;
-            if(cy > SCREEN_H) cy = SCREEN_H;
-        }
+        void cam_cap();
 };
 
 #endif
