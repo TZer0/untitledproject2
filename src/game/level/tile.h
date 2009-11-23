@@ -9,18 +9,18 @@
 class cTile{
     public:
         /* number after colon shows number of bits used */
-        UINT tile        : 8;
-        UINT ladder      : 1;
-        UINT slippery    : 5;
-        UINT kill        : 2;
-        UINT invisible   : 1;
-        UINT destroyable : 1;
-        UINT water       : 1;
-        UINT sink        : 1;
-        UINT scriptdef   : 4;
-        UINT notbigbox   : 1;
-        UINT collidable  : 1;
-        UINT unknown     : 6;
+        UINT tile          : 8;
+        UINT ladder        : 1;
+        UINT slippery      : 5;
+        UINT kill          : 2;
+        UINT invisible     : 1;
+        UINT destroyable   : 1;
+        UINT water         : 1;
+        UINT sink          : 1;
+        UINT scriptdef     : 4;
+        UINT notbigbox     : 1;
+        UINT notcollidable : 1;
+        UINT unknown       : 6;
 
         // costructors:
         cTile() { cTile(0); }
