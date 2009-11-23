@@ -74,7 +74,7 @@ class cVector {
 		cVector rot(const cVector  &b);
 		cVector unrot(const cVector &b);
 		cVector swap(void)                  { return(cVector(y,x)); }
-		double angle(void)                  { return atan2(y,x); }
+		double angle(void)                  { return atan2(-y,x); }
 		
 		/// Returns a rotation matrix as a cVector.
 		/// This matrix can be used by fastrot and fastunrot to point

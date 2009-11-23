@@ -19,7 +19,7 @@
 	<File name="../src/game/animation/luaanimation.h" open="0" top="0" tabpos="2">
 		<Cursor position="61" topLine="0" />
 	</File>
-	<File name="../src/game/bullet/bullet.cpp" open="1" top="1" tabpos="9">
+	<File name="../src/game/bullet/bullet.cpp" open="1" top="0" tabpos="9">
 		<Cursor position="848" topLine="0" />
 	</File>
 	<File name="../src/game/bullet/bullet.h" open="1" top="0" tabpos="7">
@@ -106,8 +106,8 @@
 	<File name="../src/game/misc/luautil.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="21" topLine="0" />
 	</File>
-	<File name="../src/game/misc/luautil.h" open="0" top="0" tabpos="1">
-		<Cursor position="112" topLine="20" />
+	<File name="../src/game/misc/luautil.h" open="1" top="0" tabpos="10">
+		<Cursor position="70" topLine="0" />
 	</File>
 	<File name="../src/game/misc/timer.cpp" open="0" top="0" tabpos="10">
 		<Cursor position="478" topLine="51" />
@@ -115,8 +115,8 @@
 	<File name="../src/game/misc/timer.h" open="0" top="0" tabpos="11">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="../src/game/misc/vector.h" open="0" top="0" tabpos="6">
-		<Cursor position="2768" topLine="7" />
+	<File name="../src/game/misc/vector.h" open="1" top="1" tabpos="11">
+		<Cursor position="103" topLine="0" />
 	</File>
 	<File name="../src/game/player/player.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="336" topLine="12" />
