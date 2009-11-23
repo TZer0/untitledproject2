@@ -22,13 +22,13 @@ void cmBullet::draw(void) {
 void cmBullet::process(double delta) {
     for (EatBullets i = bullets.begin(); i!=bullets.end(); i++) {
         cBullet *tmp = (*i);
+        
+        // Runs the script function
+        lua_getglobal(tmp->l, "process");
+        lua_pushnumber(tmp->l, delta);
+        lua_pcall(tmp->l, 1, 0, 0);
+        
         tmp->pos += tmp->vel * delta;
-
-        if (tmp->life % 8 == 0) {
-            tmp->animation->setSequence("FRAMEA");
-        } else {
-            tmp->animation->setSequence("FRAMEB");
-        }
 
         ++tmp->life;
     }
