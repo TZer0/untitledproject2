@@ -2,10 +2,10 @@
 
 using namespace std;
 
-class cBullet *cmBullet::add(const char *id, cVector pos, cVector vel) {
+class cBullet *cmBullet::add(const char *script, cVector pos, cVector vel) {
 
     class cBullet *newBullet;
-    newBullet = new cBullet(get(id), pos, vel);
+    newBullet = new cBullet(script, pos, vel);
     bullets.push_back(newBullet);
     return newBullet;
 }
@@ -49,11 +49,8 @@ int cmBullet::load(void) {
     std::list<std::string>::iterator i;
     
     for (i = cmBD->filedb.begin(); i != cmBD->filedb.end(); i++) {
-        cBullData *tmp = new cBullData;
-        tmp->script = mGame->mFile->get_script((*i).c_str());
-        LOGS(LDEBUG, "Loading bullet %s",
-                mGame->mFile->execdir_strip((*i).c_str()).c_str());
-        insert(mGame->mFile->execdir_strip((*i).c_str()), tmp);
+       // LOGS(DEBUG, "Loading %s", (*i).c_str());
+       // load_bullet_file((*i).c_str());
     }
     return 0;
 }
