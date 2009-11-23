@@ -8,7 +8,7 @@
 using namespace std;
 
 void cmLevel::init() {
-
+    int start = -1;
     // todo: put this call where it really belongs:
     //tiles.resize(LEVEL_HEIGHT);
     for (int j = 0; j<get_sizex(); j++) {
@@ -25,18 +25,27 @@ void cmLevel::init() {
     rect = mGame->mCollision->create(CollisionRectangle, &colpos, cVector(0,0), 32, 32);
     
     // Register the tiles to the collision map
-    for (int k = 0; k<get_sizex(); k++) {
+   for (int k = 0; k<get_sizex(); k++) {
         for (int i = 0; i<get_sizey(); i++) {
-            if(tiles[k][i].invisible == 0) {
-                // Moves the collision position
-                colpos = cVector(k*32, i*32);
-            
-                // Registers the rectangle for all existing tiles
-                register_collision(rect, new sColSectorInstance(new sLevelCollision(k,i)));
+            if(tiles[k][i].invisible == 0 && start == -1) {
+                start = i;
+                
             }// if(isTile)
+            if((tiles[k][i].invisible == 1 && start != -1) || (i == get_sizey()-1 && start != -1)){
+                if (start == -1) {
+                    start = 0; 
+                }
+                colpos = cVector(k*32, start*32);
+                rect = mGame->mCollision->create(CollisionRectangle, &colpos, cVector(0,0), 32, (i-start)*32);
+                register_collision(rect, new sColSectorInstance(new sLevelCollision(rect,k,start)));
+                start = -1;
+            }
+           
         }// for(y)
+         start = -1;
     }// for(x)
     
+                
 }
 
 void cmLevel::collision_function(int caller_id, void *inst)
@@ -49,7 +58,7 @@ void cmLevel::collision_function(int caller_id, void *inst)
     
     // Call the test_collision() function for the cApplyCollision system that called for us
     // Passing our collision object, and our number
-    getCaller()->test_collision(getId(), rect);
+    getCaller()->test_collision(getId(), lc->thisCollision);
 }
 
 void cmLevel::level_init() {
