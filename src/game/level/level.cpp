@@ -13,7 +13,8 @@ void cmLevel::init() {
     //tiles.resize(LEVEL_HEIGHT);
     for (int j = 0; j<get_sizex(); j++) {
         //tiles[j].resize(LEVEL_WIDTH);
-        tiles[j][18] = 1;
+        tiles[j][18].tile = 1;
+        tiles[j][18].invisible = 0;
     }
     for (int i = 0; i<16; i++) {
         for (int k = 0; k<16; k++) {
@@ -21,7 +22,7 @@ void cmLevel::init() {
         tiles[i+20][k].invisible = 0;
         }
     }
-    
+
     rect = mGame->mCollision->create(CollisionRectangle, &colpos, cVector(0,0), 32, 32);
     
     // Register the tiles to the collision map
@@ -31,7 +32,7 @@ void cmLevel::init() {
                 start = y;
                 
             }// if(isTile)
-            if((tiles[x][y].invisible == 1 && start != -1) || (y == get_sizey()-1 && start != -1)){
+            if((tiles[x][y].notbigbox == 1 && tiles[x][y].invisible == 0)||(tiles[x][y].invisible == 1 && start != -1) || (y == get_sizey()-1 && start != -1)){
                 if (start == -1) {
                     start = 0; 
                 }
