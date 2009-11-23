@@ -18,7 +18,9 @@ class cTile{
         UINT water       : 1;
         UINT sink        : 1;
         UINT scriptdef   : 4;
-        UINT unknown     : 8;
+        UINT notbigbox   : 1;
+        UINT collidable  : 1;
+        UINT unknown     : 6;
 
         // costructors:
         cTile() { cTile(0); }
