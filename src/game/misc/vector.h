@@ -1,8 +1,9 @@
-#include "../port.h"
 /**
  * File: vector.h
  *
  * Description:	Header for the vector class.
+ *
+ * (c)2009, by Raymond Loeberg
  */
 #ifndef VECTOR_H
 #define VECTOR_H
@@ -73,11 +74,52 @@ class cVector {
 		cVector rot(const cVector  &b);
 		cVector unrot(const cVector &b);
 		cVector swap(void)                  { return(cVector(y,x)); }
-		//double angle(cVector &b)             { return atan2(-(b.y-y),(b.x-y))-M_PI/2.0; }
-		double angle(void)                  { return atan2(-y,x); }
+		double angle(void)                  { return atan2(y,x); }
+		
+		/// Returns a rotation matrix as a cVector.
+		/// This matrix can be used by fastrot and fastunrot to point
+		/// a vector in the direction of this vector's getrot() matrix.
+		/// The new coordinate system is such that this vector's normal points towards [0,1]
+		cVector getrot_y() {
+            if(y==0 && x==0)
+                return cVector(1.0,0.0);
+            else {
+                cVector t = this->norm();
+                return cVector(t.x,t.y);
+            }
+		}
+		
+		/// As getrot_y, but rotates the normal point to [1,0]
+		cVector getrot_x() {
+		    if(y==0 && x==0)
+                return cVector(1.0,0.0);
+		    else {
+		        cVector t = this->norm();
+                return cVector(t.x,-t.y);
+		    }
+		}
+		
+		/// Applies a fast rotation using a rotation matrix
+		void fastrot(const cVector &rot) {
+            double tx=x,ty=y;
+            x = rot.x*tx - rot.y*ty;
+            y = rot.y*tx + rot.x*ty;
+        }
+        
+        /// Applies a fast reversion of a rotation using a rotation matrix
+        void fastunrot(const cVector &rot) {
+            double tx=x,ty=y;
+            x = rot.x*tx + rot.y*ty;
+            y =-rot.y*tx + rot.x*ty;
+        }
+        
+        /// Returns a new cVector that has its rotation reversed
+        cVector unrotate(const cVector &rot) {
+            return(cVector( rot.x*x + rot.y*y,
+                           -rot.y*x + rot.x*y ));
+        }
 		
 		double x,y;
 };
 
 #endif
-
