@@ -8,7 +8,8 @@
 using namespace std;
 
 void cmLevel::init() {
-
+    int start = -1;
+    int rI = 0;
     // todo: put this call where it really belongs:
     //tiles.resize(LEVEL_HEIGHT);
     for (int j = 0; j<get_sizex(); j++) {
@@ -21,22 +22,38 @@ void cmLevel::init() {
         tiles[i+20][k].invisible = 0;
         }
     }
-    
-    rect = mGame->mCollision->create(CollisionRectangle, &colpos, cVector(0,0), 32, 32);
-    
-    // Register the tiles to the collision map
+    tiles[1][10].tile = 1;
+    tiles[1][10].invisible = 0;
+    tiles[1][15].tile = 1;
+    tiles[1][15].invisible = 0;
     for (int k = 0; k<get_sizex(); k++) {
         for (int i = 0; i<get_sizey(); i++) {
-            if(tiles[k][i].invisible == 0) {
-                // Moves the collision position
+            if(tiles[k][i].invisible == 0 && start == -1) {
+                start = i;
+            }
+            if ((tiles[k][i].invisible != 0 && start != -1)|| (i == get_sizey()-1 && start != -1)){ 
+                colpos = cVector(k*32, (start)*32);
+                //rect = mGame->mCollision->create(CollisionRectangle, &colpos, cVector(0,0), 32, (i-start)*32);
+                rect1.push_back(mGame->mCollision->create(CollisionRectangle, &colpos, cVector(0,0), 32, (i-start)*32));
+                register_collision(rect1[rI], new sColSectorInstance(new sLevelCollision(k,start)));
+                start = -1;
+                rI++;
+            }
+
+            /*if ((tiles[k][i].invisible == 0 && i == get_sizey()-1)){
                 colpos = cVector(k*32, i*32);
-            
-                // Registers the rectangle for all existing tiles
+                rect = mGame->mCollision->create(CollisionRectangle, &colpos, cVector(0,0), 32, 32);
                 register_collision(rect, new sColSectorInstance(new sLevelCollision(k,i)));
-            }// if(isTile)
+            }*/
+           
         }// for(y)
+
+        //start = -1;
+        //length = 0;
     }// for(x)
-    
+
+    rect = mGame->mCollision->create(CollisionRectangle, &colpos, cVector(0,0), 32, 32);
+
 }
 
 void cmLevel::collision_function(int caller_id, void *inst)
