@@ -26,6 +26,7 @@ class cmPlayer : public cDataSystem, public cApplyCollision {
         bool flagDown;
         bool flagFire;
         bool left;
+        bool reJump;
         cAnimation *animation;
         cWeapon *weapon;
         cCollision *col;
