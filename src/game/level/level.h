@@ -36,7 +36,7 @@ class cmLevel : public cDataSystem, public cApplyCollision {
         cVector colpos;     // Position of collision instance
 
     public:
-        cmLevel() : cApplyCollision(MOD_LEVEL, 4, 70*32, 35*32)
+        cmLevel() : cApplyCollision(MOD_LEVEL, 4, 1*32, 1*32)
             { }
         
         void init();

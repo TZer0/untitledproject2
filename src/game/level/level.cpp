@@ -25,6 +25,8 @@ void cmLevel::init() {
 
     rect = mGame->mCollision->create(CollisionRectangle, &colpos, cVector(0,0), 32, 32);
     
+    resize_colmap(32*get_sizex(), 32*get_sizey());
+    
     // Register the tiles to the collision map
   for (int x = 0; x<get_sizex(); x++) {
         for (int y = 0; y<get_sizey(); y++) {
