@@ -13,8 +13,8 @@
  * Initialize player.
  */
 void cmPlayer::init() {
-    gravity = 500.0;
-    horSpeed = 300;
+    gravity = 1600.0;
+    horSpeed = 250;
     jumpHeight = 400;
     jumpLife = JUMP_LIFE;
     height = 48;
