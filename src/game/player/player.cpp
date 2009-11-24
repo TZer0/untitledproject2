@@ -32,6 +32,7 @@ void cmPlayer::init() {
     flagRight = false;
     flagFire = false;
     left = false;
+    reJump = false;
 
     animation = mGame->mAnim->add("PLAYER");
     animation->setSequence("IDLE");
@@ -50,6 +51,7 @@ void cmPlayer::init() {
  * Set player flags based on keyboard input.
  */
 void cmPlayer::input() {
+    reJump = true;
     if (key[KEY_LEFT] || key[KEY_H]) {
         flagLeft = true;
     }
@@ -60,6 +62,7 @@ void cmPlayer::input() {
 
     if (key[KEY_UP] || key[KEY_K]) {
         flagUp = true;
+        reJump = false;
     }
 
     if (key[KEY_DOWN] || key[KEY_J]) {
@@ -215,7 +218,9 @@ bool cmPlayer::test_collision(int dial_id, cCollision *target)
             // Currently, we kill off the velocity, based on the the
             // return path normal
             vel = vel*ret.orp.normal().norm();
-            jumpLife = JUMP_LIFE;
+            if (reJump == true) {
+                jumpLife = JUMP_LIFE;
+            }
         }
         
         if (fabs(angle+M_PI/2.0) < 0.01) {
