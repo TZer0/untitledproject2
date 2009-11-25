@@ -214,7 +214,7 @@ bool cmPlayer::test_collision(int dial_id, cCollision *target)
 
         // We will also permit a new jump, if the normal is sensible.
         double angle = ret.orp.angle();
-        if (fabs(angle-M_PI/2.0) < 0.01) {
+        if (fabs(angle-M_PI/2.0) < 0.01 && vel.y > 0) {
             // Currently, we kill off the velocity, based on the the
             // return path normal
             vel = vel*ret.orp.normal().norm();
