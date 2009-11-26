@@ -22,7 +22,7 @@ struct sLevelCollision {
     unsigned short xi,yi;
     cCollision *thisCollision;
     sColSectorInstance cols;
-    sLevelCollision(cCollision *thisRect,unsigned short xi, unsigned short yi) : thisCollision(thisRect),xi(xi), yi(yi), cols(this)
+    sLevelCollision(cCollision *thisRect,unsigned short xi, unsigned short yi) : xi(xi), yi(yi), thisCollision(thisRect), cols(this)
         { }
 };
 

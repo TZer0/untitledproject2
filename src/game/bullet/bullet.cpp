@@ -38,6 +38,7 @@ void cmBullet::process(double delta) {
         ++tmp->life;
         
         if(tmp->toDie) {
+            delete tmp;
             i = bullets.erase(i);
         }else
             ++i;
