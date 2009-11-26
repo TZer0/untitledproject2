@@ -16,12 +16,6 @@ void cmLevel::init() {
         tiles[j][18].tile = 1;
         tiles[j][18].invisible = 0;
     }
-    for (int i = 0; i<16; i++) {
-        for (int k = 0; k<16; k++) {
-        tiles[i+20][k].tile = k*16+i;
-        tiles[i+20][k].invisible = 0;
-        }
-    }
 
     rect = mGame->mCollision->create(CollisionRectangle, &colpos, cVector(0,0), 32, 32);
     
