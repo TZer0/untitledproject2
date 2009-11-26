@@ -9,18 +9,7 @@ using namespace std;
 
 void cmLevel::init() {
     int start = -1;
-    // todo: put this call where it really belongs:
-    //tiles.resize(LEVEL_HEIGHT);
-    for (int j = 0; j<get_sizex(); j++) {
-        //tiles[j].resize(LEVEL_WIDTH);
-        tiles[j][18].tile = 1;
-        tiles[j][18].invisible = 0;
-    }
-
-    rect = mGame->mCollision->create(CollisionRectangle, &colpos, cVector(0,0), 32, 32);
-    
     resize_colmap(32*get_sizex(), 32*get_sizey());
-    
     // Register the tiles to the collision map
   for (int x = 0; x<get_sizex(); x++) {
         for (int y = 0; y<get_sizey(); y++) {
