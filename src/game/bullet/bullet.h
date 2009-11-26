@@ -71,6 +71,11 @@ class cBullet {
 
         }
         
+        ~cBullet() {
+            lua_close(l);
+            animation->toDie = 1;
+        }
+        
         lua_State *l;
         cAnimation *animation;
         cVector pos;

@@ -20,16 +20,10 @@ void cmAnim::process(double delta)
 	class cAnimation *cur;
 	class cAnimSeqData *cseq;
 	
-	for(AnimIter i=data.begin(); i!=data.end(); i++) {
+	for(AnimIter i=data.begin(); i!=data.end();) {
 		// "Define" the current object and sequence
 		cur=(*i);
 		cseq = cur->cseq;
-		
-		// Check if this object is to be killed
-		if(cur->toDie) {
-		    data.erase(i);
-			continue;
-		}
 		
 		// We prevent the delta from being too fucking large
 		// o_O
@@ -67,6 +61,12 @@ void cmAnim::process(double delta)
 		cur->cur = cseq->fd[cur->cf]->bmp;
 		cur->x = cseq->fd[cur->cf]->xo;
 		cur->y = cseq->fd[cur->cf]->yo;
+		
+        if(cur->toDie) {
+            delete cur;
+            i = data.erase(i);
+        }else
+            ++i;
 	}
 	
 	return;
