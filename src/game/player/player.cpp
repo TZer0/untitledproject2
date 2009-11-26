@@ -20,7 +20,7 @@ void cmPlayer::init() {
     height = 48;
     width = 32;
 
-    pos = cVector(200, SCREEN_H - height - 50);
+    pos = cVector(200, 200);
     vel = cVector(0.0, 0.0);
 
     // Initate camera position

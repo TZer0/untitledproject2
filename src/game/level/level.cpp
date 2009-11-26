@@ -13,11 +13,11 @@ void cmLevel::init() {
     // Register the tiles to the collision map
   for (int x = 0; x<get_sizex(); x++) {
         for (int y = 0; y<get_sizey(); y++) {
-            if(tiles[x][y].invisible == 0 && start == -1) {
+            if(tiles[x][y].notcollidable == 0 && start == -1) {
                 start = y;
                 
             }// if(isTile)
-            if((tiles[x][y].notbigbox == 1 && tiles[x][y].invisible == 0)||(tiles[x][y].invisible == 1 && start != -1) || (y == get_sizey()-1 && start != -1)){
+            if((tiles[x][y].notbigbox == 1 && tiles[x][y].notcollidable == 0)||(tiles[x][y].notcollidable == 1 && start != -1) || (y == get_sizey()-1 && start != -1)){
                 if (start == -1) {
                     start = 0; 
                 }
