@@ -19,20 +19,34 @@ class cWeaponData {
 
 class cWeapon {
     private:
+        cWeaponData *data;
+		cLuaClass lc;
+        
+    public:
         int ammo; // Negative value gives infinite ammo.
         bool ean; // Enemy And Netherworld. Weapon hurts player if true.
         lua_State *l;
-        cWeaponData *data;
-        
-    public:
-        cWeapon(cWeaponData *data, int ammo, bool ean):
-            ammo(ammo),
-            ean(ean),
-            data(data) {
+
+        cWeapon(cWeaponData *data, int ammo, bool ean) {
+            this->data = data;
+            this->ammo = ammo;
+            this->ean = ean;
 
             l = luaL_newstate();
-            luaL_openlibs(l);
-            luaL_dostring(l, data->script);
+            luaL_openlibs(l); 
+
+            // Register the class to the LUA script.
+            lc.register_self(l, "weapon");
+            lc.register_int("ammo", &this->ammo);
+            // Simple LUA script example, showcasing both reading and writing
+            // Run script
+            if(luaL_dostring(l, data->script)) {
+                LOGU(LERR, "Lua script error %s", lua_tostring(l, -1));
+            }
+        }
+        
+        ~cWeapon() {
+            lua_close(l);
         }
 
         void spawnBullet(std::string, double, double, double, double);
