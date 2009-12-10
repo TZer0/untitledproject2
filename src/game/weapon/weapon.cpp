@@ -1,8 +1,9 @@
 #include "weapon.h"
+#include "luaweapon.h"
 
 using namespace std;
 
-class cWeapon *cmWeapon::add(const char *id, int ammo, bool ean) {
+cWeapon *cmWeapon::add(const char *id, int ammo, bool ean) {
     class cWeapon *newWeapon;
     newWeapon = new cWeapon(get(id), ammo, ean);
     weapons.push_back(newWeapon);
@@ -24,6 +25,25 @@ int cmWeapon::load(void) {
     return 0;
 }
 
+cWeapon::cWeapon(cWeaponData *data, int ammo, bool ean) {
+    this->data = data;
+    this->ammo = ammo;
+    this->ean = ean;
+
+    l = luaL_newstate();
+    luaL_openlibs(l); 
+    luaopen_weapon(l);
+
+    // Register the class to the LUA script.
+    lc.register_self(l, "weapon");
+    lc.register_int("ammo", &this->ammo);
+    // Simple LUA script example, showcasing both reading and writing
+    // Run script
+    if(luaL_dostring(l, data->script)) {
+        LOGU(LERR, "Lua script error %s", lua_tostring(l, -1));
+    }
+}
+
 void cWeapon::spawnBullet(string id, double px, double py, double vx, double vy) {
     cVector pos, vel;
 
@@ -36,8 +56,9 @@ void cWeapon::spawnBullet(string id, double px, double py, double vx, double vy)
 
 void cWeapon::fire(cVector pos, cVector vel) {
     if (ammo != 0) {
+        mGame->mWeapon->cur = this;
         // Call Lua function which adds bullet(s).
-        spawnBullet("data/bullet/test.lua", pos.x, pos.y, vel.x, vel.y);
+        // spawnBullet("data/bullet/test.lua", pos.x, pos.y, vel.x, vel.y);
         lua_getglobal(l, "fire");
         lua_pcall(l, 0, 0, 0);
         if (ammo > 0)

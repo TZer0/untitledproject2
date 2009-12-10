@@ -25,6 +25,7 @@ SOURCEZ = main.cpp\
 		game/misc/vector.cpp\
 		game/player/player.cpp\
 		game/weapon/weapon.cpp\
+		game/weapon/luaweapon.cpp\
 
 
 OBJECTZ = $(SOURCEZ:.cpp=.o)

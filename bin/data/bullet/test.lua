@@ -1,4 +1,5 @@
 function init()
+    print("init")
 end
 
 function process(delta)
