@@ -21,7 +21,7 @@ void cmBullet::draw(void) {
 }
 
 void cmBullet::process(double delta) {
-    for (EatBullets i = bullets.begin(); i!=bullets.end(); /* */) {
+    for (EatBullets i = bullets.begin(); i!=bullets.end();) {
         cBullet *tmp = (*i);
         cur = tmp;
         
@@ -38,6 +38,7 @@ void cmBullet::process(double delta) {
         ++tmp->life;
         
         if(tmp->toDie) {
+            delete tmp;
             i = bullets.erase(i);
         }else
             ++i;

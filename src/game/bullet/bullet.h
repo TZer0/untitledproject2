@@ -39,8 +39,12 @@ class cBullet {
 
     public:
         bool toDie;
-        
         int life;
+        lua_State *l;
+        cAnimation *animation;
+        cVector pos;
+        cVector vel;
+
         cBullet(cBullData *data, cVector pos, cVector vel) {
             this->pos = pos;
             this->vel = vel;
@@ -56,7 +60,7 @@ class cBullet {
             animation = mGame->mAnim->add("BULLET");
             animation->setSequence("IDLE");
             
-            // Registers the class to the LUA script
+            // Register the class to the LUA script.
             lc.register_self(l, "shot");
                 lc.register_double("x", &this->pos.x);
                 lc.register_double("y", &this->pos.y);
@@ -71,13 +75,16 @@ class cBullet {
 
         }
         
-        lua_State *l;
-        cAnimation *animation;
-        cVector pos;
-        cVector vel;
+        ~cBullet() {
+            lua_close(l);
+            animation->toDie = 1;
+        }
 };
 
-class cmBullet : public cDataSystem, public cApplyCollision, public tLoadingSystem<cBullData *> {
+class cmBullet :
+    public cDataSystem,
+    public cApplyCollision,
+    public tLoadingSystem<cBullData *> {
     private:
         std::list<cBullet*> bullets;
         typedef std::list<cBullet*>::iterator EatBullets;
@@ -88,7 +95,9 @@ class cmBullet : public cDataSystem, public cApplyCollision, public tLoadingSyst
         }
         
         void init(void) {
-            col = mGame->mCollision->create(CollisionPoint, &colpoint, cVector(0,0));
+            col = mGame->mCollision->create(CollisionPoint,
+                    &colpoint,
+                    cVector(0,0));
         }
         
         void level_init(void) {}
@@ -96,7 +105,7 @@ class cmBullet : public cDataSystem, public cApplyCollision, public tLoadingSyst
         void process(double); 
         void draw(void);
         void clear_data(void);
-        class cBullet *add(const char *script, cVector pos, cVector vel);  
+        class cBullet *add(const char *id, cVector pos, cVector vel);  
         virtual ~cmBullet() {}
         
         cBullet *cur;

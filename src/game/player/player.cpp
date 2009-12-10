@@ -3,7 +3,6 @@
 #include "../draw.h"
 #include "../game.h"
 #include "../level/level.h"
-#include "../misc/input.h"
 
 #define OUTER_BORDER_W 200
 #define INNER_BORDER_W 300
@@ -14,14 +13,14 @@
  * Initialize player.
  */
 void cmPlayer::init() {
-    gravity = 500.0;
-    horSpeed = 300;
+    gravity = 1600.0;
+    horSpeed = 250;
     jumpHeight = 400;
     jumpLife = JUMP_LIFE;
     height = 48;
     width = 32;
 
-    pos = cVector(200, SCREEN_H - height - 50);
+    pos = cVector(200, 200);
     vel = cVector(0.0, 0.0);
 
     // Initate camera position
@@ -63,9 +62,7 @@ void cmPlayer::input() {
 
     if (key[KEY_UP] || key[KEY_K]) {
         flagUp = true;
-        if (key[KEY_UP] || mGame->mIn->pkey[KEY_K]) {
         reJump = false;
-        }
     }
 
     if (key[KEY_DOWN] || key[KEY_J]) {
@@ -217,7 +214,7 @@ bool cmPlayer::test_collision(int dial_id, cCollision *target)
 
         // We will also permit a new jump, if the normal is sensible.
         double angle = ret.orp.angle();
-        if (fabs(angle-M_PI/2.0) < 0.01) {
+        if (fabs(angle-M_PI/2.0) < 0.01 && vel.y > 0) {
             // Currently, we kill off the velocity, based on the the
             // return path normal
             vel = vel*ret.orp.normal().norm();
