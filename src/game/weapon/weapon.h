@@ -17,11 +17,6 @@ class cWeaponData {
         const char *script;
 };
 
-class cmWeaponData : public tLoadingSystem<cBulletData *> {
-    public:
-        cWeaponData *cWData;
-};
-
 class cWeapon {
     private:
         cWeaponData *data;
@@ -31,9 +26,8 @@ class cWeapon {
         int ammo; // Negative value gives infinite ammo.
         bool ean; // Enemy And Netherworld. Weapon hurts player if true.
         lua_State *l;
-        cWeaponData *data;
 
-        cWeapon(cWeapponData *data, int ammo, bool ean) {
+        cWeapon(cWeaponData *data, int ammo, bool ean) {
             this->data = data;
             this->ammo = ammo;
             this->ean = ean;
