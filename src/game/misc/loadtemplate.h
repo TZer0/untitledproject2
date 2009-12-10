@@ -57,6 +57,7 @@ class tLoadingSystem {
 		
 		/// List of filenames to load
 		std::list<std::string> filedb;
+		typedef std::list<std::string>::iterator FileIterator;
 };
 
 #endif

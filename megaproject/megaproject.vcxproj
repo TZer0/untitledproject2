@@ -90,6 +90,7 @@
     <ClInclude Include="..\src\game\misc\file.h" />
     <ClInclude Include="..\src\game\misc\input.h" />
     <ClInclude Include="..\src\game\misc\loadimage.h" />
+    <ClInclude Include="..\src\game\misc\loadtemplate.h" />
     <ClInclude Include="..\src\game\misc\log.h" />
     <ClInclude Include="..\src\game\misc\moduletemplate.h" />
     <ClInclude Include="..\src\game\misc\timer.h" />

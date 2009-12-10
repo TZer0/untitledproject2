@@ -62,10 +62,8 @@ int cmBullet::load(void) {
     for (i = cmBD->filedb.begin(); i != cmBD->filedb.end(); i++) {
        cBullData *tmp = new cBullData;
        tmp->script = mGame->mFile->get_script((*i).c_str());
-       LOGS(LDEBUG, "Loading bullet %s",
-             mGame->mFile->execdir_strip((*i).c_str()).c_str());
-             insert(mGame->mFile->execdir_strip((*i).c_str()), tmp);
-    }
+       insert(mGame->mFile->execdir_strip((*i).c_str()), tmp);
+   	}
     return 0;
 }
 
