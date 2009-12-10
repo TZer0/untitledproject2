@@ -60,7 +60,6 @@ int cmLevel::load() {
         }
     }
 	background = mImagesData.retrieve("background.bmp");
-	LOGC(LDEBUG, "%p", background);
     // creates a new levelinfo instance.
     // todo: create more instances and put them in the levelinfo map.
     curLev = new cLevelInfo();

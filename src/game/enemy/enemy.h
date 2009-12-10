@@ -14,6 +14,7 @@
 #include "../lua.h"
 #include "../animation/anim.h"
 #include "../weapon/weapon.h"
+#include "../misc/loadtemplate.h"
 
 class cEnemyData {
 
@@ -55,7 +56,7 @@ class cEnemy {
         }
 };
 
-class cmEnemy : public cDataSystem {
+class cmEnemy : public cDataSystem, public tLoadingSystem<cEnemyData *> {
     private:
         std::list<cEnemy*> enemies;
         typedef std::list<std::string>::iterator Fileeater;

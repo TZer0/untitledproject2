@@ -15,16 +15,13 @@ void cmEnemy::clear_data(void) {
 
 /* Load the enemy data */
 int cmEnemy::load(void) {
-
-    std::list<std::string> files
-        = mGame->mFile->dirRecursiveGet("enemies", "lua");
-
-    for (Fileeater f = files.begin(); f != files.end(); f++) {
+	filedb = mGame->mFile->dirRecursiveGet("enemies", "lua");
+	FileIterator f;
+    for (f = filedb.begin(); f != filedb.end(); f++) {
         std::string tmp = (*f);
         cEnemyData *tmpData = new cEnemyData();
         tmpData->script = mGame->mFile->get_script(tmp.c_str());
     }
-
     return 0;
 }
 
@@ -71,10 +68,9 @@ void cmEnemy::process(double delta) {
 
     for (it = enemies.begin(); it != enemies.end(); it++) {
         cEnemy *e = *it;
-        e->vel.x = 0.04 * (mGame->mPlayer->pos.x - e->pos.x);
-        e->vel.y = 0.04 * (mGame->mPlayer->pos.y - e->pos.y);
+        e->vel.x = 0.04 * (mGame->mPlayer->pos.x - e->pos.x+15);
+        e->vel.y = 0.04 * (mGame->mPlayer->pos.y - e->pos.y+25);
         e->pos += e->vel;
-
         if (e->life % 60 == 0) {
             LOGS(LDEBUG, "Die, player!");
             e->weapon->fire(e->pos, cVector(10*e->vel.x, 10*e->vel.y));
