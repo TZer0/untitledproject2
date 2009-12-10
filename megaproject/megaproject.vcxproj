@@ -1,0 +1,137 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{C5E060C9-057F-4FBA-B617-D06394786AC0}</ProjectGUID>
+    <RootNamespace>megaproject</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(LocalAppData)\Microsoft\VisualStudio\10.0\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(LocalAppData)\Microsoft\VisualStudio\10.0\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\..\..\bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>alleg.lib;lua51.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\game\animation\anim.h" />
+    <ClInclude Include="..\src\game\animation\loadanimation.h" />
+    <ClInclude Include="..\src\game\animation\loadtemplate.h" />
+    <ClInclude Include="..\src\game\animation\luaanimation.h" />
+    <ClInclude Include="..\src\game\bullet\bullet.h" />
+    <ClInclude Include="..\src\game\collision\colapply.h" />
+    <ClInclude Include="..\src\game\collision\collision.h" />
+    <ClInclude Include="..\src\game\collision\colmap.h" />
+    <ClInclude Include="..\src\game\draw.h" />
+    <ClInclude Include="..\src\game\enemy\enemy.h" />
+    <ClInclude Include="..\src\game\game.h" />
+    <ClInclude Include="..\src\game\level\level.h" />
+    <ClInclude Include="..\src\game\level\levelinfo.h" />
+    <ClInclude Include="..\src\game\level\levelinfoattributes.h" />
+    <ClInclude Include="..\src\game\level\tile.h" />
+    <ClInclude Include="..\src\game\lua.h" />
+    <ClInclude Include="..\src\game\misc\file.h" />
+    <ClInclude Include="..\src\game\misc\input.h" />
+    <ClInclude Include="..\src\game\misc\loadimage.h" />
+    <ClInclude Include="..\src\game\misc\log.h" />
+    <ClInclude Include="..\src\game\misc\moduletemplate.h" />
+    <ClInclude Include="..\src\game\misc\timer.h" />
+    <ClInclude Include="..\src\game\misc\vector.h" />
+    <ClInclude Include="..\src\game\player\player.h" />
+    <ClInclude Include="..\src\game\port.h" />
+    <ClInclude Include="..\src\game\sound\sound.h" />
+    <ClInclude Include="..\src\game\weapon\weapon.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\game\animation\anim.cpp" />
+    <ClCompile Include="..\src\game\animation\animproc.cpp" />
+    <ClCompile Include="..\src\game\animation\loadanimation.cpp" />
+    <ClCompile Include="..\src\game\animation\luaanimation.cpp" />
+    <ClCompile Include="..\src\game\bullet\bullet.cpp" />
+    <ClCompile Include="..\src\game\collision\colapply.cpp" />
+    <ClCompile Include="..\src\game\collision\collision.cpp" />
+    <ClCompile Include="..\src\game\collision\colmap.cpp" />
+    <ClCompile Include="..\src\game\collision\sat.cpp" />
+    <ClCompile Include="..\src\game\draw.cpp" />
+    <ClCompile Include="..\src\game\enemy\enemy.cpp" />
+    <ClCompile Include="..\src\game\game.cpp" />
+    <ClCompile Include="..\src\game\init.cpp" />
+    <ClCompile Include="..\src\game\level\level.cpp" />
+    <ClCompile Include="..\src\game\level\levelinfo.cpp" />
+    <ClCompile Include="..\src\game\level\tile.cpp" />
+    <ClCompile Include="..\src\game\load.cpp" />
+    <ClCompile Include="..\src\game\misc\file.cpp" />
+    <ClCompile Include="..\src\game\misc\input.cpp" />
+    <ClCompile Include="..\src\game\misc\loadimage.cpp" />
+    <ClCompile Include="..\src\game\misc\log.cpp" />
+    <ClCompile Include="..\src\game\misc\timer.cpp" />
+    <ClCompile Include="..\src\game\misc\vector.cpp" />
+    <ClCompile Include="..\src\game\player\player.cpp" />
+    <ClCompile Include="..\src\game\sound\sound.cpp" />
+    <ClCompile Include="..\src\game\weapon\weapon.cpp" />
+    <ClCompile Include="..\src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
