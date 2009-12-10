@@ -217,7 +217,7 @@ void cColMap::clear()
         for(int yi=0;yi<cl->xys;yi++) {
             for(int xi=0;xi<cl->xys;xi++) {
                 // Reset bits, this is slow, but for std::vector<bool>, there is no other way
-                cl->data[yi][xi] = false;
+                cl->md[yi][xi] = false;
                 
                 // Clear data from map
                 if(l==lc-1)

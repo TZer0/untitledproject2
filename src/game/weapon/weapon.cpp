@@ -38,6 +38,8 @@ void cWeapon::fire(cVector pos, cVector vel) {
     if (ammo != 0) {
         // Call Lua function which adds bullet(s).
         spawnBullet("data/bullet/test.lua", pos.x, pos.y, vel.x, vel.y);
+        lua_getglobal(l, "fire");
+        lua_pcall(l, 0, 0, 0);
         if (ammo > 0)
             --ammo;
     } else {

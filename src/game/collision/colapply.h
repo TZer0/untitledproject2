@@ -19,7 +19,7 @@ class cCollision;
  * This class derives from the collision map, and utilizes it heavily
  * for determining which instances to collide with
  */
-class cApplyCollision : public cColMap {
+class cApplyCollision : cColMap {
     private:
         /// All cApplyCollision instances keeps an identifier
         /// to be used when identifying which modules interact with
@@ -39,7 +39,7 @@ class cApplyCollision : public cColMap {
         cApplyCollision *getCaller() { return caller; }
         
         /// Resizes the collision map
-        void resize_colmap(double w,double h) { resize(w,h); }
+        void resize_colmap(double w,double h) { clear(); resize(w,h); }
         
         /// Registers a collision object to the collision map
         void register_collision(cCollision *col, sColSectorInstance *inst);

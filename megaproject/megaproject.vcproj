@@ -57,7 +57,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="alleg.lib lua51.lib"
+				AdditionalDependencies="alleg.lib lua51.lib fmodex_vc.lib"
 				OutputFile="$(OutDir)\..\..\bin\$(ProjectName).exe"
 				GenerateDebugInformation="true"
 				TargetMachine="1"
