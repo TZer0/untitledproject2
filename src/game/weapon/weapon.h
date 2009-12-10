@@ -32,6 +32,9 @@ class cWeapon {
             this->ammo = ammo;
             this->ean = ean;
 
+            l = luaL_newstate();
+            luaL_openlibs(l); 
+
             // Register the class to the LUA script.
             lc.register_self(l, "weapon");
             lc.register_int("ammo", &this->ammo);
