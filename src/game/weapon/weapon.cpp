@@ -34,7 +34,6 @@ cWeapon::cWeapon(cWeaponData *data, int ammo, bool ean) {
     luaL_openlibs(l); 
     luaopen_weapon(l);
 
-    // Register the class to the LUA script.
     lc.register_self(l, "weapon");
     lc.register_int("ammo", &this->ammo);
     if(luaL_dostring(l, data->script)) {
