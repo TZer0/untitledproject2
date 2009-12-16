@@ -129,9 +129,9 @@ void cmPlayer::process(double delta) {
         cVector bulVel;
         flagFire = false;
         if (left) {
-            bulVel.x = -3 * horSpeed;
+            bulVel.x = -1;
         } else {
-            bulVel.x = 3 * horSpeed;
+            bulVel.x = 1;
         }
         weapon->fire(pos, bulVel);
     }

@@ -37,8 +37,6 @@ cWeapon::cWeapon(cWeaponData *data, int ammo, bool ean) {
     // Register the class to the LUA script.
     lc.register_self(l, "weapon");
     lc.register_int("ammo", &this->ammo);
-    // Simple LUA script example, showcasing both reading and writing
-    // Run script
     if(luaL_dostring(l, data->script)) {
         LOGU(LERR, "Lua script error %s", lua_tostring(l, -1));
     }
@@ -60,7 +58,11 @@ void cWeapon::fire(cVector pos, cVector vel) {
         // Call Lua function which adds bullet(s).
         // spawnBullet("data/bullet/test.lua", pos.x, pos.y, vel.x, vel.y);
         lua_getglobal(l, "fire");
-        lua_pcall(l, 0, 0, 0);
+        lua_pushnumber(l, pos.x);
+        lua_pushnumber(l, pos.y);
+        lua_pushnumber(l, vel.x);
+        lua_pushnumber(l, vel.y);
+        lua_pcall(l, 4, 0, 0);
         if (ammo > 0)
             --ammo;
     } else {

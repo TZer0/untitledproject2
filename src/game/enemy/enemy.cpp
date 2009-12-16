@@ -65,17 +65,20 @@ void cmEnemy::draw(void) {
 
 void cmEnemy::process(double delta) {
     std::list<cEnemy*>::iterator it;
+    cVector vel;
 
     for (it = enemies.begin(); it != enemies.end(); it++) {
         cEnemy *e = *it;
         e->vel.x = 0.04 * (mGame->mPlayer->pos.x - e->pos.x+15);
         e->vel.y = 0.04 * (mGame->mPlayer->pos.y - e->pos.y+25);
         e->pos += e->vel;
-        if (e->life % 60 == 0) {
+        // LOGS(LDEBUG, "e->life: %f", e->life);
+        if (int(e->life) % 100 == 0) {
             LOGS(LDEBUG, "Die, player!");
-            e->weapon->fire(e->pos, cVector(10*e->vel.x, 10*e->vel.y));
+            vel = cVector(10*e->vel.x, 10*e->vel.y);
+            e->weapon->fire(e->pos, vel.snorm());
         }
 
-        ++e->life;
+        e->life += 100 * delta;
     }
 }
