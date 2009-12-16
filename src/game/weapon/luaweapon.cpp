@@ -11,8 +11,8 @@ static int spawnBullet(lua_State *storS) {
     return 0;
 }
 
-static /*struct*/ luaL_Reg noe[] = {
-    {"bambam", spawnBullet},
+static struct luaL_Reg noe[] = {
+    {"spawn", spawnBullet},
     NULL};
 
 void luaopen_weapon(lua_State *storS) {

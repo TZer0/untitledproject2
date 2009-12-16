@@ -1,12 +1,13 @@
-print("Why, hello there.")
+print("BFG9K1 locked and loaded!")
 
 -- Chosen by fair dice roll. Randomness guaranteed!
 function randint()
     return 4
 end
 
-function fire()
-    bambam("data/bullet/test.lua", 320, 600, 3, randint())
+function fire(x, y, dx, dy)
+    spawn("data/bullet/test.lua", x, y, 300*dx, 300*dy)
 end
 
+-- What the fuck is this shit?
 a = randint()

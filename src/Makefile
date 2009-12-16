@@ -27,7 +27,6 @@ SOURCEZ = main.cpp\
 		game/weapon/weapon.cpp\
 		game/weapon/luaweapon.cpp\
 
-
 OBJECTZ = $(SOURCEZ:.cpp=.o)
 # GNU
 # CFLAGZ = $(shell allegro-config --cflags) -c -Wall -I/usr/include/lua5.1

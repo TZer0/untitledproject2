@@ -30,7 +30,7 @@ class cEnemy {
 
     public:
         cWeapon *weapon;
-        int life;
+        double life;
         int height;
         int width;
         cVector pos;
