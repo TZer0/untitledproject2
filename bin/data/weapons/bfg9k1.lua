@@ -10,4 +10,5 @@ function fire(x, y, dx, dy)
 end
 
 -- What the fuck is this shit?
+-- Let's leave it in, just to be safe.
 a = randint()

@@ -133,7 +133,8 @@ void cmPlayer::process(double delta) {
         } else {
             bulVel.x = 1;
         }
-        weapon->fire(pos, bulVel);
+        // bulVel.y = vel.y;
+        weapon->fire(cVector(pos.x+12, pos.y+20), bulVel);
     }
     
     // old code:
