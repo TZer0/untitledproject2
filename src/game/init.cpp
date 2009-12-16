@@ -18,7 +18,7 @@ int cmGame::init(void)
     allegro_init();
     
     set_color_depth(32);
-    set_gfx_mode(GFX_AUTODETECT_WINDOWED, 800, 600, 0, 0);
+    set_gfx_mode(GFX_AUTODETECT_WINDOWED, 640, 480, 0, 0);
     
     install_keyboard();
     install_mouse();
