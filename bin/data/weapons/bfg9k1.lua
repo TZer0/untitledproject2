@@ -6,7 +6,7 @@ function randint()
 end
 
 function fire(x, y, dx, dy)
-    spawn("data/bullet/test.lua", x, y, 300*dx, 300*dy)
+    spawn("data/bullet/test.lua", x, y, 500*dx, 500*dy)
 end
 
 -- What the fuck is this shit?
