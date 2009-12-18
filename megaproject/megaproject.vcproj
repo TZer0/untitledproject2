@@ -234,6 +234,10 @@
 					Name="weapon"
 					>
 					<File
+						RelativePath="..\src\game\weapon\luaweapon.cpp"
+						>
+					</File>
+					<File
 						RelativePath="..\src\game\weapon\weapon.cpp"
 						>
 					</File>
@@ -379,6 +383,10 @@
 				<Filter
 					Name="weapon"
 					>
+					<File
+						RelativePath="..\src\game\weapon\luaweapon.h"
+						>
+					</File>
 					<File
 						RelativePath="..\src\game\weapon\weapon.h"
 						>

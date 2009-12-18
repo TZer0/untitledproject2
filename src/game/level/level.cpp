@@ -8,6 +8,7 @@
 using namespace std;
 
 void cmLevel::init() {
+
     int start = -1;
     resize_colmap(32*get_sizex(), 32*get_sizey());
     // Register the tiles to the collision map
