@@ -104,7 +104,7 @@ void cmEnemy::collision_function(int caller_id, void *inst)
 		case MOD_BULLET:
 			// If true, a collision occured
 			// Process the response here
-			if(getCaller()->test_collision(caller_id, hit->col)) {
+			if(getCaller()->test_collision(getId(), hit->col)) {
 				LOGS(LDEBUG, "Ouch!");
 			}
 		break;

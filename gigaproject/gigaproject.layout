@@ -22,29 +22,29 @@
 	<File name="../src/game/animation/luaanimation.h" open="0" top="0" tabpos="2">
 		<Cursor position="61" topLine="0" />
 	</File>
-	<File name="../src/game/bullet/bullet.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="1018" topLine="0" />
+	<File name="../src/game/bullet/bullet.cpp" open="1" top="0" tabpos="14">
+		<Cursor position="2285" topLine="31" />
 	</File>
-	<File name="../src/game/bullet/bullet.h" open="0" top="0" tabpos="2">
-		<Cursor position="1911" topLine="25" />
+	<File name="../src/game/bullet/bullet.h" open="1" top="0" tabpos="13">
+		<Cursor position="964" topLine="30" />
 	</File>
 	<File name="../src/game/collision/colapply.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="2048" topLine="0" />
 	</File>
-	<File name="../src/game/collision/colapply.h" open="0" top="0" tabpos="7">
-		<Cursor position="1173" topLine="11" />
+	<File name="../src/game/collision/colapply.h" open="1" top="0" tabpos="11">
+		<Cursor position="1166" topLine="30" />
 	</File>
 	<File name="../src/game/collision/collision.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="2707" topLine="64" />
 	</File>
-	<File name="../src/game/collision/collision.h" open="0" top="0" tabpos="5">
-		<Cursor position="2889" topLine="7" />
+	<File name="../src/game/collision/collision.h" open="1" top="0" tabpos="12">
+		<Cursor position="2095" topLine="41" />
 	</File>
 	<File name="../src/game/collision/colmap.cpp" open="0" top="0" tabpos="9">
 		<Cursor position="5977" topLine="22" />
 	</File>
-	<File name="../src/game/collision/colmap.h" open="0" top="0" tabpos="10">
-		<Cursor position="2914" topLine="19" />
+	<File name="../src/game/collision/colmap.h" open="1" top="0" tabpos="10">
+		<Cursor position="2914" topLine="36" />
 	</File>
 	<File name="../src/game/collision/sat.cpp" open="0" top="0" tabpos="1">
 		<Cursor position="2620" topLine="0" />
@@ -55,23 +55,29 @@
 	<File name="../src/game/draw.h" open="0" top="0" tabpos="7">
 		<Cursor position="868" topLine="0" />
 	</File>
-	<File name="../src/game/enemy/enemy.h" open="0" top="0" tabpos="2">
-		<Cursor position="886" topLine="11" />
+	<File name="../src/game/enemy/ai/ai.h" open="0" top="0" tabpos="0">
+		<Cursor position="970" topLine="31" />
 	</File>
-	<File name="../src/game/game.cpp" open="0" top="0" tabpos="11">
-		<Cursor position="833" topLine="10" />
+	<File name="../src/game/enemy/enemy.cpp" open="1" top="1" tabpos="4">
+		<Cursor position="2563" topLine="46" />
 	</File>
-	<File name="../src/game/game.h" open="0" top="0" tabpos="4">
-		<Cursor position="224" topLine="0" />
+	<File name="../src/game/enemy/enemy.h" open="1" top="0" tabpos="1">
+		<Cursor position="396" topLine="7" />
 	</File>
-	<File name="../src/game/init.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="1022" topLine="2" />
+	<File name="../src/game/game.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="434" topLine="3" />
 	</File>
-	<File name="../src/game/level/level.cpp" open="0" top="0" tabpos="8">
-		<Cursor position="748" topLine="0" />
+	<File name="../src/game/game.h" open="1" top="0" tabpos="7">
+		<Cursor position="510" topLine="8" />
 	</File>
-	<File name="../src/game/level/level.h" open="0" top="0" tabpos="6">
-		<Cursor position="704" topLine="0" />
+	<File name="../src/game/init.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="868" topLine="25" />
+	</File>
+	<File name="../src/game/level/level.cpp" open="1" top="0" tabpos="9">
+		<Cursor position="1005" topLine="28" />
+	</File>
+	<File name="../src/game/level/level.h" open="1" top="0" tabpos="3">
+		<Cursor position="366" topLine="6" />
 	</File>
 	<File name="../src/game/level/levelinfo.h" open="0" top="0" tabpos="0">
 		<Cursor position="0" topLine="3" />
@@ -121,11 +127,11 @@
 	<File name="../src/game/misc/vector.h" open="0" top="0" tabpos="11">
 		<Cursor position="103" topLine="0" />
 	</File>
-	<File name="../src/game/player/player.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="1621" topLine="8" />
+	<File name="../src/game/player/player.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="1621" topLine="21" />
 	</File>
-	<File name="../src/game/player/player.h" open="0" top="0" tabpos="3">
-		<Cursor position="872" topLine="0" />
+	<File name="../src/game/player/player.h" open="1" top="0" tabpos="2">
+		<Cursor position="807" topLine="18" />
 	</File>
 	<File name="../src/game/weapon/luaweapon.cpp" open="0" top="0" tabpos="14">
 		<Cursor position="522" topLine="0" />
