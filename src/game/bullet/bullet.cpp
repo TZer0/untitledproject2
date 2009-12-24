@@ -1,4 +1,5 @@
 #include "../level/level.h"
+#include "../enemy/enemy.h"
 #include "bullet.h"
 
 using namespace std;
@@ -34,6 +35,7 @@ void cmBullet::process(double delta) {
         
         colpoint = cur->pos;
         mGame->mLevel->apply_collision(this, col);
+        mGame->mEnemy->apply_collision(this, col);
 
         ++tmp->life;
         
@@ -70,11 +72,22 @@ int cmBullet::load(void) {
 bool cmBullet::test_collision(int dial_id, cCollision *target)
 {
     sColReturn ret = col->collide(target, cur->vel);
-
-    if(ret.isCol) {
-        cur->toDie = true;
-        
-        return true;
-    }
+	
+	if(ret.isCol) {
+		switch(dial_id) {
+			case MOD_LEVEL:
+				cur->toDie = true;
+			break;
+			
+			case MOD_ENEMY:
+				// If only we could distinguish friend-or-foe bullets.
+				// Who removed that feature?! >:(
+				cur->toDie = true;
+				LOGS(LDEBUG, "Dying from enemy collision!");
+			break;
+		}
+		
+		return true;
+	}
     return false;
 }

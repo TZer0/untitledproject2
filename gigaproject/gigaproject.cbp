@@ -53,6 +53,7 @@
 		<Unit filename="../src/game/collision/sat.cpp" />
 		<Unit filename="../src/game/draw.cpp" />
 		<Unit filename="../src/game/draw.h" />
+		<Unit filename="../src/game/enemy/ai/ai.h" />
 		<Unit filename="../src/game/enemy/enemy.cpp" />
 		<Unit filename="../src/game/enemy/enemy.h" />
 		<Unit filename="../src/game/game.cpp" />
