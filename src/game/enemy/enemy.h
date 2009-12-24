@@ -15,8 +15,11 @@
 #include "../animation/anim.h"
 #include "../weapon/weapon.h"
 #include "../misc/loadtemplate.h"
+#include "../collision/colapply.h"
 
 #include "ai/ai.h"
+
+#define MOD_ENEMY 0xBEAF
 
 class cEnemyData {
 
@@ -39,6 +42,8 @@ class cEnemy {
         cVector pos;
         cVector vel;
         cAnimation *animation;
+        cCollision *col;
+        sColSectorInstance *colsector;
         
         cEnemy(cEnemyData *data) : ai(NULL) {
 
@@ -56,16 +61,29 @@ class cEnemy {
             weapon = mGame->mWeapon->add("data/weapons/bfg9k1.lua", -1, true);
             LOGS(LDEBUG, "Weapon pointer: %p.", weapon);
             LOGS(LDEBUG, "Added %s...", "enemy weapon");
+            
+            // Create a dummy collision object
+            col = mGame->mCollision->create(CollisionRectangle, &pos, cVector(0,0), animation->getW(), animation->getH());
+            
+            // Create sector
+            colsector = new sColSectorInstance(this);
         }
 };
 
-class cmEnemy : public cDataSystem, public tLoadingSystem<cEnemyData *> {
+class cmEnemy : 
+		public cDataSystem,
+		public cApplyCollision,
+		public tLoadingSystem<cEnemyData *>
+{
     private:
         std::list<cEnemy*> enemies;
         typedef std::list<std::string>::iterator Fileeater;
 
     public:
-        cmEnemy() {}
+		// Current enemy in processing
+		cEnemy *cur;
+		
+        cmEnemy() : cApplyCollision(MOD_ENEMY, 5, 1,1) {}
         void init(void);
         void level_init(void) {}
         int load(void);
@@ -74,6 +92,10 @@ class cmEnemy : public cDataSystem, public tLoadingSystem<cEnemyData *> {
         void clear_data(void);
         class cEnemy *add(char *script, cVector pos);
         virtual ~cmEnemy() {}
+        
+        // Collision functions
+        void collision_function(int caller_id, void*inst);
+        bool test_collision(int dial_id, cCollision *target);
 };
 
 #endif

@@ -364,7 +364,7 @@
 	"allegro.h"
 	"winalleg.h"
 
-1259081804 /home/avenger/project/untitledproject2/src/game/collision/colapply.h
+1261666447 /home/avenger/project/untitledproject2/src/game/collision/colapply.h
 	"colmap.h"
 
 1258846753 /home/avenger/project/untitledproject2/src/game/collision/colmap.h
@@ -488,10 +488,12 @@
 	"game.h"
 	"level/level.h"
 
-1260967373 source:/home/avenger/project/untitledproject2/src/game/enemy/enemy.cpp
+1261666483 source:/home/avenger/project/untitledproject2/src/game/enemy/enemy.cpp
+	"../game.h"
 	"enemy.h"
+	"../level/level.h"
 
-1261664481 /home/avenger/project/untitledproject2/src/game/enemy/enemy.h
+1261667296 /home/avenger/project/untitledproject2/src/game/enemy/enemy.h
 	<list>
 	<string>
 	<map>
@@ -506,6 +508,7 @@
 	"../animation/anim.h"
 	"../weapon/weapon.h"
 	"../misc/loadtemplate.h"
+	"../collision/colapply.h"
 	"ai/ai.h"
 
 1260967373 /home/avenger/project/untitledproject2/src/game/weapon/weapon.h
@@ -571,7 +574,7 @@
 
 1258287648 /home/avenger/project/untitledproject2/src/game/level/levelinfoattributes.h
 
-1260967373 source:/home/avenger/project/untitledproject2/src/game/init.cpp
+1261666289 source:/home/avenger/project/untitledproject2/src/game/init.cpp
 	"misc/timer.h"
 	"misc/input.h"
 	"misc/file.h"

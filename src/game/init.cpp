@@ -49,14 +49,14 @@ int cmGame::init(void)
     // Module initialization
     LOGS(LDEBUG, "Initializing mDraw...");
     mDraw->init();
+    LOGS(LDEBUG, "Initializing mLevel...");
+    mLevel->init();
     LOGS(LDEBUG, "Initializing mTimer...");
     mTimer->init();
     LOGS(LDEBUG, "Initializing mPlayer...");
     mPlayer->init();
     LOGS(LDEBUG, "Initializing mAnim...");
     mAnim->init();
-    LOGS(LDEBUG, "Initializing mLevel...");
-    mLevel->init();
     LOGS(LDEBUG, "Initializing mWeapon...");
     mWeapon->init();
     LOGS(LDEBUG, "Initializing mEnemy...");
