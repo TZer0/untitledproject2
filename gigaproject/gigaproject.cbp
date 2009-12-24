@@ -89,6 +89,8 @@
 		<Unit filename="../src/game/port.h" />
 		<Unit filename="../src/game/sound/sound.cpp" />
 		<Unit filename="../src/game/sound/sound.h" />
+		<Unit filename="../src/game/weapon/luaweapon.cpp" />
+		<Unit filename="../src/game/weapon/luaweapon.h" />
 		<Unit filename="../src/game/weapon/weapon.cpp" />
 		<Unit filename="../src/game/weapon/weapon.h" />
 		<Unit filename="../src/main.cpp" />
