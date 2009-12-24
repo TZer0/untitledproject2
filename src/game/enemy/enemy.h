@@ -16,6 +16,8 @@
 #include "../weapon/weapon.h"
 #include "../misc/loadtemplate.h"
 
+#include "ai/ai.h"
+
 class cEnemyData {
 
     public:
@@ -30,6 +32,7 @@ class cEnemy {
 
     public:
         cWeapon *weapon;
+        cAI *ai;		// The AI we use. Different AI types will use different cAI derived classes
         double life;
         int height;
         int width;
@@ -37,7 +40,7 @@ class cEnemy {
         cVector vel;
         cAnimation *animation;
         
-        cEnemy(cEnemyData *data) {
+        cEnemy(cEnemyData *data) : ai(NULL) {
 
             l = luaL_newstate();
             luaL_openlibs(l);
