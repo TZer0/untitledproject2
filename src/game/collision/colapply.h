@@ -37,6 +37,7 @@ class cApplyCollision : cColMap {
         
         int getId() { return id; }
         cApplyCollision *getCaller() { return caller; }
+        void clear_colmap() { clear(); }
         
         /// Resizes the collision map
         void resize_colmap(double w,double h) { clear(); resize(w,h); }
