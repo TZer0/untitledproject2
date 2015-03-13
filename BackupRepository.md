@@ -1,0 +1,1 @@
+There's a secondary repository at http://ciew.wingedleopard.net/hg/untitledproject2/ which pulls from Google Code every 15 minutes. Use this if Google Code is unavailable. You can't push changes (yet).
